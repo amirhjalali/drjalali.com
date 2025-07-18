@@ -4,23 +4,69 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a fresh repository for drjalali.com - a personal website project. The repository is currently empty with no existing code structure.
+Professional website for Dr. Ali Akbar Jalali, built with Next.js 15, TypeScript, and Tailwind CSS. The site showcases his academic career, research, and role as the "Father of Information Technology in Iran."
 
 ## Development Setup
 
-No build system, package manager, or development tools have been configured yet. Future setup will depend on the technology stack chosen for the website.
+```bash
+# Install dependencies
+npm install
 
-## Commands
+# Run development server
+npm run dev
 
-No build, test, or lint commands are currently available. These should be added as the project develops.
+# Build for production
+npm run build
+
+# Run linting
+npm run lint
+
+# Build and export static site
+npm run export
+```
 
 ## Architecture
 
-No code architecture exists yet. This section should be updated once the project structure is established.
+```
+src/
+├── app/
+│   ├── layout.tsx      # Root layout with metadata
+│   ├── page.tsx        # Home page component
+│   └── globals.css     # Global styles with Tailwind
+├── components/
+│   ├── Navigation.tsx   # Responsive navigation
+│   ├── Hero.tsx        # Hero section
+│   ├── About.tsx       # Biography section
+│   ├── AcademicCareer.tsx # Career timeline
+│   ├── Research.tsx    # Research & publications
+│   └── Contact.tsx     # Professional links
+```
 
-## Notes for Future Development
+## Task Management
 
-- This is a clean slate repository ready for initial project setup
-- Consider the technology stack (e.g., static site generator, framework, CMS) before adding files
-- Update this CLAUDE.md file as the project structure evolves
-- Add build/test/lint commands to this file once they are established
+- **PROJECT_ROADMAP.md** - Long-term project planning and phases
+- **TASKS.md** - Current sprint tasks and tracking
+- **DECISIONS.md** - Technical decisions and rationale
+
+## Deployment
+
+- Hosted on GitHub Pages
+- Automatic deployment via GitHub Actions on push to main
+- Static export configured in next.config.js
+
+## Key Features
+
+- Responsive design for all devices
+- SEO optimized with metadata
+- Fast performance with static generation
+- Professional academic design
+- Tailwind CSS for styling
+
+## Important Notes
+
+1. When adding images, optimize them for web (WebP format preferred)
+2. Maintain consistent TypeScript types
+3. Follow existing component patterns
+4. Test responsive design on mobile
+5. Ensure all external links open in new tabs
+6. Keep content professional and academic in tone
