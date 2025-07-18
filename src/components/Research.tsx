@@ -143,7 +143,7 @@ export default function Research() {
           
           <div className="mt-8 text-center">
             <p className="text-gray-700 italic">
-              "Recognized as the Father of Information Technology in Iran for pioneering work in internet infrastructure and digital transformation."
+              &ldquo;Recognized as the Father of Information Technology in Iran for pioneering work in internet infrastructure and digital transformation.&rdquo;
             </p>
           </div>
         </div>
