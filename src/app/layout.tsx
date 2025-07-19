@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Analytics from '@/components/Analytics'
+import { ThemeProvider } from '@/contexts/ThemeContext'
 
 export const metadata: Metadata = {
   title: 'Dr. Ali Akbar Jalali - Professor of Electrical Engineering',
@@ -56,9 +57,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen bg-white text-gray-900 antialiased">
-        {children}
-        <Analytics />
+      <body className="min-h-screen bg-white dark:bg-neutral-900 text-gray-900 dark:text-neutral-100 antialiased transition-colors duration-300">
+        <ThemeProvider>
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -72,7 +72,7 @@ export default function Timeline() {
   return (
     <div className="relative">
       {/* Vertical line */}
-      <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+      <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-300 dark:bg-neutral-600"></div>
       
       {/* Timeline events */}
       <div className="space-y-8">
@@ -80,7 +80,7 @@ export default function Timeline() {
           <div key={index} className="relative flex items-start">
             {/* Timeline dot */}
             <div className={`
-              absolute left-8 w-4 h-4 rounded-full transform -translate-x-1/2 ring-4 ring-white
+              absolute left-8 w-4 h-4 rounded-full transform -translate-x-1/2 ring-4 ring-white dark:ring-neutral-900
               ${event.type === 'education' ? 'bg-blue-500' : 
                 event.type === 'career' ? 'bg-green-500' : 
                 'bg-primary-500'}
@@ -89,22 +89,22 @@ export default function Timeline() {
             {/* Content */}
             <div className="ml-16 pb-8">
               <div className="flex items-center mb-2">
-                <span className="text-sm font-semibold text-gray-500 mr-4">
+                <span className="text-sm font-semibold text-gray-500 dark:text-neutral-400 mr-4">
                   {event.year}
                 </span>
                 <span className={`
                   px-2 py-1 text-xs font-medium rounded-full
-                  ${event.type === 'education' ? 'bg-blue-100 text-blue-700' : 
-                    event.type === 'career' ? 'bg-green-100 text-green-700' : 
-                    'bg-primary-100 text-primary-700'}
+                  ${event.type === 'education' ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300' : 
+                    event.type === 'career' ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300' : 
+                    'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'}
                 `}>
                   {event.type.charAt(0).toUpperCase() + event.type.slice(1)}
                 </span>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-neutral-100 mb-1">
                 {event.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 dark:text-neutral-300 leading-relaxed">
                 {event.description}
               </p>
             </div>

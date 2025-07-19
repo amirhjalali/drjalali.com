@@ -52,35 +52,35 @@ export default function Research() {
   ]
 
   return (
-    <section id="research" className="py-20 bg-white">
+    <section id="research" className="py-20 bg-white dark:bg-neutral-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4">
             Research & Publications
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto">
             Pioneering research in control systems, IoT, and information technology with global impact
           </p>
         </div>
 
         {/* Research Areas */}
         <div className="mb-20">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Research Areas</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Areas</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {researchAreas.map((area, index) => (
-              <div key={index} className="bg-gray-50 p-6 rounded-lg hover:shadow-lg transition-shadow">
+              <div key={index} className="bg-gray-50 dark:bg-neutral-800 p-6 rounded-lg hover:shadow-lg transition-shadow border border-gray-200 dark:border-neutral-700">
                 <div className="flex items-start mb-4">
                   <span className="text-3xl mr-4">{area.icon}</span>
-                  <h4 className="text-xl font-bold text-gray-900">{area.title}</h4>
+                  <h4 className="text-xl font-bold text-gray-900 dark:text-neutral-100">{area.title}</h4>
                 </div>
-                <p className="text-gray-700 mb-4 leading-relaxed">{area.description}</p>
+                <p className="text-gray-700 dark:text-neutral-300 mb-4 leading-relaxed">{area.description}</p>
                 <div>
-                  <p className="text-sm font-semibold text-gray-800 mb-2">Key Technologies:</p>
+                  <p className="text-sm font-semibold text-gray-800 dark:text-neutral-200 mb-2">Key Technologies:</p>
                   <div className="flex flex-wrap gap-2">
                     {area.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-primary-100 text-primary-700 text-xs rounded-full"
+                        className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs rounded-full"
                       >
                         {tech}
                       </span>
@@ -94,55 +94,55 @@ export default function Research() {
 
         {/* Key Publications */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Key Publications</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Key Publications</h3>
           <div className="space-y-6">
             {keyPublications.map((pub, index) => (
-              <div key={index} className="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+              <div key={index} className="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 p-6 rounded-lg shadow-sm">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-3">
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-1">{pub.title}</h4>
-                    <div className="flex items-center space-x-4 text-sm text-gray-600">
-                      <span className="bg-primary-100 text-primary-700 px-2 py-1 rounded text-xs">
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-neutral-100 mb-1">{pub.title}</h4>
+                    <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-neutral-400">
+                      <span className="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-2 py-1 rounded text-xs">
                         {pub.type}
                       </span>
                       <span>{pub.year}</span>
                       {pub.publisher && <span>{pub.publisher}</span>}
                     </div>
                   </div>
-                  <span className="mt-2 lg:mt-0 inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded text-sm">
+                  <span className="mt-2 lg:mt-0 inline-block bg-gray-100 dark:bg-neutral-700 text-gray-700 dark:text-neutral-300 px-3 py-1 rounded text-sm">
                     {pub.category}
                   </span>
                 </div>
-                <p className="text-gray-700 leading-relaxed">{pub.description}</p>
+                <p className="text-gray-700 dark:text-neutral-300 leading-relaxed">{pub.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Research Impact */}
-        <div className="bg-primary-50 p-8 rounded-lg">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Research Impact</h3>
+        <div className="bg-primary-50 dark:bg-primary-900/20 p-8 rounded-lg border border-primary-100 dark:border-primary-800">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Impact</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">300+</div>
-              <p className="text-gray-700">Research Papers</p>
+              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">300+</div>
+              <p className="text-gray-700 dark:text-neutral-300">Research Papers</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">50+</div>
-              <p className="text-gray-700">Books & Chapters</p>
+              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">50+</div>
+              <p className="text-gray-700 dark:text-neutral-300">Books & Chapters</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">30+</div>
-              <p className="text-gray-700">Years of Research</p>
+              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">30+</div>
+              <p className="text-gray-700 dark:text-neutral-300">Years of Research</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">Pioneer</div>
-              <p className="text-gray-700">IT in Iran</p>
+              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">Pioneer</div>
+              <p className="text-gray-700 dark:text-neutral-300">IT in Iran</p>
             </div>
           </div>
           
           <div className="mt-8 text-center">
-            <p className="text-gray-700 italic">
+            <p className="text-gray-700 dark:text-neutral-300 italic">
               &ldquo;Recognized as the Father of Information Technology in Iran for pioneering work in internet infrastructure and digital transformation.&rdquo;
             </p>
           </div>

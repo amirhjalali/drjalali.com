@@ -2,23 +2,23 @@ import Timeline from './Timeline'
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white dark:bg-neutral-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4">
             About Dr. Jalali
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto">
             A distinguished academic and technology pioneer who has shaped Iran&apos;s digital landscape
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-6">
               Biography
             </h3>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-gray-700 dark:text-neutral-300 leading-relaxed">
               <p>
                 Born on November 22, 1954, in Shahkooh, Shahroud, Iran, Dr. Ali Akbar Jalali 
                 has become one of the most influential figures in Iran&apos;s technological development. 
@@ -39,35 +39,35 @@ export default function About() {
           </div>
 
           <div className="space-y-8">
-            <div className="bg-primary-50 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold text-primary-800 mb-3">
+            <div className="bg-primary-50 dark:bg-primary-900/20 p-6 rounded-lg border border-primary-100 dark:border-primary-800">
+              <h4 className="text-lg font-semibold text-primary-800 dark:text-primary-300 mb-3">
                 Key Achievements
               </h4>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-700 dark:text-neutral-300">
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-2">•</span>
+                  <span className="text-primary-600 dark:text-primary-400 mr-2">•</span>
                   Pioneer of internet development in Iranian villages
                 </li>
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-2">•</span>
+                  <span className="text-primary-600 dark:text-primary-400 mr-2">•</span>
                   Author of 50+ books and 300+ research papers
                 </li>
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-2">•</span>
+                  <span className="text-primary-600 dark:text-primary-400 mr-2">•</span>
                   Expert in IoT, Control Systems, and ICT
                 </li>
                 <li className="flex items-start">
-                  <span className="text-primary-600 mr-2">•</span>
+                  <span className="text-primary-600 dark:text-primary-400 mr-2">•</span>
                   30+ years of academic excellence
                 </li>
               </ul>
             </div>
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h4 className="text-lg font-semibold text-gray-800 mb-3">
+            <div className="bg-gray-50 dark:bg-neutral-800 p-6 rounded-lg border border-gray-200 dark:border-neutral-700">
+              <h4 className="text-lg font-semibold text-gray-800 dark:text-neutral-200 mb-3">
                 Current Positions
               </h4>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-gray-700 dark:text-neutral-300">
                 <li>
                   <strong>Professor</strong><br />
                   Iran University of Science and Technology
@@ -87,7 +87,7 @@ export default function About() {
 
         {/* Career Timeline */}
         <div className="mt-20">
-          <h3 className="text-2xl font-bold text-gray-900 mb-10 text-center">Career Journey</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-10 text-center">Career Journey</h3>
           <Timeline />
         </div>
       </div>
