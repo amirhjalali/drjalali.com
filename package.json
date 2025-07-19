@@ -30,9 +30,11 @@
     "eslint": "^9.31.0",
     "eslint-config-next": "^15.4.1",
     "next": "^15.4.1",
+    "next-optimized-images": "^2.6.2",
     "postcss": "^8.5.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "sharp": "^0.34.3",
     "tailwindcss": "^4.1.11",
     "task-master-ai": "^0.20.0",
     "typescript": "^5.8.3"
