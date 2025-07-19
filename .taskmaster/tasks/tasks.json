@@ -1,0 +1,125 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": "PHOTO-001",
+        "title": "Professional Photography Session",
+        "description": "Schedule and conduct professional photo session for Dr. Jalali including headshots, academic setting photos, and candid shots",
+        "category": "Content Enhancement",
+        "priority": "Critical",
+        "status": "Not Started",
+        "assignee": "Content Team",
+        "dueDate": "2025-01-25",
+        "estimatedHours": 8,
+        "dependencies": [],
+        "acceptanceCriteria": [
+          "High-resolution headshot (at least 2000x2000px)",
+          "Academic setting photo for About section",
+          "Images optimized for web (WebP format)",
+          "Multiple aspect ratios available"
+        ]
+      },
+      {
+        "id": "DOMAIN-001",
+        "title": "Configure Custom Domain",
+        "description": "Set up drjalali.com to point to GitHub Pages with proper SSL configuration",
+        "category": "Technical Development",
+        "priority": "Critical",
+        "status": "Not Started",
+        "assignee": "DevOps Team",
+        "dueDate": "2025-01-22",
+        "estimatedHours": 4,
+        "dependencies": [],
+        "acceptanceCriteria": [
+          "drjalali.com resolves to the website",
+          "SSL certificate is configured",
+          "www redirects to non-www",
+          "GitHub Pages custom domain is set"
+        ]
+      },
+      {
+        "id": "CONTENT-001",
+        "title": "Content Audit of drjalali.ir",
+        "description": "Comprehensive audit of existing Farsi website to identify content for translation and migration",
+        "category": "Content Enhancement",
+        "priority": "High",
+        "status": "Not Started",
+        "assignee": "Content Team",
+        "dueDate": "2025-01-29",
+        "estimatedHours": 12,
+        "dependencies": [],
+        "acceptanceCriteria": [
+          "Complete content inventory spreadsheet",
+          "Priority ranking for translation",
+          "Missing content identification",
+          "Media assets catalog"
+        ]
+      },
+      {
+        "id": "TRANSLATE-001",
+        "title": "Biography Translation",
+        "description": "Professional translation of biography and key achievements from Farsi to English",
+        "category": "Content Enhancement",
+        "priority": "High",
+        "status": "Not Started",
+        "assignee": "Translation Team",
+        "dueDate": "2025-02-05",
+        "estimatedHours": 16,
+        "dependencies": [
+          "CONTENT-001"
+        ],
+        "acceptanceCriteria": [
+          "Complete biography in professional English",
+          "Key achievements and milestones translated",
+          "Academic tone maintained",
+          "Fact-checking completed"
+        ]
+      },
+      {
+        "id": "PUBLISH-001",
+        "title": "Publications Database",
+        "description": "Create comprehensive database of Dr. Jalali's publications with search and filter functionality",
+        "category": "Content Enhancement",
+        "priority": "Medium",
+        "status": "Not Started",
+        "assignee": "Development Team",
+        "dueDate": "2025-02-12",
+        "estimatedHours": 20,
+        "dependencies": [
+          "CONTENT-001"
+        ],
+        "acceptanceCriteria": [
+          "Publications categorized by type",
+          "Search functionality implemented",
+          "Filter by year, category, journal",
+          "Links to external sources (IEEE, Google Scholar)"
+        ]
+      },
+      {
+        "id": "SEO-001",
+        "title": "SEO Optimization",
+        "description": "Implement comprehensive SEO strategy including meta tags, schema markup, and sitemap",
+        "category": "SEO & Performance",
+        "priority": "Medium",
+        "status": "Not Started",
+        "assignee": "Development Team",
+        "dueDate": "2025-02-08",
+        "estimatedHours": 8,
+        "dependencies": [
+          "DOMAIN-001"
+        ],
+        "acceptanceCriteria": [
+          "All pages have unique meta descriptions",
+          "Schema.org markup for academic profile",
+          "XML sitemap generated",
+          "Google Search Console configured"
+        ]
+      }
+    ],
+    "metadata": {
+      "created": "2025-07-19T02:38:55.326Z",
+      "updated": "2025-07-19T02:38:55.326Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

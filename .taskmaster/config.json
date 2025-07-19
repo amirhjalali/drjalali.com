@@ -1,0 +1,45 @@
+{
+  "projectName": "Dr. Jalali Professional Website",
+  "description": "Professional academic website for Dr. Ali Akbar Jalali showcasing his career, research, and contributions as the Father of Information Technology in Iran",
+  "technology": "Next.js 15, TypeScript, Tailwind CSS",
+  "aiProvider": "anthropic",
+  "model": "claude-3-sonnet-20240229",
+  "taskCategories": [
+    "Content Enhancement",
+    "Technical Development",
+    "Design & UX",
+    "SEO & Performance",
+    "Deployment & Operations"
+  ],
+  "priorities": [
+    "Critical",
+    "High",
+    "Medium",
+    "Low"
+  ],
+  "phases": [
+    {
+      "name": "Phase 1 - Content Enhancement",
+      "description": "Professional photography, content translation, domain setup",
+      "timeline": "2-3 weeks"
+    },
+    {
+      "name": "Phase 2 - Content Expansion",
+      "description": "Publications database, media integration, news section",
+      "timeline": "4-6 weeks"
+    },
+    {
+      "name": "Phase 3 - Feature Enhancement",
+      "description": "Multi-language support, interactive features, performance optimization",
+      "timeline": "6-8 weeks"
+    },
+    {
+      "name": "Phase 4 - Advanced Features",
+      "description": "CMS integration, analytics, community features",
+      "timeline": "Ongoing"
+    }
+  ],
+  "global": {
+    "defaultTag": "master"
+  }
+}
