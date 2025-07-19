@@ -36,7 +36,7 @@ export default function Hero() {
           {/* Content */}
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
+              <h1 className="heading-display text-fluid-7xl text-gray-900">
                 <span className="block">Dr. Ali Akbar</span>
                 <span className="block bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">
                   Jalali
@@ -44,13 +44,13 @@ export default function Hero() {
               </h1>
               
               <div className="relative">
-                <p className="text-2xl md:text-3xl text-primary-600 font-semibold tracking-wide">
+                <p className="caption-text text-fluid-2xl text-primary-600">
                   Father of Information Technology in Iran
                 </p>
                 <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 to-primary-700 rounded-full"></div>
               </div>
               
-              <p className="text-xl text-gray-700 leading-relaxed max-w-2xl">
+              <p className="body-large text-fluid-xl text-gray-700 max-w-2xl">
                 Professor of Electrical Engineering at Iran University of Science and Technology. 
                 Pioneer in Internet of Things, Control Systems, and Information Technology with 
                 over 30 years of academic excellence and 300+ published papers.
