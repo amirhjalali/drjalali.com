@@ -1,3 +1,5 @@
+import Timeline from './Timeline'
+
 export default function About() {
   return (
     <section id="about" className="py-20 bg-white">
@@ -81,6 +83,12 @@ export default function About() {
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Career Timeline */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-10 text-center">Career Journey</h3>
+          <Timeline />
         </div>
       </div>
     </section>
