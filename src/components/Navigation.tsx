@@ -29,6 +29,9 @@ export default function Navigation() {
             <Link href="#research" className="text-gray-700 hover:text-primary-600 transition-colors">
               Research
             </Link>
+            <Link href="#publications" className="text-gray-700 hover:text-primary-600 transition-colors">
+              Publications
+            </Link>
             <Link href="#media" className="text-gray-700 hover:text-primary-600 transition-colors">
               Media
             </Link>
@@ -69,6 +72,9 @@ export default function Navigation() {
               </Link>
               <Link href="#research" className="block px-3 py-2 text-gray-700 hover:text-primary-600">
                 Research
+              </Link>
+              <Link href="#publications" className="block px-3 py-2 text-gray-700 hover:text-primary-600">
+                Publications
               </Link>
               <Link href="#media" className="block px-3 py-2 text-gray-700 hover:text-primary-600">
                 Media
