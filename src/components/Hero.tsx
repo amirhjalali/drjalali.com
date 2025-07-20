@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import ProfessionalPhoto from './ProfessionalPhoto';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -100,27 +101,37 @@ export default function Hero() {
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-blue-300 dark:from-blue-500 to-transparent rounded-full opacity-20 dark:opacity-30"></div>
               
               {/* Photo Container */}
-              <div className="relative w-96 h-96 bg-gradient-to-br from-primary-100 via-primary-200 to-primary-300 dark:from-neutral-700 dark:via-neutral-600 dark:to-neutral-500 rounded-full flex items-center justify-center shadow-2xl ring-8 ring-white dark:ring-neutral-700 ring-opacity-50 dark:ring-opacity-60 group-hover:ring-opacity-70 dark:group-hover:ring-opacity-80 transition-all duration-500 transform group-hover:scale-105">
-                {/* TODO: Replace with actual professional photo */}
-                <div className="text-center">
-                  <div className="text-primary-700 dark:text-neutral-200 text-7xl font-bold mb-2 tracking-tight">
-                    Dr. J
-                  </div>
-                  <div className="text-primary-600 dark:text-neutral-400 text-sm font-medium opacity-75">
-                    Professional Photo Coming Soon
-                  </div>
-                </div>
-                
-                {/* Photo Overlay Effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-t from-primary-600/10 dark:from-primary-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative w-96 h-96 shadow-2xl ring-8 ring-white dark:ring-neutral-700 ring-opacity-50 dark:ring-opacity-60 group-hover:ring-opacity-70 dark:group-hover:ring-opacity-80 transition-all duration-500 transform group-hover:scale-105 rounded-full overflow-hidden">
+                <ProfessionalPhoto 
+                  className="w-full h-full"
+                  alt="Dr. Ali Akbar Jalali - Professor of Electrical Engineering"
+                />
               </div>
               
               {/* Floating Achievement Badges */}
-              <div className="absolute -top-4 left-4 bg-white dark:bg-neutral-800 rounded-lg px-3 py-2 shadow-lg border border-gray-100 dark:border-neutral-700 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <div className="text-xs font-semibold text-gray-600 dark:text-neutral-300">IEEE Fellow</div>
+              <div className="absolute -top-6 left-2 bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105">
+                <div className="text-center">
+                  <div className="text-primary-600 dark:text-primary-400 text-lg font-bold">30+</div>
+                  <div className="text-xs font-medium text-gray-600 dark:text-neutral-300">Years</div>
+                </div>
               </div>
-              <div className="absolute -bottom-2 -right-4 bg-white dark:bg-neutral-800 rounded-lg px-3 py-2 shadow-lg border border-gray-100 dark:border-neutral-700 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
-                <div className="text-xs font-semibold text-gray-600 dark:text-neutral-300">300+ Papers</div>
+              
+              <div className="absolute -bottom-4 -right-6 bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow-xl border border-gray-100 dark:border-neutral-700 transform -rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105">
+                <div className="text-center">
+                  <div className="text-primary-600 dark:text-primary-400 text-lg font-bold">300+</div>
+                  <div className="text-xs font-medium text-gray-600 dark:text-neutral-300">Papers</div>
+                </div>
+              </div>
+              
+              <div className="absolute top-20 -left-8 bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-105">
+                <div className="text-center">
+                  <div className="text-primary-600 dark:text-primary-400 text-lg font-bold">50+</div>
+                  <div className="text-xs font-medium text-gray-600 dark:text-neutral-300">Books</div>
+                </div>
+              </div>
+              
+              <div className="absolute bottom-16 right-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl px-3 py-2 shadow-xl transform -rotate-1 hover:rotate-0 transition-all duration-300 hover:scale-105">
+                <div className="text-xs font-semibold">IT Pioneer</div>
               </div>
             </div>
           </div>
