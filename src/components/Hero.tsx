@@ -105,6 +105,7 @@ export default function Hero() {
               {/* Photo Container */}
               <div className="relative w-96 h-96 shadow-2xl ring-8 ring-white dark:ring-neutral-700 ring-opacity-50 dark:ring-opacity-60 group-hover:ring-opacity-70 dark:group-hover:ring-opacity-80 transition-all duration-500 transform group-hover:scale-105 rounded-full overflow-hidden">
                 <ProfessionalPhoto 
+                  src="/images/professional/dr-jalali-professional.jpg"
                   className="w-full h-full"
                   alt="Dr. Ali Akbar Jalali - Professor of Electrical Engineering"
                 />

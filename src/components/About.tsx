@@ -1,5 +1,6 @@
 import Timeline from './Timeline'
 import { SlideUp, FadeIn } from './ScrollAnimation'
+import ProfessionalPhoto from './ProfessionalPhoto'
 
 export default function About() {
   return (
@@ -21,9 +22,27 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideUp delay={100}>
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-6">
-                Biography
-              </h3>
+              {/* Academic Profile Photo */}
+              <div className="flex items-start gap-6 mb-8">
+                <div className="flex-shrink-0">
+                  <div className="w-24 h-24 rounded-xl overflow-hidden shadow-lg ring-4 ring-primary-100 dark:ring-primary-800">
+                    <ProfessionalPhoto 
+                      src="/images/professional/dr-jalali-professional.jpg"
+                      className="w-full h-full"
+                      alt="Dr. Ali Akbar Jalali - Academic Profile"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-2">
+                    Biography
+                  </h3>
+                  <p className="text-primary-600 dark:text-primary-400 font-medium">
+                    Professor of Electrical Engineering
+                  </p>
+                </div>
+              </div>
+              
               <div className="space-y-4 text-gray-700 dark:text-neutral-300 leading-relaxed">
               <p>
                 Born on November 22, 1954, in Shahkooh, Shahroud, Iran, Dr. Ali Akbar Jalali 
