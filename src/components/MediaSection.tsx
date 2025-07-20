@@ -13,24 +13,45 @@ interface Video {
 const videos: Video[] = [
   {
     id: '1',
-    title: 'Introduction to Internet of Things',
-    description: 'Dr. Jalali explains the fundamentals of IoT and its impact on modern technology',
-    youtubeId: 'dQw4w9WgXcQ', // Placeholder - replace with actual video ID
+    title: 'Internet of Things: Fundamentals and Applications',
+    description: 'Dr. Jalali discusses IoT technology, smart systems, and their real-world applications in industry and daily life',
+    youtubeId: 'ACTUAL_VIDEO_ID_1', // To be replaced with actual Dr. Jalali video
     category: 'lecture'
   },
   {
     id: '2',
-    title: 'The Future of Information Technology in Iran',
-    description: 'An interview discussing the development of IT infrastructure in Iran',
-    youtubeId: 'dQw4w9WgXcQ', // Placeholder - replace with actual video ID
+    title: 'Father of IT in Iran: A Journey Through Digital Transformation',
+    description: 'An in-depth interview with Dr. Jalali about his pioneering work in establishing Iran\'s information technology infrastructure',
+    youtubeId: 'ACTUAL_VIDEO_ID_2', // To be replaced with actual Dr. Jalali video
     category: 'interview'
   },
   {
     id: '3',
-    title: 'Control Systems Innovation',
-    description: 'Documentary on Dr. Jalali\'s contributions to control systems engineering',
-    youtubeId: 'dQw4w9WgXcQ', // Placeholder - replace with actual video ID
+    title: 'Control Systems and Engineering Excellence',
+    description: 'Exploring Dr. Jalali\'s contributions to advanced control theory and his published research on reduced-order systems',
+    youtubeId: 'ACTUAL_VIDEO_ID_3', // To be replaced with actual Dr. Jalali video
+    category: 'lecture'
+  },
+  {
+    id: '4',
+    title: 'UNESCO eASIA Award: Rural ICT Centers',
+    description: 'Documentary on Dr. Jalali\'s award-winning project bringing internet connectivity to rural Iranian villages',
+    youtubeId: 'ACTUAL_VIDEO_ID_4', // To be replaced with actual Dr. Jalali video
     category: 'documentary'
+  },
+  {
+    id: '5',
+    title: 'Innovation in Academic Research',
+    description: 'Dr. Jalali shares insights on research methodology, academic publishing, and fostering innovation in engineering',
+    youtubeId: 'ACTUAL_VIDEO_ID_5', // To be replaced with actual Dr. Jalali video
+    category: 'interview'
+  },
+  {
+    id: '6',
+    title: '3D Printing and Manufacturing Technology',
+    description: 'A technical lecture on additive manufacturing, 3D printing applications, and their impact on modern industry',
+    youtubeId: 'ACTUAL_VIDEO_ID_6', // To be replaced with actual Dr. Jalali video
+    category: 'lecture'
   }
 ]
 
@@ -109,19 +130,38 @@ export default function MediaSection() {
               onClick={() => setSelectedVideo(video)}
             >
               {/* Video Thumbnail */}
-              <div className="relative aspect-video bg-gray-200">
-                <img
-                  src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
-                  alt={video.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-black bg-opacity-60 rounded-full p-4">
-                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+              <div className="relative aspect-video bg-gradient-to-br from-primary-100 to-primary-200 dark:from-neutral-700 dark:to-neutral-800">
+                {video.youtubeId.startsWith('ACTUAL_VIDEO_ID') ? (
+                  // Placeholder for actual videos
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="bg-primary-600 dark:bg-primary-500 rounded-full p-6 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
+                        <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <p className="text-primary-700 dark:text-primary-300 font-medium text-sm">
+                        Video Coming Soon
+                      </p>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  // Real video thumbnail
+                  <>
+                    <img
+                      src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+                      alt={video.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-black bg-opacity-60 rounded-full p-4">
+                        <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
               
               {/* Video Info */}
@@ -152,26 +192,53 @@ export default function MediaSection() {
             onClick={() => setSelectedVideo(null)}
           >
             <div
-              className="bg-white rounded-lg max-w-4xl w-full overflow-hidden"
+              className="bg-white dark:bg-neutral-800 rounded-lg max-w-4xl w-full overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="aspect-video">
-                <iframe
-                  src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}`}
-                  title={selectedVideo.title}
-                  className="w-full h-full"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                {selectedVideo.youtubeId.startsWith('ACTUAL_VIDEO_ID') ? (
+                  // Placeholder content
+                  <div className="w-full h-full bg-gradient-to-br from-primary-100 to-primary-200 dark:from-neutral-700 dark:to-neutral-800 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="bg-primary-600 dark:bg-primary-500 rounded-full p-8 mb-6 mx-auto w-24 h-24 flex items-center justify-center">
+                        <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <h3 className="text-xl font-bold text-primary-700 dark:text-primary-300 mb-2">
+                        Video Coming Soon
+                      </h3>
+                      <p className="text-primary-600 dark:text-primary-400">
+                        This video will be available once Dr. Jalali&apos;s content is uploaded
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  // Real video iframe
+                  <iframe
+                    src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}`}
+                    title={selectedVideo.title}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                )}
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-neutral-100 mb-2">
                   {selectedVideo.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-neutral-300">
                   {selectedVideo.description}
                 </p>
+                {selectedVideo.youtubeId.startsWith('ACTUAL_VIDEO_ID') && (
+                  <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                    <p className="text-sm text-blue-700 dark:text-blue-300">
+                      📝 <strong>Note:</strong> This is placeholder content. Replace &quot;ACTUAL_VIDEO_ID_{selectedVideo.id}&quot; with the real YouTube video ID.
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>
