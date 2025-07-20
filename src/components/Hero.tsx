@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import ProfessionalPhoto from './ProfessionalPhoto';
+import Button from './Button';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -71,24 +72,25 @@ export default function Hero() {
             </div>
             
             <div className={`mt-10 flex flex-col sm:flex-row gap-4 transform transition-all duration-700 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-              <a
+              <Button
                 href="#about"
-                className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 transition-all duration-300 transform hover:scale-105 hover:shadow-xl shadow-lg"
+                variant="primary"
+                size="lg"
+                icon="arrow"
+                glow={true}
+                className="text-lg"
               >
-                <span>Learn More</span>
-                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-              <a
+                Learn More
+              </Button>
+              <Button
                 href="#research"
-                className="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-xl text-primary-700 dark:text-primary-300 bg-white dark:bg-neutral-800 border-2 border-primary-200 dark:border-primary-600 hover:border-primary-300 dark:hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-neutral-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                variant="secondary"
+                size="lg"
+                icon="external"
+                className="text-lg"
               >
-                <span>View Research</span>
-                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              </a>
+                View Research
+              </Button>
             </div>
           </div>
           

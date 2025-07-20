@@ -1,3 +1,5 @@
+import Card from './Card';
+
 export default function Research() {
   const researchAreas = [
     {
@@ -68,10 +70,16 @@ export default function Research() {
           <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Areas</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {researchAreas.map((area, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-neutral-800 p-6 rounded-lg hover:shadow-lg transition-shadow border border-gray-200 dark:border-neutral-700">
+              <Card 
+                key={index} 
+                variant="glass" 
+                hover="lift" 
+                interactive={true}
+                className="group"
+              >
                 <div className="flex items-start mb-4">
-                  <span className="text-3xl mr-4">{area.icon}</span>
-                  <h4 className="text-xl font-bold text-gray-900 dark:text-neutral-100">{area.title}</h4>
+                  <span className="text-3xl mr-4 transform group-hover:scale-110 transition-transform duration-300">{area.icon}</span>
+                  <h4 className="text-xl font-bold text-gray-900 dark:text-neutral-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">{area.title}</h4>
                 </div>
                 <p className="text-gray-700 dark:text-neutral-300 mb-4 leading-relaxed">{area.description}</p>
                 <div>
@@ -80,14 +88,14 @@ export default function Research() {
                     {area.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs rounded-full"
+                        className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs rounded-full border border-primary-200 dark:border-primary-700 hover:bg-primary-200 dark:hover:bg-primary-800/40 transition-colors duration-200"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -97,24 +105,30 @@ export default function Research() {
           <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Key Publications</h3>
           <div className="space-y-6">
             {keyPublications.map((pub, index) => (
-              <div key={index} className="bg-white dark:bg-neutral-800 border border-gray-200 dark:border-neutral-700 p-6 rounded-lg shadow-sm">
+              <Card 
+                key={index} 
+                variant="elevated" 
+                hover="lift" 
+                interactive={true}
+                className="group"
+              >
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-3">
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-neutral-100 mb-1">{pub.title}</h4>
+                    <h4 className="text-lg font-bold text-gray-900 dark:text-neutral-100 mb-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">{pub.title}</h4>
                     <div className="flex items-center space-x-4 text-sm text-gray-600 dark:text-neutral-400">
-                      <span className="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-2 py-1 rounded text-xs">
+                      <span className="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-2 py-1 rounded text-xs border border-primary-200 dark:border-primary-700">
                         {pub.type}
                       </span>
                       <span>{pub.year}</span>
                       {pub.publisher && <span>{pub.publisher}</span>}
                     </div>
                   </div>
-                  <span className="mt-2 lg:mt-0 inline-block bg-gray-100 dark:bg-neutral-700 text-gray-700 dark:text-neutral-300 px-3 py-1 rounded text-sm">
+                  <span className="mt-2 lg:mt-0 inline-block bg-gray-100 dark:bg-neutral-700 text-gray-700 dark:text-neutral-300 px-3 py-1 rounded text-sm border border-gray-200 dark:border-neutral-600">
                     {pub.category}
                   </span>
                 </div>
                 <p className="text-gray-700 dark:text-neutral-300 leading-relaxed">{pub.description}</p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
