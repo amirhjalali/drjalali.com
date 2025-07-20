@@ -27,7 +27,7 @@ export default function About() {
                 <div className="flex-shrink-0">
                   <div className="w-24 h-24 rounded-xl overflow-hidden shadow-lg ring-4 ring-primary-100 dark:ring-primary-800">
                     <ProfessionalPhoto 
-                      src="/images/professional/dr-jalali-professional.jpg"
+                      src="/images/professional/dr-jalali-professional.png"
                       className="w-full h-full"
                       alt="Dr. Ali Akbar Jalali - Academic Profile"
                     />
@@ -37,9 +37,20 @@ export default function About() {
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-2">
                     Biography
                   </h3>
-                  <p className="text-primary-600 dark:text-primary-400 font-medium">
+                  <p className="text-primary-600 dark:text-primary-400 font-medium mb-2">
                     Professor of Electrical Engineering
                   </p>
+                  <a 
+                    href="https://en.wikipedia.org/wiki/Ali_Akbar_Jalali"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm text-gray-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                  >
+                    <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 8.16l-.292 1.393c-.011.013-.027.019-.042.019-.015 0-.031-.006-.042-.019l-.688-1.393h-1.195v5.44c0 .013-.006.025-.019.025H13.69c-.013 0-.025-.012-.025-.025V8.16h-1.195l-.688 1.393c-.011.013-.027.019-.042.019-.015 0-.031-.006-.042-.019L11.406 8.16H6.432c-.013 0-.025.012-.025.025v7.69c0 .013.012.025.025.025h11.136c.013 0 .025-.012.025-.025V8.185c0-.013-.012-.025-.025-.025z"/>
+                    </svg>
+                    Wikipedia Biography
+                  </a>
                 </div>
               </div>
               
