@@ -1,6 +1,8 @@
 import Card from './Card';
 import { CardGrid } from './GridLayout';
 import { SlideUp, FadeIn } from './ScrollAnimation';
+import { SectionAnchor, FlowIndicator } from './SectionDivider';
+import { SectionCTA } from './StickyActions';
 
 export default function Research() {
   const researchAreas = [
@@ -58,18 +60,13 @@ export default function Research() {
   return (
     <section id="research" className="py-20 bg-white dark:bg-neutral-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <SlideUp>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4">
-              Research & Publications
-            </h2>
-          </SlideUp>
-          <FadeIn delay={200}>
-            <p className="text-xl text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto">
-              Pioneering research in control systems, IoT, and information technology with global impact
-            </p>
-          </FadeIn>
-        </div>
+        <SlideUp>
+          <SectionAnchor
+            number="02"
+            title="Research & Publications"
+            subtitle="Pioneering research in control systems, IoT, and information technology with global impact"
+          />
+        </SlideUp>
 
         {/* Research Areas */}
         <div className="mb-20">

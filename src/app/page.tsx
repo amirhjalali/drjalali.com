@@ -9,12 +9,16 @@ import NewsSection from '@/components/NewsSection'
 import ContactForm from '@/components/ContactForm'
 import JsonLd from '@/components/JsonLd'
 import ScrollProgress from '@/components/ScrollProgress'
+import FloatingNav from '@/components/FloatingNav'
+import StickyActions from '@/components/StickyActions'
 
 export default function Home() {
   return (
     <>
       <JsonLd />
       <ScrollProgress />
+      <FloatingNav />
+      <StickyActions />
       <Navigation />
       <main>
         <Hero />

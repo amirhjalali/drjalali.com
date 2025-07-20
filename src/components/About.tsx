@@ -1,23 +1,19 @@
 import Timeline from './Timeline'
 import { SlideUp, FadeIn } from './ScrollAnimation'
 import ProfessionalPhoto from './ProfessionalPhoto'
+import { SectionAnchor, FlowIndicator } from './SectionDivider'
 
 export default function About() {
   return (
     <section id="about" className="py-20 bg-white dark:bg-neutral-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <SlideUp>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4">
-              About Dr. Jalali
-            </h2>
-          </SlideUp>
-          <FadeIn delay={200}>
-            <p className="text-xl text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto">
-              A distinguished academic and technology pioneer who has shaped Iran&apos;s digital landscape
-            </p>
-          </FadeIn>
-        </div>
+        <SlideUp>
+          <SectionAnchor
+            number="01"
+            title="About Dr. Jalali"
+            subtitle="A distinguished academic and technology pioneer who has shaped Iran's digital landscape"
+          />
+        </SlideUp>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <SlideUp delay={100}>
@@ -132,6 +128,14 @@ export default function About() {
           <FadeIn delay={300}>
             <Timeline />
           </FadeIn>
+        </div>
+        
+        {/* Flow Indicator */}
+        <div className="mt-16">
+          <FlowIndicator 
+            text="Explore Academic Career" 
+            direction="down"
+          />
         </div>
       </div>
     </section>
