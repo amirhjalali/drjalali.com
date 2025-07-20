@@ -8,11 +8,13 @@ import MediaSection from '@/components/MediaSection'
 import NewsSection from '@/components/NewsSection'
 import ContactForm from '@/components/ContactForm'
 import JsonLd from '@/components/JsonLd'
+import ScrollProgress from '@/components/ScrollProgress'
 
 export default function Home() {
   return (
     <>
       <JsonLd />
+      <ScrollProgress />
       <Navigation />
       <main>
         <Hero />

@@ -1,4 +1,6 @@
 import Card from './Card';
+import { CardGrid } from './GridLayout';
+import { SlideUp, FadeIn } from './ScrollAnimation';
 
 export default function Research() {
   const researchAreas = [
@@ -57,26 +59,32 @@ export default function Research() {
     <section id="research" className="py-20 bg-white dark:bg-neutral-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4">
-            Research & Publications
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto">
-            Pioneering research in control systems, IoT, and information technology with global impact
-          </p>
+          <SlideUp>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4">
+              Research & Publications
+            </h2>
+          </SlideUp>
+          <FadeIn delay={200}>
+            <p className="text-xl text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto">
+              Pioneering research in control systems, IoT, and information technology with global impact
+            </p>
+          </FadeIn>
         </div>
 
         {/* Research Areas */}
         <div className="mb-20">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Areas</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <SlideUp>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Areas</h3>
+          </SlideUp>
+          <CardGrid minWidth="300px" maxWidth="600px" gap="lg">
             {researchAreas.map((area, index) => (
-              <Card 
-                key={index} 
-                variant="glass" 
-                hover="lift" 
-                interactive={true}
-                className="group"
-              >
+              <FadeIn key={index} delay={index * 100}>
+                <Card 
+                  variant="glass" 
+                  hover="lift" 
+                  interactive={true}
+                  className="group"
+                >
                 <div className="flex items-start mb-4">
                   <span className="text-3xl mr-4 transform group-hover:scale-110 transition-transform duration-300">{area.icon}</span>
                   <h4 className="text-xl font-bold text-gray-900 dark:text-neutral-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">{area.title}</h4>
@@ -95,9 +103,10 @@ export default function Research() {
                     ))}
                   </div>
                 </div>
-              </Card>
+                </Card>
+              </FadeIn>
             ))}
-          </div>
+          </CardGrid>
         </div>
 
         {/* Key Publications */}
