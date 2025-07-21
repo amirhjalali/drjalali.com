@@ -10,47 +10,32 @@ interface Video {
   category: 'interview' | 'lecture' | 'documentary'
 }
 
+// To add real videos from Dr. Jalali's YouTube channel:
+// 1. Go to https://www.youtube.com/@Professor.Aliakbar.Jalali
+// 2. Find the video you want to include
+// 3. Extract the video ID from the URL (e.g., from https://www.youtube.com/watch?v=ABC123, the ID is ABC123)
+// 4. Replace PLACEHOLDER_VIDEO_X with the actual video ID
+
 const videos: Video[] = [
   {
     id: '1',
     title: 'Internet of Things: Fundamentals and Applications',
     description: 'Dr. Jalali discusses IoT technology, smart systems, and their real-world applications in industry and daily life',
-    youtubeId: 'ACTUAL_VIDEO_ID_1', // To be replaced with actual Dr. Jalali video
+    youtubeId: 'PLACEHOLDER_VIDEO_1', // Replace with actual YouTube video ID
     category: 'lecture'
   },
   {
     id: '2',
     title: 'Father of IT in Iran: A Journey Through Digital Transformation',
     description: 'An in-depth interview with Dr. Jalali about his pioneering work in establishing Iran\'s information technology infrastructure',
-    youtubeId: 'ACTUAL_VIDEO_ID_2', // To be replaced with actual Dr. Jalali video
+    youtubeId: 'PLACEHOLDER_VIDEO_2', // Replace with actual YouTube video ID
     category: 'interview'
   },
   {
     id: '3',
     title: 'Control Systems and Engineering Excellence',
     description: 'Exploring Dr. Jalali\'s contributions to advanced control theory and his published research on reduced-order systems',
-    youtubeId: 'ACTUAL_VIDEO_ID_3', // To be replaced with actual Dr. Jalali video
-    category: 'lecture'
-  },
-  {
-    id: '4',
-    title: 'UNESCO eASIA Award: Rural ICT Centers',
-    description: 'Documentary on Dr. Jalali\'s award-winning project bringing internet connectivity to rural Iranian villages',
-    youtubeId: 'ACTUAL_VIDEO_ID_4', // To be replaced with actual Dr. Jalali video
-    category: 'documentary'
-  },
-  {
-    id: '5',
-    title: 'Innovation in Academic Research',
-    description: 'Dr. Jalali shares insights on research methodology, academic publishing, and fostering innovation in engineering',
-    youtubeId: 'ACTUAL_VIDEO_ID_5', // To be replaced with actual Dr. Jalali video
-    category: 'interview'
-  },
-  {
-    id: '6',
-    title: '3D Printing and Manufacturing Technology',
-    description: 'A technical lecture on additive manufacturing, 3D printing applications, and their impact on modern industry',
-    youtubeId: 'ACTUAL_VIDEO_ID_6', // To be replaced with actual Dr. Jalali video
+    youtubeId: 'PLACEHOLDER_VIDEO_3', // Replace with actual YouTube video ID
     category: 'lecture'
   }
 ]
@@ -131,7 +116,7 @@ export default function MediaSection() {
             >
               {/* Video Thumbnail */}
               <div className="relative aspect-video bg-gradient-to-br from-primary-100 to-primary-200 dark:from-neutral-700 dark:to-neutral-800">
-                {video.youtubeId.startsWith('ACTUAL_VIDEO_ID') ? (
+                {video.youtubeId.startsWith('PLACEHOLDER_VIDEO') ? (
                   // Placeholder for actual videos
                   <div className="w-full h-full flex items-center justify-center">
                     <div className="text-center">
@@ -196,7 +181,7 @@ export default function MediaSection() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="aspect-video">
-                {selectedVideo.youtubeId.startsWith('ACTUAL_VIDEO_ID') ? (
+                {selectedVideo.youtubeId.startsWith('PLACEHOLDER_VIDEO') ? (
                   // Placeholder content
                   <div className="w-full h-full bg-gradient-to-br from-primary-100 to-primary-200 dark:from-neutral-700 dark:to-neutral-800 flex items-center justify-center">
                     <div className="text-center">
@@ -232,10 +217,10 @@ export default function MediaSection() {
                 <p className="text-gray-600 dark:text-neutral-300">
                   {selectedVideo.description}
                 </p>
-                {selectedVideo.youtubeId.startsWith('ACTUAL_VIDEO_ID') && (
+                {selectedVideo.youtubeId.startsWith('PLACEHOLDER_VIDEO') && (
                   <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
                     <p className="text-sm text-blue-700 dark:text-blue-300">
-                      📝 <strong>Note:</strong> This is placeholder content. Replace &quot;ACTUAL_VIDEO_ID_{selectedVideo.id}&quot; with the real YouTube video ID.
+                      📝 <strong>Note:</strong> To display this video, replace &quot;{selectedVideo.youtubeId}&quot; with the actual YouTube video ID from Dr. Jalali&apos;s channel.
                     </p>
                   </div>
                 )}
