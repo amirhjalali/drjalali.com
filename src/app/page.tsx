@@ -6,6 +6,7 @@ import Research from '@/components/Research'
 import PublicationsDatabase from '@/components/PublicationsDatabase'
 import MediaSection from '@/components/MediaSection'
 import NewsSection from '@/components/NewsSection'
+import FAQ from '@/components/FAQ'
 import ContactForm from '@/components/ContactForm'
 import JsonLd from '@/components/JsonLd'
 import ScrollProgress from '@/components/ScrollProgress'
@@ -28,6 +29,7 @@ export default function Home() {
         <PublicationsDatabase />
         <MediaSection />
         <NewsSection />
+        <FAQ />
         <ContactForm />
       </main>
     </>

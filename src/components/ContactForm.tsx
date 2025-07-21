@@ -34,19 +34,33 @@ const ContactForm = () => {
     setSubmitStatus('idle');
 
     try {
-      // Simulate form submission - replace with actual endpoint
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // For now, we'll just log the form data and show success
-      console.log('Form submitted:', formData);
-      
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+      // Using Formspree for form handling (alternative to EmailJS)
+      // Replace 'YOUR_FORM_ID' with actual Formspree form ID
+      const response = await fetch(`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID || 'YOUR_FORM_ID'}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+        }),
       });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus('error');
