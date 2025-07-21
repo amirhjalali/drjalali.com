@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     images: ['/images/dr-jalali-profile.jpg'],
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || 'your-google-verification-code',
   },
 }
 
