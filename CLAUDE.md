@@ -77,3 +77,5 @@ src/
 - Use clear, descriptive commit messages in present tense
 - Do NOT include "Generated with Claude Code" or similar attributions in commit messages
 - Focus commit messages on what was changed and why
+- **ALWAYS push commits to GitHub immediately after committing**
+- Use `git push` after each commit to ensure changes are published
