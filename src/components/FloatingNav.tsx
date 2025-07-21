@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ChevronUp, Home, User, BookOpen, FileText, Camera, Newspaper, Mail } from 'lucide-react';
+import { ChevronUp, Home, User, BookOpen, FileText, Mail } from 'lucide-react';
 
 interface NavItem {
   id: string;
@@ -15,8 +15,6 @@ const navItems: NavItem[] = [
   { id: 'about', label: 'About', icon: User, href: '#about' },
   { id: 'research', label: 'Research', icon: BookOpen, href: '#research' },
   { id: 'publications', label: 'Publications', icon: FileText, href: '#publications' },
-  { id: 'media', label: 'Media', icon: Camera, href: '#media' },
-  { id: 'news', label: 'News', icon: Newspaper, href: '#news' },
   { id: 'contact', label: 'Contact', icon: Mail, href: '#contact' },
 ];
 
@@ -75,34 +73,34 @@ export default function FloatingNav() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-40">
+    <div className="fixed right-2 sm:right-6 top-1/2 transform -translate-y-1/2 z-40">
       {/* Progress Ring */}
-      <div className="relative mb-4">
+      <div className="relative mb-2 sm:mb-4">
         <svg
-          width="60"
-          height="60"
-          className="transform -rotate-90"
+          width="48"
+          height="48"
+          className="transform -rotate-90 sm:w-[60px] sm:h-[60px]"
         >
           {/* Background circle */}
           <circle
-            cx="30"
-            cy="30"
-            r="26"
+            cx="24"
+            cy="24"
+            r="20"
             stroke="currentColor"
-            strokeWidth="3"
+            strokeWidth="2.5"
             fill="transparent"
             className="text-gray-200 dark:text-neutral-700"
           />
           {/* Progress circle */}
           <circle
-            cx="30"
-            cy="30"
-            r="26"
+            cx="24"
+            cy="24"
+            r="20"
             stroke="currentColor"
-            strokeWidth="3"
+            strokeWidth="2.5"
             fill="transparent"
-            strokeDasharray={`${2 * Math.PI * 26}`}
-            strokeDashoffset={`${2 * Math.PI * 26 * (1 - scrollProgress / 100)}`}
+            strokeDasharray={`${2 * Math.PI * 20}`}
+            strokeDashoffset={`${2 * Math.PI * 20 * (1 - scrollProgress / 100)}`}
             strokeLinecap="round"
             className="text-primary-500 transition-all duration-300 ease-out"
             style={{
@@ -117,11 +115,11 @@ export default function FloatingNav() {
           className="absolute inset-0 flex items-center justify-center w-full h-full bg-white dark:bg-neutral-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group border border-gray-200 dark:border-neutral-700"
           title="Scroll to top"
         >
-          <ChevronUp className="w-5 h-5 text-gray-600 dark:text-neutral-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
+          <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-neutral-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
         </button>
         
-        {/* Progress percentage */}
-        <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
+        {/* Progress percentage - hidden on mobile */}
+        <div className="hidden sm:block absolute -bottom-8 left-1/2 transform -translate-x-1/2">
           <span className="text-xs font-medium text-gray-500 dark:text-neutral-400 bg-white dark:bg-neutral-800 px-2 py-1 rounded-full shadow-sm border border-gray-200 dark:border-neutral-700">
             {Math.round(scrollProgress)}%
           </span>
@@ -129,7 +127,7 @@ export default function FloatingNav() {
       </div>
 
       {/* Navigation Dots */}
-      <div className="bg-white dark:bg-neutral-800 rounded-full p-2 shadow-lg border border-gray-200 dark:border-neutral-700">
+      <div className="bg-white dark:bg-neutral-800 rounded-full p-1.5 sm:p-2 shadow-lg border border-gray-200 dark:border-neutral-700">
         {navItems.map((item, index) => {
           const Icon = item.icon;
           const isActive = activeSection === item.id;
@@ -139,7 +137,7 @@ export default function FloatingNav() {
               <button
                 onClick={() => handleNavClick(item.href, item.id)}
                 className={`
-                  block w-10 h-10 rounded-full mb-1 last:mb-0 transition-all duration-300 
+                  block w-8 h-8 sm:w-10 sm:h-10 rounded-full mb-1 last:mb-0 transition-all duration-300 
                   flex items-center justify-center relative overflow-hidden
                   ${isActive 
                     ? 'bg-primary-500 text-white shadow-lg scale-110' 
@@ -148,7 +146,7 @@ export default function FloatingNav() {
                 `}
                 title={item.label}
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 
                 {/* Active indicator */}
                 {isActive && (
