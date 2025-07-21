@@ -38,11 +38,12 @@ export default function Hero() {
           {/* Content */}
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <div className="space-y-6">
-              <h1 className="heading-primary text-fluid-7xl text-gray-900 dark:text-neutral-100">
+              <h1 className="heading-primary text-fluid-7xl">
                 <span className="block">
-                  <span className="font-extrabold">Dr.</span> Ali Akbar
+                  <span className="font-extrabold text-gray-900 dark:text-neutral-100">Dr.</span>{' '}
+                  <span className="bg-gradient-to-r from-primary-600 to-primary-700 dark:from-primary-400 dark:to-primary-500 bg-clip-text text-transparent">Ali Akbar</span>
                 </span>
-                <span className="block bg-gradient-to-r from-primary-600 to-primary-700 dark:from-primary-400 dark:to-primary-500 bg-clip-text text-transparent font-extrabold">
+                <span className="block font-extrabold text-gray-900 dark:text-neutral-100">
                   Jalali
                 </span>
               </h1>
