@@ -70,3 +70,10 @@ src/
 4. Test responsive design on mobile
 5. Ensure all external links open in new tabs
 6. Keep content professional and academic in tone
+
+## Git Workflow
+
+- Commit changes regularly after completing logical units of work
+- Use clear, descriptive commit messages in present tense
+- Do NOT include "Generated with Claude Code" or similar attributions in commit messages
+- Focus commit messages on what was changed and why

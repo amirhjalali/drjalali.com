@@ -33,14 +33,16 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 pb-32 lg:pb-40 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <div className="space-y-6">
-              <h1 className="heading-display text-fluid-7xl text-gray-900 dark:text-neutral-100">
-                <span className="block">Dr. Ali Akbar</span>
-                <span className="block bg-gradient-to-r from-primary-600 to-primary-700 dark:from-primary-400 dark:to-primary-500 bg-clip-text text-transparent">
+              <h1 className="heading-primary text-fluid-7xl text-gray-900 dark:text-neutral-100">
+                <span className="block">
+                  <span className="font-extrabold">Dr.</span> Ali Akbar
+                </span>
+                <span className="block bg-gradient-to-r from-primary-600 to-primary-700 dark:from-primary-400 dark:to-primary-500 bg-clip-text text-transparent font-extrabold">
                   Jalali
                 </span>
               </h1>
@@ -151,12 +153,12 @@ export default function Hero() {
       </div>
 
       {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" className="w-full h-auto">
+      <div className="absolute bottom-0 left-0 right-0 z-0">
+        <svg viewBox="0 0 1440 80" className="w-full h-auto">
           <path
             fill="currentColor"
             className="text-white dark:text-neutral-900"
-            d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,69.3C960,85,1056,107,1152,112C1248,117,1344,107,1392,101.3L1440,96L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"
+            d="M0,32L48,37.3C96,43,192,53,288,48C384,43,480,21,576,16C672,11,768,21,864,37.3C960,53,1056,75,1152,80C1248,85,1344,75,1392,69.3L1440,64L1440,80L1392,80C1344,80,1248,80,1152,80C1056,80,960,80,864,80C768,80,672,80,576,80C480,80,384,80,288,80C192,80,96,80,48,80L0,80Z"
           />
         </svg>
       </div>

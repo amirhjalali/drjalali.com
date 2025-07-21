@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, User, Mail, MessageSquare, Phone, MapPin, Clock } from 'lucide-react';
+import { Send, User, Mail, MessageSquare, ExternalLink } from 'lucide-react';
 
 interface FormData {
   name: string;
@@ -55,30 +55,66 @@ const ContactForm = () => {
     }
   };
 
-  const contactInfo = [
+  const socialLinks = [
     {
-      icon: <Mail className="w-5 h-5" />,
-      label: 'Email',
-      value: 'jalali@iust.ac.ir',
-      href: 'mailto:jalali@iust.ac.ir'
+      name: 'Google Scholar',
+      href: 'https://scholar.google.com/citations?user=yb5J4skAAAAJ&hl=en',
+      icon: (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 24a12 12 0 1 1 0-24 12 12 0 0 1 0 24zm-1-22.92A11 11 0 0 0 2.08 12 11 11 0 0 0 11 22.92zm0-1.04A9.96 9.96 0 0 1 1.04 12 9.96 9.96 0 0 1 11 1.04z"/>
+        </svg>
+      ),
+      color: 'hover:text-blue-600'
     },
     {
-      icon: <Phone className="w-5 h-5" />,
-      label: 'Phone',
-      value: '+98 21 7391 3000',
-      href: 'tel:+982173913000'
+      name: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/aliakbar-jalali-4569405/',
+      icon: (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      ),
+      color: 'hover:text-blue-600'
     },
     {
-      icon: <MapPin className="w-5 h-5" />,
-      label: 'Address',
-      value: 'Iran University of Science and Technology, Tehran, Iran',
-      href: 'https://maps.google.com/?q=Iran+University+of+Science+and+Technology'
+      name: 'IEEE Xplore',
+      href: 'https://ieeexplore.ieee.org/author/37300412300',
+      icon: (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1 2.05c5.053.5 9 4.765 9 9.95 0 5.185-3.947 9.45-9 9.95V2.05zm0 1.39v17.1c4.267-.462 7.61-4.02 7.61-8.54S15.267 3.902 11 3.44z"/>
+        </svg>
+      ),
+      color: 'hover:text-blue-700'
     },
     {
-      icon: <Clock className="w-5 h-5" />,
-      label: 'Office Hours',
-      value: 'Sunday - Thursday: 9:00 AM - 5:00 PM',
-      href: null
+      name: 'YouTube',
+      href: 'https://www.youtube.com/@Professor.Aliakbar.Jalali',
+      icon: (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      ),
+      color: 'hover:text-red-600'
+    },
+    {
+      name: 'Instagram',
+      href: 'https://www.instagram.com/drjalali_ict/?hl=en',
+      icon: (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      ),
+      color: 'hover:text-pink-500'
+    },
+    {
+      name: 'Wikipedia',
+      href: 'https://en.wikipedia.org/wiki/Ali_Akbar_Jalali',
+      icon: (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 8.16l-.292 1.393c-.011.013-.027.019-.042.019-.015 0-.031-.006-.042-.019l-.688-1.393h-1.195v5.44c0 .013-.006.025-.019.025H13.69c-.013 0-.025-.012-.025-.025V8.16h-1.195l-.688 1.393c-.011.013-.027.019-.042.019-.015 0-.031-.006-.042-.019L11.406 8.16H6.432c-.013 0-.025.012-.025.025v7.69c0 .013.012.025.025.025h11.136c.013 0 .025-.012.025-.025V8.185c0-.013-.012-.025-.025-.025z"/>
+        </svg>
+      ),
+      color: 'hover:text-gray-600'
     }
   ];
 
@@ -104,77 +140,36 @@ const ContactForm = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Information */}
+          {/* Social Links */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Contact Information</h3>
-              <div className="space-y-4">
-                {contactInfo.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 text-blue-600 mt-1">
-                      {item.icon}
+            <div className="bg-gray-50 dark:bg-neutral-800 rounded-lg p-6 border border-gray-200 dark:border-neutral-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-neutral-100 mb-6">Connect with Dr. Jalali</h3>
+              <p className="text-gray-600 dark:text-neutral-400 mb-6 text-sm">
+                Follow Dr. Jalali&apos;s professional activities and research updates across various platforms.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex flex-col items-center p-4 rounded-lg bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-600 ${link.color} transition-all duration-300 hover:shadow-md hover:scale-105 group`}
+                  >
+                    <div className="text-gray-400 dark:text-neutral-500 group-hover:text-current transition-colors mb-2">
+                      {link.icon}
                     </div>
-                    <div>
-                      <div className="text-sm font-medium text-gray-900 mb-1">
-                        {item.label}
-                      </div>
-                      {item.href ? (
-                        <a
-                          href={item.href}
-                          target={item.href.startsWith('http') ? '_blank' : undefined}
-                          rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                          className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <span className="text-gray-600 text-sm">
-                          {item.value}
-                        </span>
-                      )}
-                    </div>
-                  </div>
+                    <span className="text-xs font-medium text-gray-700 dark:text-neutral-300 text-center">
+                      {link.name}
+                    </span>
+                    <ExternalLink className="w-3 h-3 text-gray-300 dark:text-neutral-600 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
                 ))}
               </div>
-
-              {/* Social Links */}
-              <div className="mt-8">
-                <h4 className="text-lg font-medium text-gray-900 mb-4">Follow</h4>
-                <div className="flex gap-3">
-                  <a
-                    href="https://www.linkedin.com/in/dr-ali-akbar-jalali"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-blue-600 transition-colors"
-                  >
-                    <span className="sr-only">LinkedIn</span>
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://scholar.google.com/citations?user=XXXXXXXX"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-blue-600 transition-colors"
-                  >
-                    <span className="sr-only">Google Scholar</span>
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 24a12 12 0 1 1 0-24 12 12 0 0 1 0 24zm-1-22.92A11 11 0 0 0 2.08 12 11 11 0 0 0 11 22.92zm0-1.04A9.96 9.96 0 0 1 1.04 12 9.96 9.96 0 0 1 11 1.04z"/>
-                    </svg>
-                  </a>
-                  <a
-                    href="https://www.youtube.com/@draliakbarjalali"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-red-600 transition-colors"
-                  >
-                    <span className="sr-only">YouTube</span>
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                  </a>
-                </div>
+              <div className="mt-6 pt-6 border-t border-gray-200 dark:border-neutral-600">
+                <p className="text-xs text-gray-500 dark:text-neutral-500 text-center italic">
+                  For direct inquiries, please use the contact form.
+                </p>
               </div>
             </div>
           </div>
