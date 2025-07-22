@@ -1,34 +1,48 @@
 'use client';
 
 import { useState } from 'react';
+import { Send, User, Mail, MessageSquare } from 'lucide-react';
 
 const ContactForm = () => {
-  const [showEmailOptions, setShowEmailOptions] = useState(false);
-  const email = 'drjalali@gmail.com';
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const handleEmailClick = (e: React.MouseEvent) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+  
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setShowEmailOptions(true);
+    
+    // Construct mailto link with form data
+    const subject = encodeURIComponent(formData.subject || 'Contact from Website');
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:drjalali@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
   };
 
-  const socialLinks: Array<{
-    name: string;
-    href: string;
-    icon: React.ReactNode;
-    color: string;
-    onClick?: (e: React.MouseEvent) => void;
-  }> = [
-    {
-      name: 'Email',
-      href: '#email',
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-        </svg>
-      ),
-      color: 'hover:text-blue-600',
-      onClick: handleEmailClick
-    },
+  const socialLinks = [
     {
       name: 'Google Scholar',
       href: 'https://scholar.google.com/citations?user=yb5J4skAAAAJ&hl=en',
@@ -104,113 +118,128 @@ const ContactForm = () => {
           </p>
         </div>
 
-        {/* Social Links */}
-        <div className="flex justify-center">
-          <div className="flex gap-6">
-            {socialLinks.map((link, index) => (
-              <div key={index} className="relative group">
-                {link.onClick ? (
-                  <button
-                    onClick={link.onClick}
-                    className={`
-                      flex items-center justify-center w-16 h-16 rounded-full
-                      bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl
-                      border-2 border-gray-100 dark:border-neutral-700
-                      text-gray-600 dark:text-neutral-400 ${link.color}
-                      transition-all duration-300 hover:scale-110 hover:-translate-y-1
-                    `}
-                    aria-label={link.name === 'Email' ? 'Email Dr. Jalali' : `Visit Dr. Jalali's ${link.name} profile`}
-                  >
-                    {link.icon}
-                  </button>
-                ) : (
-                  <a
-                    href={link.href}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className={`
-                      flex items-center justify-center w-16 h-16 rounded-full
-                      bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl
-                      border-2 border-gray-100 dark:border-neutral-700
-                      text-gray-600 dark:text-neutral-400 ${link.color}
-                      transition-all duration-300 hover:scale-110 hover:-translate-y-1
-                    `}
-                    aria-label={link.name === 'Email' ? 'Email Dr. Jalali' : `Visit Dr. Jalali's ${link.name} profile`}
-                  >
-                    {link.icon}
-                  </a>
-                )}
-                
-                {/* Tooltip on hover */}
-                <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                  <div className="bg-gray-900 dark:bg-neutral-700 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap shadow-lg">
-                    {link.name}
-                    <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 border-4 border-transparent border-b-gray-900 dark:border-b-neutral-700"></div>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-neutral-100 mb-6">Send a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Name
+                  </label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="Your name"
+                    />
                   </div>
                 </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email
+                  </label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Subject of your message"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    Message
+                  </label>
+                  <div className="relative">
+                    <MessageSquare className="absolute left-3 top-3 text-gray-400 w-4 h-4" />
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                      rows={4}
+                      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                      placeholder="Your message..."
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                >
+                  <Send className="w-4 h-4" />
+                  Send Message
+                </button>
+              </form>
+            </div>
+            
+            {/* Social Links */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-neutral-100 mb-6">Connect on Social Media</h3>
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`
+                      flex flex-col items-center justify-center p-4 rounded-lg
+                      bg-white dark:bg-neutral-800 shadow hover:shadow-lg
+                      border border-gray-100 dark:border-neutral-700
+                      text-gray-600 dark:text-neutral-400 ${link.color}
+                      transition-all duration-300 hover:scale-105
+                    `}
+                    aria-label={`Visit Dr. Jalali's ${link.name} profile`}
+                  >
+                    {link.icon}
+                    <span className="text-xs mt-2 text-center">{link.name}</span>
+                  </a>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Email Options Modal */}
-        {showEmailOptions && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4" onClick={() => setShowEmailOptions(false)}>
-            <div className="bg-white dark:bg-neutral-800 rounded-lg p-6 max-w-md w-full shadow-xl" onClick={(e) => e.stopPropagation()}>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-neutral-100 mb-4">Contact Dr. Jalali</h3>
-              <p className="text-gray-600 dark:text-neutral-400 mb-6">Email: {email}</p>
               
-              <div className="space-y-3">
-                {/* Copy to clipboard */}
-                <button
-                  onClick={() => {
-                    navigator.clipboard.writeText(email);
-                    alert('Email address copied to clipboard!');
-                    setShowEmailOptions(false);
-                  }}
-                  className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                  </svg>
-                  Copy Email Address
-                </button>
-                
-                {/* Open in default mail client */}
-                <a
-                  href={`mailto:${email}`}
-                  className="w-full px-4 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors flex items-center justify-center gap-2"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Open Email Client
-                </a>
-                
-                {/* Open Gmail */}
-                <a
-                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-neutral-300 rounded-lg hover:bg-gray-50 dark:hover:bg-neutral-700 transition-colors flex items-center justify-center gap-2"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
-                  </svg>
-                  Open in Gmail
-                </a>
-                
-                {/* Cancel */}
-                <button
-                  onClick={() => setShowEmailOptions(false)}
-                  className="w-full px-4 py-3 text-gray-600 dark:text-neutral-400 hover:text-gray-800 dark:hover:text-neutral-200 transition-colors"
-                >
-                  Cancel
-                </button>
+              <div className="mt-6 p-4 bg-gray-50 dark:bg-neutral-800 rounded-lg">
+                <p className="text-sm text-gray-600 dark:text-neutral-400">
+                  <strong>Email:</strong> drjalali@gmail.com
+                </p>
               </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );
