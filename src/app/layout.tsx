@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://drjalali.com',
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+  },
   robots: {
     index: true,
     follow: true,
