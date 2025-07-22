@@ -71,7 +71,7 @@ export default function Research() {
         {/* Research Areas */}
         <div className="mb-20">
           <SlideUp>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Areas</h3>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Areas</h2>
           </SlideUp>
           <CardGrid minWidth="300px" maxWidth="600px" gap="lg">
             {researchAreas.map((area, index) => (
@@ -84,7 +84,7 @@ export default function Research() {
                 >
                 <div className="flex items-start mb-4">
                   <span className="text-3xl mr-4 transform group-hover:scale-110 transition-transform duration-300">{area.icon}</span>
-                  <h4 className="text-xl font-bold text-gray-900 dark:text-neutral-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">{area.title}</h4>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-neutral-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">{area.title}</h3>
                 </div>
                 <p className="text-gray-700 dark:text-neutral-300 mb-4 leading-relaxed">{area.description}</p>
                 <div>
