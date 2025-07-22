@@ -38,7 +38,7 @@ export default function Hero() {
           {/* Content */}
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <div className="space-y-6">
-              <h1 className="heading-primary text-fluid-7xl">
+              <h1 className="heading-primary text-fluid-5xl">
                 <span className="block">
                   <span className="font-extrabold text-gray-900 dark:text-neutral-100">Dr.</span>{' '}
                   <span className="bg-gradient-to-r from-primary-600 to-primary-700 dark:from-primary-400 dark:to-primary-500 bg-clip-text text-transparent">Ali Akbar</span>
@@ -109,13 +109,13 @@ export default function Hero() {
           {/* Professional Photo / Placeholder */}
           <div className={`flex justify-center lg:justify-end transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <div className="relative group">
-              {/* Decorative Elements */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary-400 to-blue-500 dark:from-primary-600 dark:to-blue-700 rounded-full opacity-20 dark:opacity-30 group-hover:opacity-30 dark:group-hover:opacity-40 transition-opacity duration-500 blur-2xl"></div>
-              <div className="absolute -top-8 -right-8 w-24 h-24 bg-gradient-to-br from-primary-300 dark:from-primary-500 to-transparent rounded-full opacity-30 dark:opacity-40"></div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-tr from-blue-300 dark:from-blue-500 to-transparent rounded-full opacity-20 dark:opacity-30"></div>
+              {/* Enhanced Decorative Elements */}
+              <div className="absolute -inset-6 bg-gradient-to-r from-primary-400 to-blue-500 dark:from-primary-600 dark:to-blue-700 rounded-full opacity-25 dark:opacity-35 group-hover:opacity-35 dark:group-hover:opacity-45 transition-opacity duration-500 blur-3xl"></div>
+              <div className="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-primary-300 dark:from-primary-500 to-transparent rounded-full opacity-40 dark:opacity-50"></div>
+              <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-tr from-blue-300 dark:from-blue-500 to-transparent rounded-full opacity-30 dark:opacity-40"></div>
               
-              {/* Photo Container */}
-              <div className="relative w-96 h-96 shadow-2xl ring-8 ring-white dark:ring-neutral-700 ring-opacity-50 dark:ring-opacity-60 group-hover:ring-opacity-70 dark:group-hover:ring-opacity-80 transition-all duration-500 transform group-hover:scale-105 rounded-full overflow-hidden">
+              {/* Photo Container - Made Larger */}
+              <div className="relative w-[28rem] h-[28rem] shadow-2xl ring-12 ring-white dark:ring-neutral-700 ring-opacity-60 dark:ring-opacity-70 group-hover:ring-opacity-80 dark:group-hover:ring-opacity-90 transition-all duration-500 transform group-hover:scale-105 rounded-full overflow-hidden">
                 <ProfessionalPhoto 
                   src="/images/professional/dr-jalali-professional.png"
                   className="w-full h-full"
@@ -123,30 +123,30 @@ export default function Hero() {
                 />
               </div>
               
-              {/* Floating Achievement Badges */}
-              <div className="absolute -top-6 left-2 bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105">
+              {/* Floating Achievement Badges - Enhanced for larger photo */}
+              <div className="absolute -top-8 left-4 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105">
                 <div className="text-center">
-                  <div className="text-primary-600 dark:text-primary-400 text-lg font-bold">30+</div>
-                  <div className="text-xs font-medium text-gray-600 dark:text-neutral-300">Years</div>
+                  <div className="text-primary-600 dark:text-primary-400 text-xl font-bold">30+</div>
+                  <div className="text-sm font-medium text-gray-600 dark:text-neutral-300">Years</div>
                 </div>
               </div>
               
-              <div className="absolute -bottom-4 -right-6 bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow-xl border border-gray-100 dark:border-neutral-700 transform -rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105">
+              <div className="absolute -bottom-6 -right-8 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform -rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105">
                 <div className="text-center">
-                  <div className="text-primary-600 dark:text-primary-400 text-lg font-bold">300+</div>
-                  <div className="text-xs font-medium text-gray-600 dark:text-neutral-300">Papers</div>
+                  <div className="text-primary-600 dark:text-primary-400 text-xl font-bold">300+</div>
+                  <div className="text-sm font-medium text-gray-600 dark:text-neutral-300">Papers</div>
                 </div>
               </div>
               
-              <div className="absolute top-20 -left-8 bg-white dark:bg-neutral-800 rounded-xl px-4 py-3 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-105">
+              <div className="absolute top-24 -left-12 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-105">
                 <div className="text-center">
-                  <div className="text-primary-600 dark:text-primary-400 text-lg font-bold">50+</div>
-                  <div className="text-xs font-medium text-gray-600 dark:text-neutral-300">Books</div>
+                  <div className="text-primary-600 dark:text-primary-400 text-xl font-bold">50+</div>
+                  <div className="text-sm font-medium text-gray-600 dark:text-neutral-300">Books</div>
                 </div>
               </div>
               
-              <div className="absolute bottom-16 right-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl px-3 py-2 shadow-xl transform -rotate-1 hover:rotate-0 transition-all duration-300 hover:scale-105">
-                <div className="text-xs font-semibold">IT Pioneer</div>
+              <div className="absolute bottom-20 right-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl px-4 py-3 shadow-xl transform -rotate-1 hover:rotate-0 transition-all duration-300 hover:scale-105">
+                <div className="text-sm font-semibold">IT Pioneer</div>
               </div>
             </div>
           </div>
