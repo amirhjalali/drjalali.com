@@ -8,7 +8,6 @@ import ContactForm from '@/components/ContactForm'
 import JsonLd from '@/components/JsonLd'
 import ScrollProgress from '@/components/ScrollProgress'
 import FloatingNav from '@/components/FloatingNav'
-import StickyActions from '@/components/StickyActions'
 
 export default function Home() {
   return (
@@ -16,7 +15,6 @@ export default function Home() {
       <JsonLd />
       <ScrollProgress />
       <FloatingNav />
-      <StickyActions />
       <Navigation />
       <main id="main-content">
         <Hero />
