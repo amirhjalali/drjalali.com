@@ -75,7 +75,7 @@ const ContactForm = () => {
       href: 'https://scholar.google.com/citations?user=yb5J4skAAAAJ&hl=en',
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 24a12 12 0 1 1 0-24 12 12 0 0 1 0 24zm-1-22.92A11 11 0 0 0 2.08 12 11 11 0 0 0 11 22.92zm0-1.04A9.96 9.96 0 0 1 1.04 12 9.96 9.96 0 0 1 11 1.04z"/>
+          <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
         </svg>
       ),
       color: 'hover:text-blue-600'
@@ -95,7 +95,8 @@ const ContactForm = () => {
       href: 'https://ieeexplore.ieee.org/author/37300412300',
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-1 2.05c5.053.5 9 4.765 9 9.95 0 5.185-3.947 9.45-9 9.95V2.05zm0 1.39v17.1c4.267-.462 7.61-4.02 7.61-8.54S15.267 3.902 11 3.44z"/>
+          <path d="M3.5 7L12 2l8.5 5v10L12 22l-8.5-5V7zm8.5 13.5l7-4V8.5L12 4.5 5 8.5v8l7 4z"/>
+          <path d="M8 10h8v1H8zm0 2h8v1H8zm0 2h5v1H8z"/>
         </svg>
       ),
       color: 'hover:text-blue-700'
@@ -125,7 +126,7 @@ const ContactForm = () => {
       href: 'https://en.wikipedia.org/wiki/Ali_Akbar_Jalali',
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 8.16l-.292 1.393c-.011.013-.027.019-.042.019-.015 0-.031-.006-.042-.019l-.688-1.393h-1.195v5.44c0 .013-.006.025-.019.025H13.69c-.013 0-.025-.012-.025-.025V8.16h-1.195l-.688 1.393c-.011.013-.027.019-.042.019-.015 0-.031-.006-.042-.019L11.406 8.16H6.432c-.013 0-.025.012-.025.025v7.69c0 .013.012.025.025.025h11.136c.013 0 .025-.012.025-.025V8.185c0-.013-.012-.025-.025-.025z"/>
+          <path d="M12.0015 0C5.3755 0 0.0015 5.374 0.0015 12s5.374 12 12 12 12-5.374 12-12-5.374-12-12-12zm4.606 8.055l-3.263 5.945-3.263-5.945h-1.024L12.0015 16l2.944-7.945h-1.024zm-9.212 0l3.263 5.945L7.3945 8.055h1.024L12.0015 16l-2.944-7.945h1.024z"/>
         </svg>
       ),
       color: 'hover:text-gray-600'
@@ -156,33 +157,49 @@ const ContactForm = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Social Links */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-50 dark:bg-neutral-800 rounded-lg p-6 border border-gray-200 dark:border-neutral-700">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-neutral-100 mb-6">Connect with Dr. Jalali</h3>
-              <p className="text-gray-600 dark:text-neutral-400 mb-6 text-sm">
-                Follow Dr. Jalali&apos;s professional activities and research updates across various platforms.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-neutral-800 dark:to-neutral-900 rounded-xl p-8 border border-gray-200 dark:border-neutral-700 shadow-lg">
+              <div className="text-center mb-8">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-neutral-100 mb-3">Connect with Dr. Jalali</h3>
+                <p className="text-gray-600 dark:text-neutral-400 text-sm">
+                  Follow research updates and professional activities
+                </p>
+              </div>
+              
+              {/* Clean Icon Grid */}
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
                 {socialLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex flex-col items-center p-4 rounded-lg bg-white dark:bg-neutral-900 border border-gray-200 dark:border-neutral-600 ${link.color} transition-all duration-300 hover:shadow-md hover:scale-105 group`}
-                  >
-                    <div className="text-gray-400 dark:text-neutral-500 group-hover:text-current transition-colors mb-2">
+                  <div key={index} className="relative group">
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`
+                        flex items-center justify-center w-14 h-14 rounded-full
+                        bg-white dark:bg-neutral-700 shadow-md hover:shadow-lg
+                        border-2 border-gray-200 dark:border-neutral-600
+                        text-gray-500 dark:text-neutral-400 ${link.color}
+                        transition-all duration-300 hover:scale-110 hover:-translate-y-1
+                        group-hover:shadow-xl
+                      `}
+                      aria-label={`Visit Dr. Jalali's ${link.name} profile`}
+                    >
                       {link.icon}
+                    </a>
+                    
+                    {/* Tooltip on hover */}
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                      <div className="bg-gray-900 dark:bg-neutral-700 text-white text-xs px-3 py-1 rounded-lg whitespace-nowrap shadow-lg">
+                        {link.name}
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900 dark:border-t-neutral-700"></div>
+                      </div>
                     </div>
-                    <span className="text-xs font-medium text-gray-700 dark:text-neutral-300 text-center">
-                      {link.name}
-                    </span>
-                    <ExternalLink className="w-3 h-3 text-gray-300 dark:text-neutral-600 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </div>
                 ))}
               </div>
-              <div className="mt-6 pt-6 border-t border-gray-200 dark:border-neutral-600">
-                <p className="text-xs text-gray-500 dark:text-neutral-500 text-center italic">
-                  For direct inquiries, please use the contact form.
+              
+              <div className="text-center pt-6 border-t border-gray-200 dark:border-neutral-600">
+                <p className="text-xs text-gray-500 dark:text-neutral-500">
+                  For direct inquiries, please use the contact form
                 </p>
               </div>
             </div>
