@@ -62,7 +62,6 @@ export default function Research() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SlideUp>
           <SectionAnchor
-            number="02"
             title="Research & Publications"
             subtitle="Pioneering research in control systems, IoT, and information technology with global impact"
           />

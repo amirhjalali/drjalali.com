@@ -101,7 +101,7 @@ export default function SectionDivider({
 
 // Visual anchor component for section numbers
 interface SectionAnchorProps {
-  number: string | number;
+  number?: string | number;
   title: string;
   subtitle?: string;
   className?: string;
@@ -115,13 +115,15 @@ export function SectionAnchor({
 }: SectionAnchorProps) {
   return (
     <div className={`text-center mb-16 ${className}`}>
-      {/* Section Number */}
-      <div className="relative inline-block mb-6">
-        <div className="absolute inset-0 bg-primary-500/20 rounded-full blur-xl transform scale-150" />
-        <div className="relative bg-gradient-to-r from-primary-500 to-primary-600 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl shadow-lg">
-          {number}
+      {/* Section Number - Only show if number is provided */}
+      {number && (
+        <div className="relative inline-block mb-6">
+          <div className="absolute inset-0 bg-primary-500/20 rounded-full blur-xl transform scale-150" />
+          <div className="relative bg-gradient-to-r from-primary-500 to-primary-600 text-white w-16 h-16 rounded-full flex items-center justify-center font-bold text-xl shadow-lg">
+            {number}
+          </div>
         </div>
-      </div>
+      )}
       
       {/* Section Title */}
       <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4">

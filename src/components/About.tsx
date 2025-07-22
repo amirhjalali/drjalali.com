@@ -9,7 +9,6 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SlideUp>
           <SectionAnchor
-            number="01"
             title="About Dr. Jalali"
             subtitle="A distinguished academic and technology pioneer who has shaped Iran's digital landscape"
           />
