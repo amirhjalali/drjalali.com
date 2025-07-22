@@ -33,12 +33,6 @@ export default function Navigation() {
             <Link href="#publications" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
               Publications
             </Link>
-            <Link href="#media" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-              Media
-            </Link>
-            <Link href="#news" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-              News
-            </Link>
             <Link href="#contact" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
               Contact
             </Link>
@@ -78,12 +72,6 @@ export default function Navigation() {
               </Link>
               <Link href="#publications" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors">
                 Publications
-              </Link>
-              <Link href="#media" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors">
-                Media
-              </Link>
-              <Link href="#news" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors">
-                News
               </Link>
               <Link href="#contact" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors">
                 Contact
