@@ -18,7 +18,7 @@ export default function Home() {
       <FloatingNav />
       <StickyActions />
       <Navigation />
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <AcademicCareer />
