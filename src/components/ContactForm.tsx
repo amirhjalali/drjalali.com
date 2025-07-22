@@ -126,7 +126,8 @@ const ContactForm = () => {
       href: 'https://en.wikipedia.org/wiki/Ali_Akbar_Jalali',
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12.0015 0C5.3755 0 0.0015 5.374 0.0015 12s5.374 12 12 12 12-5.374 12-12-5.374-12-12-12zm4.606 8.055l-3.263 5.945-3.263-5.945h-1.024L12.0015 16l2.944-7.945h-1.024zm-9.212 0l3.263 5.945L7.3945 8.055h1.024L12.0015 16l-2.944-7.945h1.024z"/>
+          <circle cx="12" cy="12" r="12" fill="currentColor" opacity="0.1"/>
+          <path d="M4 6v12h2.5l2-6 2 6h3l2-6 2 6H20V6h-2.5l-2.5 7.5L12.5 6H11l-2.5 7.5L6 6H4z" fill="currentColor"/>
         </svg>
       ),
       color: 'hover:text-gray-600'
