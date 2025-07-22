@@ -22,9 +22,9 @@ export default function About() {
                 <div className="flex-shrink-0">
                   <div className="w-24 h-24 rounded-xl overflow-hidden shadow-lg ring-4 ring-primary-100 dark:ring-primary-800">
                     <ProfessionalPhoto 
-                      src="/images/professional/dr-jalali-professional.png"
-                      className="w-full h-full"
-                      alt="Dr. Ali Akbar Jalali - Academic Profile"
+                      src="/images/biography/dr-jalali-biography.png"
+                      className="w-full h-full object-cover object-top"
+                      alt="Dr. Ali Akbar Jalali - Biography"
                     />
                   </div>
                 </div>
