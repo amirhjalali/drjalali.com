@@ -159,9 +159,6 @@ const ContactForm = () => {
         {/* Social Links - Separate Section */}
         <div className="mb-12">
           <div className="max-w-md mx-auto">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-neutral-100 mb-3">Connect</h3>
-            </div>
             
             {/* Clean Icon Grid */}
             <div className="flex justify-center gap-6">
