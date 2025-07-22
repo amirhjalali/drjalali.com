@@ -94,10 +94,11 @@ const ContactForm = () => {
       name: 'IEEE Xplore',
       href: 'https://ieeexplore.ieee.org/author/37300412300',
       icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M3.5 7L12 2l8.5 5v10L12 22l-8.5-5V7zm8.5 13.5l7-4V8.5L12 4.5 5 8.5v8l7 4z"/>
-          <path d="M8 10h8v1H8zm0 2h8v1H8zm0 2h5v1H8z"/>
-        </svg>
+        <img 
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABfElEQVR4AW2SA48kYRiE63wXnX0XnW3btm3bXNu2bdu2rXh/yG5l3k0amU7NNJ+uers+4JsjDjlggwUW/MakL8A74DlwB7gEHAV2AKuA+cA0yIazLgTGbbYcv9wUs7+rmYkTLxtjLroRwC5rrDYKnAT2KABF4OCfxCW3/bY8DnnwJ/XRt+Sdhz23bnd+8CD00aPAnTv/bNv68cEDy4cP/+3dewUCFHUP37DJ9M1qGzFsAVEN1NhxQAklx3FxOcAMBYiu6HvllCfT51cNvXmXJMHy87uePfc0TMJs64FrrgSuueQQoBhv9XU/AjS5dCts9SqrtLR2mpw/Z7N370diGkCsmU2JF1RHyTFJmihATO3Ax7AKJmQzvMJ48qEZifGUcnQAT9mMACxHPY8wRiLxQImU3EKpIhF47HvQMX3pt0j+04Hi3BRfQROWQ7Ec6cfQ6YsAMiK6iSQYh5FFoKwaioBGT0kqPL8BSQ2me1qkAMKcdFIWqBpQML2PwowCRiAwMkIg+QYAAAAASUVORK5CYII=" 
+          alt="IEEE Xplore" 
+          className="w-6 h-6"
+        />
       ),
       color: 'hover:text-blue-700'
     },
@@ -126,8 +127,8 @@ const ContactForm = () => {
       href: 'https://en.wikipedia.org/wiki/Ali_Akbar_Jalali',
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="12" fill="currentColor" opacity="0.1"/>
-          <path d="M4 6v12h2.5l2-6 2 6h3l2-6 2 6H20V6h-2.5l-2.5 7.5L12.5 6H11l-2.5 7.5L6 6H4z" fill="currentColor"/>
+          <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.3"/>
+          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.8 16.8c-.3-.1-.5-.3-.7-.6l-1.2-2.4c-.1-.2-.3-.3-.5-.3h-.6c-.2 0-.4-.2-.4-.4v-.4c0-.2.2-.4.4-.4h2.4c.2 0 .4.2.4.4v.4c0 .2-.2.4-.4.4h-.4c-.1 0-.1 0-.1.1l.8 1.6.8-1.6c0-.1 0-.1-.1-.1h-.4c-.2 0-.4-.2-.4-.4v-.4c0-.2.2-.4.4-.4h2.4c.2 0 .4.2.4.4v.4c0 .2-.2.4-.4.4h-.6c-.2 0-.4.1-.5.3l-1.2 2.4c-.2.3-.4.5-.7.6zm3.6-5.6c-.1.2-.3.3-.5.3h-.6c-.2 0-.4-.2-.4-.4v-.4c0-.2.2-.4.4-.4h.4c.1 0 .1 0 .1-.1l-.8-1.6-.8 1.6c0 .1 0 .1.1.1h.4c.2 0 .4.2.4.4v.4c0 .2-.2.4-.4.4h-2.4c-.2 0-.4-.2-.4-.4v-.4c0-.2.2-.4.4-.4h.6c.2 0 .4-.1.5-.3l1.2-2.4c.2-.3.4-.5.7-.6s.6-.1.9.1c.3.2.5.5.6.8l1.2 2.4z" fill="currentColor"/>
         </svg>
       ),
       color: 'hover:text-gray-600'
