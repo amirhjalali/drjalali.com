@@ -94,11 +94,13 @@ const ContactForm = () => {
       name: 'IEEE Xplore',
       href: 'https://ieeexplore.ieee.org/author/37300412300',
       icon: (
-        <img 
-          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABfElEQVR4AW2SA48kYRiE63wXnX0XnW3btm3bXNu2bdu2rXh/yG5l3k0amU7NNJ+uers+4JsjDjlggwUW/MakL8A74DlwB7gEHAV2AKuA+cA0yIazLgTGbbYcv9wUs7+rmYkTLxtjLroRwC5rrDYKnAT2KABF4OCfxCW3/bY8DnnwJ/XRt+Sdhz23bnd+8CD00aPAnTv/bNv68cEDy4cP/+3dewUCFHUP37DJ9M1qGzFsAVEN1NhxQAklx3FxOcAMBYiu6HvllCfT51cNvXmXJMHy87uePfc0TMJs64FrrgSuueQQoBhv9XU/AjS5dCts9SqrtLR2mpw/Z7N370diGkCsmU2JF1RHyTFJmihATO3Ax7AKJmQzvMJ48qEZifGUcnQAT9mMACxHPY8wRiLxQImU3EKpIhF47HvQMX3pt0j+04Hi3BRfQROWQ7Ec6cfQ6YsAMiK6iSQYh5FFoKwaioBGT0kqPL8BSQ2me1qkAMKcdFIWqBpQML2PwowCRiAwMkIg+QYAAAAASUVORK5CYII=" 
-          alt="IEEE Xplore" 
-          className="w-6 h-6"
-        />
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          {/* IEEE academic/technical document icon */}
+          <rect x="4" y="2" width="16" height="20" rx="1" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.4"/>
+          <path d="M7 6h10v1H7zm0 2h10v1H7zm0 2h10v1H7zm0 2h7v1H7zm0 2h8v1H7z" fill="currentColor"/>
+          <circle cx="16" cy="16" r="2" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+          <path d="M14.5 14.5l3 3" stroke="currentColor" strokeWidth="1.5"/>
+        </svg>
       ),
       color: 'hover:text-blue-700'
     },
@@ -127,8 +129,11 @@ const ContactForm = () => {
       href: 'https://en.wikipedia.org/wiki/Ali_Akbar_Jalali',
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.3"/>
-          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.8 16.8c-.3-.1-.5-.3-.7-.6l-1.2-2.4c-.1-.2-.3-.3-.5-.3h-.6c-.2 0-.4-.2-.4-.4v-.4c0-.2.2-.4.4-.4h2.4c.2 0 .4.2.4.4v.4c0 .2-.2.4-.4.4h-.4c-.1 0-.1 0-.1.1l.8 1.6.8-1.6c0-.1 0-.1-.1-.1h-.4c-.2 0-.4-.2-.4-.4v-.4c0-.2.2-.4.4-.4h2.4c.2 0 .4.2.4.4v.4c0 .2-.2.4-.4.4h-.6c-.2 0-.4.1-.5.3l-1.2 2.4c-.2.3-.4.5-.7.6zm3.6-5.6c-.1.2-.3.3-.5.3h-.6c-.2 0-.4-.2-.4-.4v-.4c0-.2.2-.4.4-.4h.4c.1 0 .1 0 .1-.1l-.8-1.6-.8 1.6c0 .1 0 .1.1.1h.4c.2 0 .4.2.4.4v.4c0 .2-.2.4-.4.4h-2.4c-.2 0-.4-.2-.4-.4v-.4c0-.2.2-.4.4-.4h.6c.2 0 .4-.1.5-.3l1.2-2.4c.2-.3.4-.5.7-.6s.6-.1.9.1c.3.2.5.5.6.8l1.2 2.4z" fill="currentColor"/>
+          {/* Wikipedia puzzle globe - simplified and cleaner */}
+          <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.4"/>
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8.5 7h2l1.5 4.5L13.5 7h2l-2.5 7h-1.5L8.5 7zm7 0h2v7h-2l-1-3 1-4z" fill="currentColor" opacity="0.9"/>
+          {/* Missing puzzle pieces */}
+          <path d="M7 10h2v2H7zm8 0h2v2h-2zM10 6h2v2h-2zm2 10h2v2h-2z" fill="none" stroke="currentColor" strokeWidth="1"/>
         </svg>
       ),
       color: 'hover:text-gray-600'
