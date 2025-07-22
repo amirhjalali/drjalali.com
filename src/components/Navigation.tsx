@@ -23,8 +23,10 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold text-primary-700 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 transition-colors">
-              Dr. Ali Akbar Jalali
+            <Link href="/" className="text-xl font-bold hover:opacity-80 transition-opacity">
+              <span className="text-gray-900 dark:text-neutral-100">Dr.</span>{' '}
+              <span className="text-primary-600 dark:text-primary-400">Ali Akbar</span>{' '}
+              <span className="text-gray-900 dark:text-neutral-100">Jalali</span>
             </Link>
           </div>
           
