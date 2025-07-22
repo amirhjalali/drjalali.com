@@ -94,12 +94,10 @@ const ContactForm = () => {
       name: 'IEEE Xplore',
       href: 'https://ieeexplore.ieee.org/author/37300412300',
       icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          {/* IEEE academic/technical document icon */}
-          <rect x="4" y="2" width="16" height="20" rx="1" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.4"/>
-          <path d="M7 6h10v1H7zm0 2h10v1H7zm0 2h10v1H7zm0 2h7v1H7zm0 2h8v1H7z" fill="currentColor"/>
-          <circle cx="16" cy="16" r="2" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-          <path d="M14.5 14.5l3 3" stroke="currentColor" strokeWidth="1.5"/>
+        <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+          {/* IEEE Official Logo Style */}
+          <path d="M2 2h20v20H2V2zm18 18V4H4v16h16zM6 6h4v1.5H6V6zm0 2.5h4V10H6V8.5zM6 11h4v1.5H6V11zm6-5h4v1.5h-4V6zm0 2.5h4V10h-4V8.5zm0 2.5h4v1.5h-4V11zM6 13.5h4V15H6v-1.5zm6 0h4V15h-4v-1.5zM6 16h10v1.5H6V16z" fill="currentColor"/>
+          <circle cx="18" cy="6" r="1.5" fill="currentColor"/>
         </svg>
       ),
       color: 'hover:text-blue-700'
@@ -128,15 +126,12 @@ const ContactForm = () => {
       name: 'Wikipedia',
       href: 'https://en.wikipedia.org/wiki/Ali_Akbar_Jalali',
       icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          {/* Wikipedia puzzle globe - simplified and cleaner */}
-          <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.4"/>
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8.5 7h2l1.5 4.5L13.5 7h2l-2.5 7h-1.5L8.5 7zm7 0h2v7h-2l-1-3 1-4z" fill="currentColor" opacity="0.9"/>
-          {/* Missing puzzle pieces */}
-          <path d="M7 10h2v2H7zm8 0h2v2h-2zM10 6h2v2h-2zm2 10h2v2h-2z" fill="none" stroke="currentColor" strokeWidth="1"/>
+        <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+          {/* Wikipedia W Logo - Official Style */}
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM7.5 8.5h1.8l1.2 6L12 10l1.5 4.5 1.2-6h1.8L15 18h-1.5L12 12l-1.5 6H9L7.5 8.5z" fill="currentColor"/>
         </svg>
       ),
-      color: 'hover:text-gray-600'
+      color: 'hover:text-gray-700'
     }
   ];
 
@@ -161,59 +156,48 @@ const ContactForm = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Social Links */}
-          <div className="lg:col-span-1">
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-neutral-800 dark:to-neutral-900 rounded-xl p-8 border border-gray-200 dark:border-neutral-700 shadow-lg">
-              <div className="text-center mb-8">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-neutral-100 mb-3">Connect with Dr. Jalali</h3>
-                <p className="text-gray-600 dark:text-neutral-400 text-sm">
-                  Follow research updates and professional activities
-                </p>
-              </div>
-              
-              {/* Clean Icon Grid */}
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                {socialLinks.map((link, index) => (
-                  <div key={index} className="relative group">
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`
-                        flex items-center justify-center w-14 h-14 rounded-full
-                        bg-white dark:bg-neutral-700 shadow-md hover:shadow-lg
-                        border-2 border-gray-200 dark:border-neutral-600
-                        text-gray-500 dark:text-neutral-400 ${link.color}
-                        transition-all duration-300 hover:scale-110 hover:-translate-y-1
-                        group-hover:shadow-xl
-                      `}
-                      aria-label={`Visit Dr. Jalali's ${link.name} profile`}
-                    >
-                      {link.icon}
-                    </a>
-                    
-                    {/* Tooltip on hover */}
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                      <div className="bg-gray-900 dark:bg-neutral-700 text-white text-xs px-3 py-1 rounded-lg whitespace-nowrap shadow-lg">
-                        {link.name}
-                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900 dark:border-t-neutral-700"></div>
-                      </div>
+        {/* Social Links - Separate Section */}
+        <div className="mb-12">
+          <div className="max-w-md mx-auto">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-neutral-100 mb-3">Connect</h3>
+            </div>
+            
+            {/* Clean Icon Grid */}
+            <div className="flex justify-center gap-6">
+              {socialLinks.map((link, index) => (
+                <div key={index} className="relative group">
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`
+                      flex items-center justify-center w-16 h-16 rounded-full
+                      bg-white dark:bg-neutral-800 shadow-lg hover:shadow-xl
+                      border-2 border-gray-100 dark:border-neutral-700
+                      text-gray-600 dark:text-neutral-400 ${link.color}
+                      transition-all duration-300 hover:scale-110 hover:-translate-y-1
+                    `}
+                    aria-label={`Visit Dr. Jalali's ${link.name} profile`}
+                  >
+                    {link.icon}
+                  </a>
+                  
+                  {/* Tooltip on hover */}
+                  <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                    <div className="bg-gray-900 dark:bg-neutral-700 text-white text-xs px-3 py-2 rounded-lg whitespace-nowrap shadow-lg">
+                      {link.name}
+                      <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 border-4 border-transparent border-b-gray-900 dark:border-b-neutral-700"></div>
                     </div>
                   </div>
-                ))}
-              </div>
-              
-              <div className="text-center pt-6 border-t border-gray-200 dark:border-neutral-600">
-                <p className="text-xs text-gray-500 dark:text-neutral-500">
-                  For direct inquiries, please use the contact form
-                </p>
-              </div>
+                </div>
+              ))}
             </div>
           </div>
+        </div>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
+        {/* Contact Form */}
+        <div className="max-w-4xl mx-auto">
             <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact Dr. Jalali form">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -359,7 +343,6 @@ const ContactForm = () => {
                 )}
               </button>
             </form>
-          </div>
         </div>
       </div>
     </section>
