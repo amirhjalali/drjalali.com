@@ -114,6 +114,7 @@ export default function FloatingNav() {
           onClick={scrollToTop}
           className="absolute inset-0 flex items-center justify-center w-full h-full bg-white dark:bg-neutral-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group border border-gray-200 dark:border-neutral-700"
           title="Scroll to top"
+          aria-label="Scroll to top of page"
         >
           <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-neutral-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
         </button>
@@ -127,7 +128,7 @@ export default function FloatingNav() {
       </div>
 
       {/* Navigation Dots */}
-      <div className="bg-white dark:bg-neutral-800 rounded-full p-1.5 sm:p-2 shadow-lg border border-gray-200 dark:border-neutral-700">
+      <div className="bg-white dark:bg-neutral-800 rounded-full p-1.5 sm:p-2 shadow-lg border border-gray-200 dark:border-neutral-700" role="navigation" aria-label="Page section navigation">
         {navItems.map((item, index) => {
           const Icon = item.icon;
           const isActive = activeSection === item.id;
@@ -145,6 +146,8 @@ export default function FloatingNav() {
                   }
                 `}
                 title={item.label}
+                aria-label={`Navigate to ${item.label} section`}
+                aria-current={isActive ? 'page' : undefined}
               >
                 <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 
