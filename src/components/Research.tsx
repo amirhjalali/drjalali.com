@@ -72,7 +72,8 @@ export default function Research() {
           <SlideUp>
             <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Areas</h2>
           </SlideUp>
-          <CardGrid minWidth="300px" maxWidth="600px" gap="lg">
+          <div className="flex justify-center">
+            <CardGrid minWidth="300px" maxWidth="600px" gap="lg">
             {researchAreas.map((area, index) => (
               <FadeIn key={index} delay={index * 100}>
                 <Card 
@@ -102,7 +103,8 @@ export default function Research() {
                 </Card>
               </FadeIn>
             ))}
-          </CardGrid>
+            </CardGrid>
+          </div>
         </div>
 
         {/* Key Publications */}
