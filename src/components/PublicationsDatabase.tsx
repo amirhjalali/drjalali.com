@@ -138,23 +138,23 @@ const PublicationsDatabase = () => {
       book: 'bg-purple-100 text-purple-800',
       chapter: 'bg-orange-100 text-orange-800',
       patent: 'bg-red-100 text-red-800',
-      thesis: 'bg-gray-100 text-gray-800'
+      thesis: 'bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-300'
     };
-    return colors[type as keyof typeof colors] || 'bg-gray-100 text-gray-800';
+    return colors[type as keyof typeof colors] || 'bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-300';
   };
 
   return (
-    <section id="publications" className="py-16 bg-gray-50">
+    <section id="publications" className="py-16 bg-gray-50 dark:bg-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Publications</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-neutral-100 mb-4">Publications</h2>
+          <p className="text-lg text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto">
             Comprehensive collection of research publications, papers, and contributions to the field of electrical engineering and information technology.
           </p>
         </div>
 
         {/* Search and Filter Controls */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
+        <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-sm p-6 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {/* Search */}
             <div className="lg:col-span-2 relative">
@@ -164,7 +164,7 @@ const PublicationsDatabase = () => {
                 placeholder="Search publications..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
@@ -173,7 +173,7 @@ const PublicationsDatabase = () => {
               <select
                 value={selectedType}
                 onChange={(e) => setSelectedType(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full p-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 {publicationTypes.map(type => (
                   <option key={type} value={type}>
@@ -188,7 +188,7 @@ const PublicationsDatabase = () => {
               <select
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full p-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 {years.map(year => (
                   <option key={year} value={year}>
@@ -207,7 +207,7 @@ const PublicationsDatabase = () => {
                   setSortBy(sort as 'year' | 'citations' | 'title');
                   setSortOrder(order as 'asc' | 'desc');
                 }}
-                className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full p-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="year-desc">Year (Newest)</option>
                 <option value="year-asc">Year (Oldest)</option>
@@ -230,14 +230,14 @@ const PublicationsDatabase = () => {
         {/* Publications List */}
         <div className="space-y-6">
           {filteredAndSortedPublications.map((publication) => (
-            <div key={publication.id} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+            <div key={publication.id} className="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-200 dark:border-neutral-700 p-6 hover:shadow-md transition-shadow">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                 <div className="flex-1">
                   <div className="flex items-start gap-3 mb-3">
                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getTypeColor(publication.type)}`}>
                       {publication.type}
                     </span>
-                    <div className="flex items-center text-sm text-gray-500 gap-4">
+                    <div className="flex items-center text-sm text-gray-500 dark:text-neutral-500 gap-4">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
                         {publication.year}
@@ -254,16 +254,16 @@ const PublicationsDatabase = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-neutral-100 mb-2">
                     {publication.title}
                   </h3>
 
-                  <p className="text-gray-700 mb-2">
+                  <p className="text-gray-700 dark:text-neutral-300 mb-2">
                     <strong>Authors:</strong> {publication.authors.join(', ')}
                   </p>
 
                   {publication.journal && (
-                    <p className="text-gray-700 mb-2">
+                    <p className="text-gray-700 dark:text-neutral-300 mb-2">
                       <strong>Journal:</strong> {publication.journal}
                       {publication.impact_factor && (
                         <span className="text-blue-600 ml-2">(IF: {publication.impact_factor})</span>
@@ -272,7 +272,7 @@ const PublicationsDatabase = () => {
                   )}
 
                   {publication.conference && (
-                    <p className="text-gray-700 mb-2">
+                    <p className="text-gray-700 dark:text-neutral-300 mb-2">
                       <strong>Conference:</strong> {publication.conference}
                     </p>
                   )}
@@ -285,7 +285,7 @@ const PublicationsDatabase = () => {
                     {publication.keywords.map((keyword, index) => (
                       <span
                         key={index}
-                        className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-800"
+                        className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-300"
                       >
                         {keyword}
                       </span>
@@ -328,35 +328,35 @@ const PublicationsDatabase = () => {
 
         {filteredAndSortedPublications.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No publications found matching your criteria.</p>
+            <p className="text-gray-500 dark:text-neutral-400 text-lg">No publications found matching your criteria.</p>
           </div>
         )}
 
         {/* Statistics */}
-        <div className="mt-12 bg-white rounded-lg shadow-sm p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Publication Statistics</h3>
+        <div className="mt-12 bg-white dark:bg-neutral-800 rounded-lg shadow-sm p-6">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-neutral-100 mb-4">Publication Statistics</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center">
               <div className="text-2xl font-bold text-blue-600">{publications.length}</div>
-              <div className="text-sm text-gray-600">Total Publications</div>
+              <div className="text-sm text-gray-600 dark:text-neutral-400">Total Publications</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-green-600">
                 {publications.reduce((sum, pub) => sum + (pub.citations || 0), 0)}
               </div>
-              <div className="text-sm text-gray-600">Total Citations</div>
+              <div className="text-sm text-gray-600 dark:text-neutral-400">Total Citations</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-purple-600">
                 {publications.filter(pub => pub.type === 'journal').length}
               </div>
-              <div className="text-sm text-gray-600">Journal Articles</div>
+              <div className="text-sm text-gray-600 dark:text-neutral-400">Journal Articles</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-orange-600">
                 {publications.filter(pub => pub.type === 'conference').length}
               </div>
-              <div className="text-sm text-gray-600">Conference Papers</div>
+              <div className="text-sm text-gray-600 dark:text-neutral-400">Conference Papers</div>
             </div>
           </div>
         </div>
