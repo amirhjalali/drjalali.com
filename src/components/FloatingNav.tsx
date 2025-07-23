@@ -119,12 +119,6 @@ export default function FloatingNav() {
           <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-gray-600 dark:text-neutral-400 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
         </button>
         
-        {/* Progress percentage - hidden on mobile */}
-        <div className="hidden sm:block absolute -bottom-8 left-1/2 transform -translate-x-1/2">
-          <span className="text-xs font-medium text-gray-500 dark:text-neutral-400 bg-white dark:bg-neutral-800 px-2 py-1 rounded-full shadow-sm border border-gray-200 dark:border-neutral-700">
-            {Math.round(scrollProgress)}%
-          </span>
-        </div>
       </div>
 
       {/* Navigation Dots */}

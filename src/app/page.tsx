@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <JsonLd />
-      <ScrollProgress />
+      <ScrollProgress showPercentage={false} />
       <FloatingNav />
       <Navigation />
       <main id="main-content">
