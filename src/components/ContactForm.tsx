@@ -28,10 +28,9 @@ const ContactForm = () => {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
-    const mailtoLink = `mailto:drjalali@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
+    // Email functionality removed for privacy
+    // Show success message instead
+    alert('Thank you for your interest in contacting Dr. Jalali. Please connect via LinkedIn or other professional networks listed below.');
     
     // Reset form
     setFormData({
@@ -111,18 +110,42 @@ const ContactForm = () => {
   return (
     <section id="contact" className="py-16 bg-white dark:bg-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-neutral-100 mb-4">Contact</h2>
           <p className="text-lg text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto">
-            Connect with Dr. Jalali through email or social media
+            Connect with Dr. Jalali for research collaborations and academic inquiries
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-neutral-100 mb-6">Send a Message</h3>
+        {/* Social Links - Centered */}
+        <div className="max-w-2xl mx-auto mb-16">
+          <div className="flex flex-wrap justify-center gap-4">
+            {socialLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`
+                  group flex items-center gap-3 px-5 py-3 rounded-full
+                  bg-white dark:bg-neutral-800 shadow-md hover:shadow-xl
+                  border border-gray-200 dark:border-neutral-700
+                  text-gray-700 dark:text-neutral-300 ${link.color}
+                  transition-all duration-300 hover:scale-105 hover:-translate-y-1
+                `}
+                aria-label={`Visit Dr. Jalali's ${link.name} profile`}
+              >
+                <span className="text-xl">{link.icon}</span>
+                <span className="font-medium">{link.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact Form - Centered */}
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-gray-50 dark:bg-neutral-800/50 rounded-2xl p-8 border border-gray-200 dark:border-neutral-700">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-neutral-100 mb-6 text-center">Send a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-neutral-300 mb-1">
@@ -199,45 +222,12 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <Send className="w-4 h-4" />
                   Send Message
                 </button>
               </form>
-            </div>
-            
-            {/* Social Links */}
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-neutral-100 mb-6">Connect on Social Media</h3>
-              <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
-                {socialLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`
-                      flex flex-col items-center justify-center p-4 rounded-lg
-                      bg-white dark:bg-neutral-800 shadow hover:shadow-lg
-                      border border-gray-100 dark:border-neutral-700
-                      text-gray-600 dark:text-neutral-400 ${link.color}
-                      transition-all duration-300 hover:scale-105
-                    `}
-                    aria-label={`Visit Dr. Jalali's ${link.name} profile`}
-                  >
-                    {link.icon}
-                    <span className="text-xs mt-2 text-center">{link.name}</span>
-                  </a>
-                ))}
-              </div>
-              
-              <div className="mt-6 p-4 bg-gray-50 dark:bg-neutral-800/50 rounded-lg border border-gray-100 dark:border-neutral-700">
-                <p className="text-sm text-gray-600 dark:text-neutral-400">
-                  <strong>Email:</strong> drjalali@gmail.com
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
