@@ -28,17 +28,20 @@ const ContactForm = () => {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
-    // Email functionality removed for privacy
-    // Show success message instead
-    alert('Thank you for your interest in contacting Dr. Jalali. Please connect via LinkedIn or other professional networks listed below.');
     
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    // Open email client with pre-filled data
+    const mailtoLink = `mailto:contact@drjalali.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoLink;
+    
+    // Optional: Reset form after a delay
+    setTimeout(() => {
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    }, 1000);
   };
 
   const socialLinks = [
