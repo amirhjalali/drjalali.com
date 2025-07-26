@@ -16,7 +16,6 @@ Based on comprehensive audit of the existing Farsi website.
 - **Q&A** - Frequently asked questions
 
 ### **Contact Information Found**
-- **Email**: drjalali@gmail.com
 - **Phone**: +982177240487
 - **Address**: Tehran, Resalat Square, Hengam Street, Iran University of Science and Technology
 

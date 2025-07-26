@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Send, User, Mail, MessageSquare } from 'lucide-react';
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const [contactFormData, setContactFormData] = useState({
     name: '',
     email: '',
     subject: '',
@@ -20,28 +20,44 @@ const ContactForm = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Construct mailto link with form data
-    const subject = encodeURIComponent(formData.subject || 'Contact from Website');
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    
-    // Open email client with pre-filled data
-    const mailtoLink = `mailto:contact@drjalali.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
-    
-    // Optional: Reset form after a delay
-    setTimeout(() => {
+    try {
+      // Google Forms integration
+      // Replace with your actual Google Form URL and field IDs
+      const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
+      
+      // These entry IDs come from your Google Form - see setup instructions
+      const contactFormData = new FormData();
+      contactFormData.append('entry.XXXXXXX', contactFormData.name);     // Name field
+      contactFormData.append('entry.XXXXXXX', contactFormData.email);    // Email field
+      contactFormData.append('entry.XXXXXXX', contactFormData.subject || 'Contact from Website'); // Subject field
+      contactFormData.append('entry.XXXXXXX', contactFormData.message);  // Message field
+      
+      // Submit to Google Forms
+      await fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Required for Google Forms
+        body: contactFormData
+      });
+      
+      // Since no-cors doesn't return a response, we assume success
+      alert('Thank you for your message! Dr. Jalali will get back to you soon.');
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       });
-    }, 1000);
+      
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Sorry, there was an error sending your message. Please try again or contact via social media.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [
@@ -160,7 +176,7 @@ const ContactForm = () => {
                       type="text"
                       id="name"
                       name="name"
-                      value={formData.name}
+                      value={contactFormData.name}
                       onChange={handleInputChange}
                       required
                       className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -179,7 +195,7 @@ const ContactForm = () => {
                       type="email"
                       id="email"
                       name="email"
-                      value={formData.email}
+                      value={contactFormData.email}
                       onChange={handleInputChange}
                       required
                       className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -196,7 +212,7 @@ const ContactForm = () => {
                     type="text"
                     id="subject"
                     name="subject"
-                    value={formData.subject}
+                    value={contactFormData.subject}
                     onChange={handleInputChange}
                     className="w-full px-4 py-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Subject of your message"
@@ -212,7 +228,7 @@ const ContactForm = () => {
                     <textarea
                       id="message"
                       name="message"
-                      value={formData.message}
+                      value={contactFormData.message}
                       onChange={handleInputChange}
                       required
                       rows={4}
