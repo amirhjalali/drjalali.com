@@ -125,30 +125,30 @@ export default function Hero() {
               </div>
               
               {/* Floating Achievement Badges - Desktop */}
-              <div className="absolute -top-8 left-4 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105">
+              <a href="#career" className="absolute -top-8 left-4 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
                 <div className="text-center">
                   <div className="text-primary-600 dark:text-primary-400 text-xl font-bold">30+</div>
                   <div className="text-sm font-medium text-gray-600 dark:text-neutral-300">Years</div>
                 </div>
-              </div>
+              </a>
               
-              <div className="absolute -bottom-6 -right-8 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform -rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105">
+              <a href="#research" className="absolute -bottom-6 -right-8 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform -rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
                 <div className="text-center">
                   <div className="text-primary-600 dark:text-primary-400 text-xl font-bold">300+</div>
                   <div className="text-sm font-medium text-gray-600 dark:text-neutral-300">Papers</div>
                 </div>
-              </div>
+              </a>
               
-              <div className="absolute top-24 -left-12 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-105">
+              <a href="#research" className="absolute top-24 -left-12 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
                 <div className="text-center">
                   <div className="text-primary-600 dark:text-primary-400 text-xl font-bold">50+</div>
                   <div className="text-sm font-medium text-gray-600 dark:text-neutral-300">Books</div>
                 </div>
-              </div>
+              </a>
               
-              <div className="absolute bottom-20 right-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl px-4 py-3 shadow-xl transform -rotate-1 hover:rotate-0 transition-all duration-300 hover:scale-105">
+              <a href="#about" className="absolute bottom-20 right-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl px-4 py-3 shadow-xl transform -rotate-1 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
                 <div className="text-sm font-semibold">IT Pioneer</div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -194,30 +194,30 @@ export default function Hero() {
               </div>
               
               {/* Floating Achievement Badges - Mobile */}
-              <div className="absolute -top-6 left-2 bg-white dark:bg-neutral-800 rounded-lg px-3 py-2 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105">
+              <a href="#career" className="absolute -top-6 left-2 bg-white dark:bg-neutral-800 rounded-lg px-3 py-2 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
                 <div className="text-center">
                   <div className="text-primary-600 dark:text-primary-400 text-lg font-bold">30+</div>
                   <div className="text-xs font-medium text-gray-600 dark:text-neutral-300">Years</div>
                 </div>
-              </div>
+              </a>
               
-              <div className="absolute -bottom-4 -right-6 bg-white dark:bg-neutral-800 rounded-lg px-3 py-2 shadow-xl border border-gray-100 dark:border-neutral-700 transform -rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105">
+              <a href="#research" className="absolute -bottom-4 -right-6 bg-white dark:bg-neutral-800 rounded-lg px-3 py-2 shadow-xl border border-gray-100 dark:border-neutral-700 transform -rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
                 <div className="text-center">
                   <div className="text-primary-600 dark:text-primary-400 text-lg font-bold">300+</div>
                   <div className="text-xs font-medium text-gray-600 dark:text-neutral-300">Papers</div>
                 </div>
-              </div>
+              </a>
               
-              <div className="absolute top-16 -left-8 bg-white dark:bg-neutral-800 rounded-lg px-3 py-2 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-105">
+              <a href="#research" className="absolute top-16 -left-8 bg-white dark:bg-neutral-800 rounded-lg px-3 py-2 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
                 <div className="text-center">
                   <div className="text-primary-600 dark:text-primary-400 text-lg font-bold">50+</div>
                   <div className="text-xs font-medium text-gray-600 dark:text-neutral-300">Books</div>
                 </div>
-              </div>
+              </a>
               
-              <div className="absolute bottom-14 right-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg px-3 py-2 shadow-xl transform -rotate-1 hover:rotate-0 transition-all duration-300 hover:scale-105">
+              <a href="#about" className="absolute bottom-14 right-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg px-3 py-2 shadow-xl transform -rotate-1 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
                 <div className="text-xs font-semibold">IT Pioneer</div>
-              </div>
+              </a>
             </div>
           </div>
 
