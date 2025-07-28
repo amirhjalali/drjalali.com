@@ -157,7 +157,7 @@ export default function Research() {
               <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Books & Chapters</p>
             </a>
             <a
-              href="#academic"
+              href="#about"
               className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">30+</div>
