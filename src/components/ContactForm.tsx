@@ -30,22 +30,22 @@ const ContactForm = () => {
       const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
       
       // These entry IDs come from your Google Form - see setup instructions
-      const contactFormData = new FormData();
-      contactFormData.append('entry.XXXXXXX', contactFormData.name);     // Name field
-      contactFormData.append('entry.XXXXXXX', contactFormData.email);    // Email field
-      contactFormData.append('entry.XXXXXXX', contactFormData.subject || 'Contact from Website'); // Subject field
-      contactFormData.append('entry.XXXXXXX', contactFormData.message);  // Message field
+      const googleFormData = new FormData();
+      googleFormData.append('entry.XXXXXXX', contactFormData.name);     // Name field
+      googleFormData.append('entry.XXXXXXX', contactFormData.email);    // Email field
+      googleFormData.append('entry.XXXXXXX', contactFormData.subject || 'Contact from Website'); // Subject field
+      googleFormData.append('entry.XXXXXXX', contactFormData.message);  // Message field
       
       // Submit to Google Forms
       await fetch(GOOGLE_FORM_URL, {
         method: 'POST',
         mode: 'no-cors', // Required for Google Forms
-        body: contactFormData
+        body: googleFormData
       });
       
       // Since no-cors doesn't return a response, we assume success
       alert('Thank you for your message! Dr. Jalali will get back to you soon.');
-      setFormData({
+      setContactFormData({
         name: '',
         email: '',
         subject: '',
