@@ -23,7 +23,7 @@ export default function About() {
                   <div className="w-24 h-24 rounded-xl overflow-hidden shadow-lg ring-4 ring-primary-100 dark:ring-primary-800">
                     <ProfessionalPhoto 
                       src="/images/biography/dr-jalali-biography.png"
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-contain"
                       alt="Dr. Ali Akbar Jalali - Biography"
                     />
                   </div>
