@@ -142,34 +142,54 @@ export default function Research() {
         <div className="bg-primary-50 dark:bg-primary-900/20 p-8 rounded-lg border border-primary-100 dark:border-primary-800">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Impact</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <a
-              href="#publications"
-              className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block"
+            <button
+              onClick={() => {
+                const element = document.getElementById('publications');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">300+</div>
               <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Research Papers</p>
-            </a>
-            <a
-              href="#publications"
-              className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block"
+            </button>
+            <button
+              onClick={() => {
+                const element = document.getElementById('publications');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
               <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Books & Chapters</p>
-            </a>
-            <a
-              href="#about"
-              className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block"
+            </button>
+            <button
+              onClick={() => {
+                const element = document.getElementById('about');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">30+</div>
               <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Years of Research</p>
-            </a>
-            <a
-              href="#about"
-              className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block"
+            </button>
+            <button
+              onClick={() => {
+                const element = document.getElementById('about');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">Pioneer</div>
               <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">IT in Iran</p>
-            </a>
+            </button>
           </div>
           
           <div className="mt-8 text-center">
