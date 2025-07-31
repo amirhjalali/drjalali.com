@@ -1,3 +1,5 @@
+'use client';
+
 import Card from './Card';
 import { CardGrid } from './GridLayout';
 import { SlideUp, FadeIn } from './ScrollAnimation';
