@@ -125,7 +125,7 @@ export default function Hero() {
               </div>
               
               {/* Floating Achievement Badges - Desktop */}
-              <a href="#career" className="absolute -top-8 left-4 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
+              <a href="#academic" className="absolute -top-8 left-4 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
                 <div className="text-center">
                   <div className="text-primary-600 dark:text-primary-400 text-xl font-bold">30+</div>
                   <div className="text-sm font-medium text-gray-600 dark:text-neutral-300">Years</div>
@@ -194,7 +194,7 @@ export default function Hero() {
               </div>
               
               {/* Floating Achievement Badges - Mobile */}
-              <a href="#career" className="absolute -top-6 left-2 bg-white dark:bg-neutral-800 rounded-lg px-3 py-2 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
+              <a href="#academic" className="absolute -top-6 left-2 bg-white dark:bg-neutral-800 rounded-lg px-3 py-2 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 transition-all duration-300 hover:scale-105 cursor-pointer">
                 <div className="text-center">
                   <div className="text-primary-600 dark:text-primary-400 text-lg font-bold">30+</div>
                   <div className="text-xs font-medium text-gray-600 dark:text-neutral-300">Years</div>
