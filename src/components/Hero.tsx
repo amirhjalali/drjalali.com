@@ -44,7 +44,7 @@ export default function Hero() {
                   <span className="font-extrabold text-gray-900 dark:text-neutral-100">Dr.</span>{' '}
                   <span className="bg-gradient-to-r from-primary-600 to-primary-700 dark:from-primary-400 dark:to-primary-500 bg-clip-text text-transparent">Ali Akbar</span>
                 </span>
-                <span className="block font-extrabold text-gray-900 dark:text-neutral-100">
+                <span className="block font-extrabold text-gray-900 dark:text-neutral-100 ml-8">
                   Jalali
                 </span>
               </h1>
@@ -163,7 +163,7 @@ export default function Hero() {
                   <span className="font-extrabold text-gray-900 dark:text-neutral-100">Dr.</span>{' '}
                   <span className="bg-gradient-to-r from-primary-600 to-primary-700 dark:from-primary-400 dark:to-primary-500 bg-clip-text text-transparent">Ali Akbar</span>
                 </span>
-                <span className="block font-extrabold text-gray-900 dark:text-neutral-100">
+                <span className="block font-extrabold text-gray-900 dark:text-neutral-100 ml-8">
                   Jalali
                 </span>
               </h1>
