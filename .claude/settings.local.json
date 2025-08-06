@@ -46,7 +46,11 @@
       "Bash(git gc:*)",
       "Bash(pkill:*)",
       "Bash(true)",
-      "Bash(touch:*)"
+      "Bash(touch:*)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:link.springer.com)",
+      "WebFetch(domain:www.sciencedirect.com)",
+      "WebFetch(domain:link.springer.com)"
     ],
     "deny": []
   }

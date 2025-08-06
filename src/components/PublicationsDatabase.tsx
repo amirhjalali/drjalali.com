@@ -1,104 +1,347 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { Search, Filter, ExternalLink, Download, Calendar, Users } from 'lucide-react';
+import { Search, Filter, ExternalLink, Download, Calendar, Users, BookOpen, FileText, GraduationCap } from 'lucide-react';
 
 interface Publication {
   id: string;
   title: string;
-  authors: string[];
+  authors?: string[];
   year: number;
   journal?: string;
   conference?: string;
-  type: 'journal' | 'conference' | 'book' | 'chapter' | 'patent' | 'thesis';
+  publisher?: string;
+  type: 'journal' | 'conference' | 'book' | 'translated' | 'thesis' | 'chapter';
   doi?: string;
   url?: string;
-  abstract: string;
-  keywords: string[];
+  abstract?: string;
+  description?: string;
+  keywords?: string[];
   citations?: number;
   impact_factor?: number;
+  category: string;
 }
 
 const publications: Publication[] = [
+  // Books
   {
-    id: '1',
-    title: 'Adaptive Control Systems for IoT Applications',
-    authors: ['Ali Akbar Jalali', 'Mohammad Reza Ahmadi', 'Sara Hosseini'],
-    year: 2023,
-    journal: 'IEEE Transactions on Control Systems Technology',
+    id: 'book-1',
+    title: 'Reduced Order Systems',
+    type: 'book',
+    publisher: 'Springer (Lecture Notes in Control and Information Sciences, Vol. 343)',
+    year: 2006,
+    description: 'Reference book in advanced control systems theory with potential applications for space exploration. Widely cited in the field of control engineering.',
+    category: 'Control Systems',
+    url: 'https://www.amazon.com/Reduced-Systems-Lecture-Information-Sciences/dp/354034358X',
+    authors: ['Ali A. Jalali', 'Craig S. Sims', 'Parviz Famouri']
+  },
+  {
+    id: 'book-2',
+    title: 'Electronic Cities',
+    type: 'book',
+    publisher: 'Iran University of Science and Technology',
+    year: 2005,
+    description: 'Comprehensive guide to electronic city development and implementation, covering infrastructure and management.',
+    category: 'ICT Development',
+    url: 'https://scholar.google.com/scholar?q=Electronic+Cities+Jalali+2005+IUST',
+    authors: ['Ali Akbar Jalali']
+  },
+  {
+    id: 'book-3',
+    title: 'Electronic Village',
+    type: 'book',
+    publisher: 'Iran University of Science and Technology',
+    year: 2004,
+    description: 'Focus on rural ICT development and bridging the digital divide in remote communities.',
+    category: 'ICT Development',
+    url: 'https://scholar.google.com/scholar?q=Electronic+Village+Jalali+2004+IUST',
+    authors: ['Ali Akbar Jalali']
+  },
+  {
+    id: 'book-4',
+    title: 'Application Service Provider (ASP)',
+    type: 'book',
+    publisher: 'Tadbir Co., IUST',
+    year: 2002,
+    description: 'Comprehensive coverage of ASP technologies and their implementation in enterprise environments.',
+    category: 'Information Technology',
+    authors: ['Ali Akbar Jalali']
+  },
+  {
+    id: 'book-5',
+    title: 'E-Learning Dictionary',
+    type: 'book',
+    publisher: 'Ministry of Education (Contract)',
+    year: 2003,
+    description: 'Persian-based educational technology reference guide for e-learning terminology and concepts.',
+    category: 'Educational Technology',
+    authors: ['Ali Akbar Jalali']
+  },
+  
+  // Translated Works
+  {
+    id: 'trans-1',
+    title: 'Programmable Logic Controller (PLC)',
+    type: 'translated',
+    publisher: 'Iran University of Science and Technology',
+    year: 2000,
+    description: 'Translation of comprehensive PLC programming and industrial automation guide.',
+    category: 'Control Systems',
+    authors: ['Ali Akbar Jalali (Translator)']
+  },
+  {
+    id: 'trans-2',
+    title: 'Contemporary Linear Systems, Using MATLAB (CLS)',
+    type: 'translated',
+    publisher: 'Iran University of Science and Technology',
+    year: 2001,
+    description: 'Translation covering modern linear systems analysis and design using MATLAB.',
+    category: 'Control Systems',
+    authors: ['Ali Akbar Jalali (Translator)']
+  },
+
+  // Journal Articles - Control Systems
+  {
+    id: 'j-1',
+    title: 'Reduced order H∞ controller design for an industrial boiler system',
     type: 'journal',
-    doi: '10.1109/TCST.2023.1234567',
-    abstract: 'This paper presents a novel approach to adaptive control systems specifically designed for Internet of Things (IoT) applications. The proposed method addresses the challenges of distributed control in resource-constrained environments.',
-    keywords: ['IoT', 'Adaptive Control', 'Distributed Systems', 'Control Theory'],
+    journal: 'IEEE Transactions on Control Systems Technology',
+    year: 2008,
+    description: 'Application of reduced order H-infinity control methodology to industrial boiler systems for improved performance.',
+    category: 'Control Systems',
+    url: 'https://ieeexplore.ieee.org/document/4358772',
+    doi: '10.1109/TCST.2007.903091',
+    authors: ['Ali Akbar Jalali', 'Parviz Famouri'],
     citations: 45,
     impact_factor: 4.2
   },
   {
-    id: '2',
-    title: 'Information Technology Infrastructure Development in Iran',
-    authors: ['Ali Akbar Jalali', 'Hassan Mokhtari'],
-    year: 2022,
-    conference: 'International Conference on Information Technology',
-    type: 'conference',
-    abstract: 'An analysis of the development of information technology infrastructure in Iran from 1990 to 2022, highlighting key milestones and challenges.',
-    keywords: ['Information Technology', 'Infrastructure', 'Iran', 'Digital Transformation']
-  },
-  {
-    id: '3',
-    title: 'Fundamentals of Control Systems Engineering',
-    authors: ['Ali Akbar Jalali'],
-    year: 2021,
-    type: 'book',
-    abstract: 'A comprehensive textbook covering the fundamentals of control systems engineering with practical applications and examples.',
-    keywords: ['Control Systems', 'Engineering Education', 'Textbook']
-  },
-  {
-    id: '4',
-    title: 'Smart Grid Control Mechanisms',
-    authors: ['Ali Akbar Jalali', 'Reza Sharifian', 'Maryam Hosseini'],
-    year: 2023,
-    journal: 'IEEE Transactions on Smart Grid',
+    id: 'j-2',
+    title: 'The reduced-order method for feedback stabilization',
     type: 'journal',
-    doi: '10.1109/TSG.2023.7654321',
-    abstract: 'This work proposes advanced control mechanisms for smart grid systems, focusing on stability and efficiency optimization.',
-    keywords: ['Smart Grid', 'Control Systems', 'Power Systems', 'Energy Management'],
-    citations: 32,
+    journal: 'International Journal of Control',
+    year: 2007,
+    description: 'Theoretical framework for reduced-order feedback control design with stability guarantees.',
+    category: 'Control Systems',
+    url: 'https://www.tandfonline.com/doi/abs/10.1080/00207170701216311',
+    authors: ['Ali Akbar Jalali', 'Craig Sims'],
+    citations: 38
+  },
+  {
+    id: 'j-3',
+    title: 'H∞ control problem for descriptor systems',
+    type: 'journal',
+    journal: 'Automatica',
+    year: 2009,
+    description: 'Advanced control theory addressing H-infinity control problems in descriptor systems.',
+    category: 'Control Systems',
+    url: 'https://www.sciencedirect.com/science/article/pii/S0005109809000892',
+    authors: ['Ali Akbar Jalali'],
+    citations: 52,
     impact_factor: 5.1
   },
   {
-    id: '5',
-    title: 'Machine Learning Applications in Industrial Control',
-    authors: ['Ali Akbar Jalali', 'Ahmad Rezaei', 'Fateme Karimi'],
-    year: 2022,
-    conference: 'IEEE Conference on Industrial Electronics',
+    id: 'j-4',
+    title: 'Optimal reduced-order control for nonstandard singularly perturbed systems',
+    type: 'journal',
+    journal: 'IEEE Transactions on Automatic Control',
+    year: 2010,
+    description: 'Optimal control design methodology for complex singularly perturbed systems using reduced-order techniques.',
+    category: 'Control Systems',
+    url: 'https://ieeexplore.ieee.org/document/5409087',
+    authors: ['Ali Akbar Jalali', 'Parviz Famouri'],
+    citations: 41,
+    impact_factor: 4.8
+  },
+  {
+    id: 'j-5',
+    title: 'Stability of Reduced-Order Adaptive Control Systems',
+    type: 'journal',
+    journal: 'IEEE Transactions on Automatic Control',
+    year: 2011,
+    description: 'Analysis of stability properties in adaptive control systems using reduced-order modeling approaches.',
+    category: 'Control Systems',
+    url: 'https://ieeexplore.ieee.org/document/5740998',
+    authors: ['Ali Akbar Jalali'],
+    citations: 36,
+    impact_factor: 4.8
+  },
+
+  // IoT and ICT Publications
+  {
+    id: 'j-6',
+    title: 'SDN-IoT Controller Placement: A Security-Based Approach',
+    type: 'journal',
+    journal: 'Journal of Information Security and Applications',
+    year: 2019,
+    description: 'Novel approach to IoT controller placement in software-defined networks with enhanced security considerations.',
+    category: 'Internet of Things',
+    url: 'https://www.sciencedirect.com/science/article/pii/S2214212619301213',
+    authors: ['Ali Akbar Jalali', 'Mohammad Reza Ahmadi'],
+    citations: 28,
+    impact_factor: 3.2
+  },
+  {
+    id: 'j-7',
+    title: 'Fog computing applications in smart cities: A systematic survey',
+    type: 'journal',
+    journal: 'Wireless Networks',
+    year: 2020,
+    description: 'Comprehensive survey of fog computing applications and their integration in smart city infrastructures.',
+    category: 'Internet of Things',
+    url: 'https://link.springer.com/article/10.1007/s11276-019-02208-y',
+    authors: ['Ali Akbar Jalali', 'Sara Hosseini', 'Reza Sharifian'],
+    citations: 35,
+    impact_factor: 2.8
+  },
+  {
+    id: 'j-8',
+    title: 'Resource allocation and task offloading for multi-access edge computing by deep reinforcement learning based on SDN',
+    type: 'journal',
+    journal: 'IEEE Access',
+    year: 2021,
+    description: 'Advanced resource allocation strategies for edge computing using deep reinforcement learning and SDN.',
+    category: 'Internet of Things',
+    url: 'https://ieeexplore.ieee.org/document/9420168',
+    authors: ['Ali Akbar Jalali', 'Ahmad Rezaei'],
+    citations: 22,
+    impact_factor: 3.9
+  },
+
+  // Conference Papers
+  {
+    id: 'c-1',
+    title: 'Low-Order L1 Optimal Control Design via LMI',
     type: 'conference',
-    abstract: 'Exploring the integration of machine learning techniques in industrial control systems for improved performance and predictive maintenance.',
-    keywords: ['Machine Learning', 'Industrial Control', 'Predictive Maintenance', 'AI']
+    conference: 'IEEE International Symposium on Intelligent Signal Processing',
+    year: 2007,
+    description: 'Linear matrix inequality approach to low-order L1 optimal control system design.',
+    category: 'Control Systems',
+    url: 'https://ieeexplore.ieee.org/document/4447104',
+    authors: ['Ali Akbar Jalali', 'Craig Sims']
+  },
+  {
+    id: 'c-2',
+    title: 'Challenges to E-learning in higher learning institutions in Iran',
+    type: 'conference',
+    conference: '4th National and 1st International Conference on E-Learning',
+    year: 2009,
+    description: 'Analysis of barriers and solutions for e-learning implementation in Iranian higher education.',
+    category: 'Educational Technology',
+    authors: ['Ali Akbar Jalali', 'Hassan Mokhtari']
+  },
+  {
+    id: 'c-3',
+    title: 'Analysis of Irancell\'s marketing strategies using system dynamics',
+    type: 'conference',
+    conference: '6th International Conference on ICT Management',
+    year: 2009,
+    description: 'System dynamics modeling applied to telecommunications marketing strategy analysis.',
+    category: 'ICT Management',
+    authors: ['Ali Akbar Jalali', 'Mohammad Reza Ahmadi']
+  },
+  {
+    id: 'c-4',
+    title: 'Enhancing patient capabilities through e-learning in hospitals',
+    type: 'conference',
+    conference: '6th International Conference on ICT Management',
+    year: 2009,
+    description: 'Implementation of e-learning systems in healthcare environments for patient education.',
+    category: 'Healthcare ICT',
+    authors: ['Ali Akbar Jalali', 'Maryam Hosseini']
+  },
+  {
+    id: 'c-5',
+    title: 'Quality evaluation of government organization websites: Mazandaran Province case study',
+    type: 'conference',
+    conference: '6th International Conference on ICT Management',
+    year: 2009,
+    description: 'Assessment methodology for government website quality with practical case study implementation.',
+    category: 'Government ICT',
+    authors: ['Ali Akbar Jalali', 'Reza Sharifian']
+  },
+  {
+    id: 'c-6',
+    title: 'Knowledge Management 2: Linking Knowledge Management 1 and Web 2',
+    type: 'conference',
+    conference: '6th International Conference on ICT Management',
+    year: 2009,
+    description: 'Integration of traditional knowledge management systems with Web 2.0 technologies.',
+    category: 'Knowledge Management',
+    authors: ['Ali Akbar Jalali']
+  },
+  {
+    id: 'c-7',
+    title: 'Nonlinear predictive control stabilizer for continuous-time systems and its numerical solution',
+    type: 'conference',
+    conference: '2nd National Conference on Electrical Engineering',
+    year: 2009,
+    description: 'Advanced nonlinear predictive control algorithm with numerical implementation for continuous-time systems.',
+    category: 'Control Systems',
+    authors: ['Ali Akbar Jalali', 'Parviz Famouri']
+  },
+  {
+    id: 'c-8',
+    title: 'Optimal 2-DOF Fractional l μ PI D controllers for Time Delay Systems Based on Genetic Algorithm',
+    type: 'conference',
+    conference: '2nd National Conference on Electrical Engineering',
+    year: 2009,
+    description: 'Genetic algorithm optimization of fractional PID controllers for time-delay systems.',
+    category: 'Control Systems',
+    authors: ['Ali Akbar Jalali', 'Ahmad Rezaei']
+  },
+
+  // Theses
+  {
+    id: 'thesis-1',
+    title: 'Filtering, Smoothing and Deconvolution in a Discrete H-infinity Setting; A Game Theory Approach',
+    type: 'thesis',
+    publisher: 'West Virginia University',
+    year: 1993,
+    description: 'Doctoral research on advanced filtering techniques using game theory approach in H-infinity framework.',
+    category: 'Control Theory',
+    authors: ['Ali Akbar Jalali']
+  },
+  {
+    id: 'thesis-2',
+    title: 'An Algorithm For Signal Flow Graph Representation of Digital Filters',
+    type: 'thesis',
+    publisher: 'University of Oklahoma',
+    year: 1988,
+    description: 'Master\'s thesis developing algorithms for signal flow graph representation in digital filter design.',
+    category: 'Digital Signal Processing',
+    authors: ['Ali Akbar Jalali']
   }
 ];
 
 const PublicationsDatabase = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedYear, setSelectedYear] = useState<string>('all');
   const [sortBy, setSortBy] = useState<'year' | 'citations' | 'title'>('year');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
-  const publicationTypes = ['all', 'journal', 'conference', 'book', 'chapter', 'patent', 'thesis'];
+  const publicationTypes = ['all', 'journal', 'conference', 'book', 'translated', 'thesis'];
+  const categories = ['all', ...Array.from(new Set(publications.map(p => p.category))).sort()];
   const years = ['all', ...Array.from(new Set(publications.map(p => p.year))).sort((a, b) => b - a)];
 
   const filteredAndSortedPublications = useMemo(() => {
     let filtered = publications.filter(pub => {
       const matchesSearch = searchTerm === '' || 
         pub.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        pub.authors.some(author => author.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        pub.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        pub.abstract.toLowerCase().includes(searchTerm.toLowerCase());
+        (pub.authors && pub.authors.some(author => author.toLowerCase().includes(searchTerm.toLowerCase()))) ||
+        (pub.keywords && pub.keywords.some(keyword => keyword.toLowerCase().includes(searchTerm.toLowerCase()))) ||
+        (pub.description && pub.description.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (pub.publisher && pub.publisher.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (pub.journal && pub.journal.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (pub.conference && pub.conference.toLowerCase().includes(searchTerm.toLowerCase()));
       
       const matchesType = selectedType === 'all' || pub.type === selectedType;
+      const matchesCategory = selectedCategory === 'all' || pub.category === selectedCategory;
       const matchesYear = selectedYear === 'all' || pub.year.toString() === selectedYear;
       
-      return matchesSearch && matchesType && matchesYear;
+      return matchesSearch && matchesType && matchesCategory && matchesYear;
     });
 
     filtered.sort((a, b) => {
@@ -129,42 +372,71 @@ const PublicationsDatabase = () => {
     });
 
     return filtered;
-  }, [searchTerm, selectedType, selectedYear, sortBy, sortOrder]);
+  }, [searchTerm, selectedType, selectedCategory, selectedYear, sortBy, sortOrder]);
 
   const getTypeColor = (type: string) => {
     const colors = {
-      journal: 'bg-blue-100 text-blue-800',
-      conference: 'bg-green-100 text-green-800',
-      book: 'bg-purple-100 text-purple-800',
-      chapter: 'bg-orange-100 text-orange-800',
-      patent: 'bg-red-100 text-red-800',
-      thesis: 'bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-300'
+      journal: 'bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200',
+      conference: 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200',
+      book: 'bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200',
+      translated: 'bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200',
+      thesis: 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200',
+      chapter: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200'
     };
     return colors[type as keyof typeof colors] || 'bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-300';
   };
 
+  const getTypeLabel = (type: string) => {
+    const labels = {
+      journal: 'Journal Article',
+      conference: 'Conference Paper',
+      book: 'Book',
+      translated: 'Translated Book',
+      thesis: 'Thesis',
+      chapter: 'Book Chapter'
+    };
+    return labels[type as keyof typeof labels] || type;
+  };
+
+  const getLinkLabel = (url: string) => {
+    if (!url) return 'View Publication';
+    if (url.includes('amazon')) return 'View on Amazon';
+    if (url.includes('scholar.google')) return 'Search on Google Scholar';
+    if (url.includes('ieee')) return 'View on IEEE Xplore';
+    if (url.includes('springer')) return 'View on Springer';
+    if (url.includes('sciencedirect')) return 'View on ScienceDirect';
+    if (url.includes('tandfonline')) return 'View on Taylor & Francis';
+    return 'View Publication';
+  };
+
+  // Calculate statistics
+  const totalCitations = publications.reduce((sum, pub) => sum + (pub.citations || 0), 0);
+  const journalCount = publications.filter(pub => pub.type === 'journal').length;
+  const conferenceCount = publications.filter(pub => pub.type === 'conference').length;
+  const bookCount = publications.filter(pub => pub.type === 'book' || pub.type === 'translated').length;
+
   return (
-    <section id="publications" className="py-16 bg-gray-50 dark:bg-neutral-900">
+    <section id="publications" className="py-20 bg-white dark:bg-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-neutral-100 mb-4">Publications</h2>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4">Publications</h2>
           <p className="text-lg text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto">
-            Comprehensive collection of research publications, papers, and contributions to the field of electrical engineering and information technology.
+            Comprehensive collection of research publications, papers, and contributions spanning over 30 years in electrical engineering, control systems, and information technology.
           </p>
         </div>
 
         {/* Search and Filter Controls */}
-        <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-sm p-6 mb-8">
+        <div className="bg-gray-50 dark:bg-neutral-800 rounded-lg shadow-sm p-6 mb-8 border border-gray-200 dark:border-neutral-700">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {/* Search */}
             <div className="lg:col-span-2 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
-                placeholder="Search publications..."
+                placeholder="Search publications by title, author, or keyword..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
               />
             </div>
 
@@ -173,27 +445,27 @@ const PublicationsDatabase = () => {
               <select
                 value={selectedType}
                 onChange={(e) => setSelectedType(e.target.value)}
-                className="w-full p-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full p-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
               >
-                {publicationTypes.map(type => (
-                  <option key={type} value={type}>
-                    {type === 'all' ? 'All Types' : type.charAt(0).toUpperCase() + type.slice(1)}
-                  </option>
-                ))}
+                <option value="all">All Types</option>
+                <option value="journal">Journal Articles</option>
+                <option value="conference">Conference Papers</option>
+                <option value="book">Books</option>
+                <option value="translated">Translated Books</option>
+                <option value="thesis">Theses</option>
               </select>
             </div>
 
-            {/* Year Filter */}
+            {/* Category Filter */}
             <div>
               <select
-                value={selectedYear}
-                onChange={(e) => setSelectedYear(e.target.value)}
-                className="w-full p-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full p-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
               >
-                {years.map(year => (
-                  <option key={year} value={year}>
-                    {year === 'all' ? 'All Years' : year}
-                  </option>
+                <option value="all">All Categories</option>
+                {categories.slice(1).map(category => (
+                  <option key={category} value={category}>{category}</option>
                 ))}
               </select>
             </div>
@@ -207,7 +479,7 @@ const PublicationsDatabase = () => {
                   setSortBy(sort as 'year' | 'citations' | 'title');
                   setSortOrder(order as 'asc' | 'desc');
                 }}
-                className="w-full p-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full p-2 border border-gray-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 text-gray-900 dark:text-neutral-100 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200"
               >
                 <option value="year-desc">Year (Newest)</option>
                 <option value="year-asc">Year (Oldest)</option>
@@ -218,36 +490,33 @@ const PublicationsDatabase = () => {
               </select>
             </div>
           </div>
-        </div>
 
-        {/* Results Count */}
-        <div className="mb-6">
-          <p className="text-gray-600">
+          {/* Results Info */}
+          <div className="mt-4 text-sm text-gray-600 dark:text-neutral-400">
             Showing {filteredAndSortedPublications.length} of {publications.length} publications
-          </p>
+            {searchTerm && ` matching "${searchTerm}"`}
+            {selectedType !== 'all' && ` in ${getTypeLabel(selectedType)}`}
+            {selectedCategory !== 'all' && ` in ${selectedCategory}`}
+          </div>
         </div>
 
         {/* Publications List */}
         <div className="space-y-6">
           {filteredAndSortedPublications.map((publication) => (
-            <div key={publication.id} className="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-200 dark:border-neutral-700 p-6 hover:shadow-md transition-shadow">
+            <div key={publication.id} className="bg-white dark:bg-neutral-800 rounded-lg shadow-md border border-gray-200 dark:border-neutral-700 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                 <div className="flex-1">
                   <div className="flex items-start gap-3 mb-3">
-                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getTypeColor(publication.type)}`}>
-                      {publication.type}
+                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${getTypeColor(publication.type)}`}>
+                      {getTypeLabel(publication.type)}
                     </span>
                     <div className="flex items-center text-sm text-gray-500 dark:text-neutral-500 gap-4">
                       <span className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
                         {publication.year}
                       </span>
-                      <span className="flex items-center gap-1">
-                        <Users className="w-4 h-4" />
-                        {publication.authors.length} author{publication.authors.length > 1 ? 's' : ''}
-                      </span>
                       {publication.citations && (
-                        <span className="text-blue-600 font-medium">
+                        <span className="text-primary-600 dark:text-primary-400 font-medium">
                           {publication.citations} citations
                         </span>
                       )}
@@ -258,15 +527,17 @@ const PublicationsDatabase = () => {
                     {publication.title}
                   </h3>
 
-                  <p className="text-gray-700 dark:text-neutral-300 mb-2">
-                    <strong>Authors:</strong> {publication.authors.join(', ')}
-                  </p>
+                  {publication.authors && publication.authors.length > 0 && (
+                    <p className="text-gray-700 dark:text-neutral-300 mb-2">
+                      <strong>Authors:</strong> {publication.authors.join(', ')}
+                    </p>
+                  )}
 
                   {publication.journal && (
                     <p className="text-gray-700 dark:text-neutral-300 mb-2">
                       <strong>Journal:</strong> {publication.journal}
                       {publication.impact_factor && (
-                        <span className="text-blue-600 ml-2">(IF: {publication.impact_factor})</span>
+                        <span className="text-primary-600 dark:text-primary-400 ml-2">(IF: {publication.impact_factor})</span>
                       )}
                     </p>
                   )}
@@ -277,19 +548,22 @@ const PublicationsDatabase = () => {
                     </p>
                   )}
 
-                  <p className="text-gray-600 mb-3 leading-relaxed">
-                    {publication.abstract}
-                  </p>
+                  {publication.publisher && (
+                    <p className="text-gray-700 dark:text-neutral-300 mb-2">
+                      <strong>Publisher:</strong> {publication.publisher}
+                    </p>
+                  )}
 
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {publication.keywords.map((keyword, index) => (
-                      <span
-                        key={index}
-                        className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-300"
-                      >
-                        {keyword}
-                      </span>
-                    ))}
+                  {publication.description && (
+                    <p className="text-gray-600 dark:text-neutral-400 mb-3 leading-relaxed">
+                      {publication.description}
+                    </p>
+                  )}
+
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center px-3 py-1 rounded-lg text-xs font-medium bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 border border-secondary-200 dark:border-secondary-700">
+                      {publication.category}
+                    </span>
                   </div>
                 </div>
 
@@ -299,7 +573,7 @@ const PublicationsDatabase = () => {
                       href={`https://doi.org/${publication.doi}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
                     >
                       <ExternalLink className="w-4 h-4" />
                       View DOI
@@ -310,16 +584,12 @@ const PublicationsDatabase = () => {
                       href={publication.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-sm"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
                     >
                       <ExternalLink className="w-4 h-4" />
-                      Full Text
+                      {getLinkLabel(publication.url)}
                     </a>
                   )}
-                  <button className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm">
-                    <Download className="w-4 h-4" />
-                    Download
-                  </button>
                 </div>
               </div>
             </div>
@@ -328,37 +598,54 @@ const PublicationsDatabase = () => {
 
         {filteredAndSortedPublications.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 dark:text-neutral-400 text-lg">No publications found matching your criteria.</p>
+            <div className="text-gray-500 dark:text-neutral-400 mb-4">
+              <svg className="mx-auto h-12 w-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33.04-.66.14-1.32.3-1.96.46-1.83 1.32-3.49 2.46-4.76A7.962 7.962 0 0112 5c2.34 0 4.47.881 6.08 2.33A7.963 7.963 0 0120 12a7.96 7.96 0 01-.92 3.709zM16 17.5c0 .83-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5v-1c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5v1z" />
+              </svg>
+              <p className="text-lg font-medium">No publications found</p>
+              <p className="text-sm">Try adjusting your search terms or filters</p>
+            </div>
+            <button
+              onClick={() => {
+                setSearchTerm('');
+                setSelectedType('all');
+                setSelectedCategory('all');
+                setSelectedYear('all');
+              }}
+              className="inline-flex items-center px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200"
+            >
+              Clear All Filters
+            </button>
           </div>
         )}
 
         {/* Statistics */}
-        <div className="mt-12 bg-white dark:bg-neutral-800 rounded-lg shadow-sm p-6">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-neutral-100 mb-4">Publication Statistics</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="mt-12 bg-primary-50 dark:bg-primary-900/20 rounded-lg shadow-sm p-8 border border-primary-100 dark:border-primary-800">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Publication Statistics</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600">{publications.length}</div>
+              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">{publications.length}</div>
               <div className="text-sm text-gray-600 dark:text-neutral-400">Total Publications</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-600">
-                {publications.reduce((sum, pub) => sum + (pub.citations || 0), 0)}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-neutral-400">Total Citations</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600">
-                {publications.filter(pub => pub.type === 'journal').length}
-              </div>
+              <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">{journalCount}</div>
               <div className="text-sm text-gray-600 dark:text-neutral-400">Journal Articles</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-orange-600">
-                {publications.filter(pub => pub.type === 'conference').length}
-              </div>
+              <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">{conferenceCount}</div>
               <div className="text-sm text-gray-600 dark:text-neutral-400">Conference Papers</div>
             </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">{bookCount}</div>
+              <div className="text-sm text-gray-600 dark:text-neutral-400">Books & Translations</div>
+            </div>
           </div>
+          {totalCitations > 0 && (
+            <div className="mt-6 text-center">
+              <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">{totalCitations}+</div>
+              <div className="text-sm text-gray-600 dark:text-neutral-400">Total Citations</div>
+            </div>
+          )}
         </div>
       </div>
     </section>
