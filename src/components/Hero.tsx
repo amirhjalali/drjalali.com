@@ -63,14 +63,25 @@ export default function Hero() {
               </p>
               
               <div className="flex flex-wrap gap-3 pt-2">
-                {['IoT Expert', 'Control Systems', '300+ Publications', '30+ Years Experience'].map((tag, index) => (
-                  <span 
-                    key={tag}
-                    className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/50 text-primary-800 dark:text-primary-200 border border-primary-200 dark:border-primary-700 transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+                {[
+                  { text: 'IoT Expert', scrollTo: 'research' },
+                  { text: 'Control Systems', scrollTo: 'research' },
+                  { text: '300+ Publications', scrollTo: 'publications' },
+                  { text: '30+ Years Experience', scrollTo: 'academic' }
+                ].map((tag, index) => (
+                  <button 
+                    key={tag.text}
+                    onClick={() => {
+                      const element = document.getElementById(tag.scrollTo);
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
+                    className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/50 text-primary-800 dark:text-primary-200 border border-primary-200 dark:border-primary-700 transform transition-all duration-500 hover:bg-primary-200 dark:hover:bg-primary-800/50 cursor-pointer ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                     style={{ transitionDelay: `${200 + index * 100}ms` }}
                   >
-                    {tag}
-                  </span>
+                    {tag.text}
+                  </button>
                 ))}
               </div>
             </div>
@@ -230,14 +241,25 @@ export default function Hero() {
             </p>
             
             <div className="flex flex-wrap justify-center gap-3 px-4">
-              {['IoT Expert', 'Control Systems', '300+ Publications', '30+ Years Experience'].map((tag, index) => (
-                <span 
-                  key={tag}
-                  className={`inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/50 text-primary-800 dark:text-primary-200 border border-primary-200 dark:border-primary-700 transform transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
+              {[
+                { text: 'IoT Expert', scrollTo: 'research' },
+                { text: 'Control Systems', scrollTo: 'research' },
+                { text: '300+ Publications', scrollTo: 'publications' },
+                { text: '30+ Years Experience', scrollTo: 'career' }
+              ].map((tag, index) => (
+                <button 
+                  key={tag.text}
+                  onClick={() => {
+                    const element = document.getElementById(tag.scrollTo);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className={`inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/50 text-primary-800 dark:text-primary-200 border border-primary-200 dark:border-primary-700 transform transition-all duration-500 hover:bg-primary-200 dark:hover:bg-primary-800/50 cursor-pointer ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                   style={{ transitionDelay: `${400 + index * 100}ms` }}
                 >
-                  {tag}
-                </span>
+                  {tag.text}
+                </button>
               ))}
             </div>
           </div>
