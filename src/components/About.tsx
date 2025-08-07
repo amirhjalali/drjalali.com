@@ -10,7 +10,7 @@ export default function About() {
         <SlideUp>
           <SectionAnchor
             title="About Dr. Jalali"
-            subtitle="A distinguished academic and technology pioneer who has shaped Iran's digital landscape"
+            subtitle="A distinguished academic and technology pioneer shaping Iran's digital transformation"
           />
         </SlideUp>
 
