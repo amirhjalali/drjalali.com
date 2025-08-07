@@ -326,6 +326,9 @@ const PublicationsDatabase = () => {
 
   // Check URL hash for filter parameters on mount
   React.useEffect(() => {
+    // Only run in browser environment
+    if (typeof window === 'undefined') return;
+    
     const handleHashChange = () => {
       const hash = window.location.hash.substring(1); // Remove #
       if (hash.includes('publications-')) {
