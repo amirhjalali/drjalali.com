@@ -87,6 +87,8 @@ export default function Research() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <button
               onClick={() => {
+                // Set hash to trigger journal filter
+                window.location.hash = 'publications-journals';
                 const element = document.getElementById('publications');
                 if (element) {
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -99,6 +101,8 @@ export default function Research() {
             </button>
             <button
               onClick={() => {
+                // Set hash to trigger book filter
+                window.location.hash = 'publications-books';
                 const element = document.getElementById('publications');
                 if (element) {
                   element.scrollIntoView({ behavior: 'smooth', block: 'start' });

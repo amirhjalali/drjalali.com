@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Search, Filter, ExternalLink, Download, Calendar, Users, BookOpen, FileText, GraduationCap } from 'lucide-react';
 
 interface Publication {
@@ -321,6 +321,37 @@ const PublicationsDatabase = () => {
   const [selectedYear, setSelectedYear] = useState<string>('all');
   const [sortBy, setSortBy] = useState<'year' | 'citations' | 'title'>('year');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+
+  // Check URL hash for filter parameters on mount
+  React.useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.substring(1); // Remove #
+      if (hash.includes('publications-')) {
+        const filterType = hash.replace('publications-', '');
+        if (filterType === 'books') {
+          setSelectedType('book');
+        } else if (filterType === 'journals') {
+          setSelectedType('journal');
+        } else if (filterType === 'papers') {
+          setSelectedType('all');
+        }
+        // Scroll to publications section
+        setTimeout(() => {
+          const element = document.getElementById('publications');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      }
+    };
+
+    // Check on mount
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const publicationTypes = ['all', 'journal', 'conference', 'book', 'translated', 'thesis'];
   const categories = ['all', ...Array.from(new Set(publications.map(p => p.category))).sort()];
