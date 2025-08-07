@@ -321,6 +321,8 @@ const PublicationsDatabase = () => {
   const [selectedYear, setSelectedYear] = useState<string>('all');
   const [sortBy, setSortBy] = useState<'year' | 'citations' | 'title'>('year');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
   // Check URL hash for filter parameters on mount
   React.useEffect(() => {
@@ -356,6 +358,11 @@ const PublicationsDatabase = () => {
   const publicationTypes = ['all', 'journal', 'conference', 'book', 'translated', 'thesis'];
   const categories = ['all', ...Array.from(new Set(publications.map(p => p.category))).sort()];
   const years = ['all', ...Array.from(new Set(publications.map(p => p.year))).sort((a, b) => b - a)];
+
+  // Reset to first page when filters change
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedType, selectedCategory, selectedYear]);
 
   const filteredAndSortedPublications = useMemo(() => {
     let filtered = publications.filter(pub => {
@@ -439,6 +446,13 @@ const PublicationsDatabase = () => {
     if (url.includes('tandfonline')) return 'View on Taylor & Francis';
     return 'View Publication';
   };
+
+  // Paginate results
+  const totalPages = Math.ceil(filteredAndSortedPublications.length / itemsPerPage);
+  const paginatedPublications = filteredAndSortedPublications.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   // Calculate statistics
   const totalCitations = publications.reduce((sum, pub) => sum + (pub.citations || 0), 0);
@@ -533,7 +547,7 @@ const PublicationsDatabase = () => {
 
         {/* Publications List */}
         <div className="space-y-6">
-          {filteredAndSortedPublications.map((publication) => (
+          {paginatedPublications.map((publication) => (
             <div key={publication.id} className="bg-white dark:bg-neutral-800 rounded-lg shadow-md border border-gray-200 dark:border-neutral-700 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                 <div className="flex-1">
@@ -626,6 +640,56 @@ const PublicationsDatabase = () => {
             </div>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center space-x-2 mt-8">
+            <button
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className="px-3 py-2 text-sm bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 rounded-lg text-gray-700 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+            >
+              Previous
+            </button>
+            
+            <div className="flex space-x-1">
+              {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                let pageNum;
+                if (totalPages <= 5) {
+                  pageNum = i + 1;
+                } else if (currentPage <= 3) {
+                  pageNum = i + 1;
+                } else if (currentPage >= totalPages - 2) {
+                  pageNum = totalPages - 4 + i;
+                } else {
+                  pageNum = currentPage - 2 + i;
+                }
+                
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => setCurrentPage(pageNum)}
+                    className={`px-3 py-2 text-sm rounded-lg transition-colors duration-200 ${
+                      currentPage === pageNum
+                        ? 'bg-primary-600 text-white'
+                        : 'bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-700'
+                    }`}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+            </div>
+            
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className="px-3 py-2 text-sm bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 rounded-lg text-gray-700 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+            >
+              Next
+            </button>
+          </div>
+        )}
 
         {filteredAndSortedPublications.length === 0 && (
           <div className="text-center py-12">

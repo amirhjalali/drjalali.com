@@ -129,20 +129,20 @@ export default function AcademicCareer() {
         </div>
 
         {/* Academic Recognition */}
-        <div className="mt-16 bg-primary-50 p-8 rounded-lg">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Academic Recognition</h3>
+        <div className="mt-16 bg-primary-50 dark:bg-primary-900/20 p-8 rounded-lg border border-primary-100 dark:border-primary-800">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-6 text-center">Academic Recognition</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">30+</div>
-              <p className="text-gray-700">Years of Academic Service</p>
+              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">30+</div>
+              <p className="text-gray-700 dark:text-neutral-300">Years of Academic Service</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">300+</div>
-              <p className="text-gray-700">Published Papers</p>
+              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">300+</div>
+              <p className="text-gray-700 dark:text-neutral-300">Published Papers</p>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">50+</div>
-              <p className="text-gray-700">Books & Chapters</p>
+              <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">50+</div>
+              <p className="text-gray-700 dark:text-neutral-300">Books & Chapters</p>
             </div>
           </div>
         </div>
