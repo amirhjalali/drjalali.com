@@ -38,7 +38,7 @@ const JsonLd = () => {
       'https://ieeexplore.ieee.org/author/37087654321',
       'https://en.wikipedia.org/wiki/Ali_Akbar_Jalali'
     ],
-    image: 'https://drjalali.com/images/dr-jalali-profile.jpg',
+    image: 'https://drjalali.com/images/professional/dr-jalali-professional.png',
     description: 'Professor at Iran University of Science and Technology, known as the Father of Information Technology in Iran. Expert in IoT, Control Systems, and ICT.',
     birthDate: '1954-03-21',
     nationality: 'Iranian',

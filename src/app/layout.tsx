@@ -1,7 +1,20 @@
 import type { Metadata } from 'next'
+import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Analytics from '@/components/Analytics'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const playfair = Playfair_Display({ 
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Dr. Ali Akbar Jalali - Professor of Electrical Engineering',
@@ -32,7 +45,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/dr-jalali-profile.jpg',
+        url: '/images/professional/dr-jalali-professional.png',
         width: 1200,
         height: 630,
         alt: 'Dr. Ali Akbar Jalali - Professor of Electrical Engineering',
@@ -43,11 +56,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dr. Ali Akbar Jalali',
     description: 'Professor and Father of Information Technology in Iran',
-    images: ['/images/dr-jalali-profile.jpg'],
+    images: ['/images/professional/dr-jalali-professional.png'],
   },
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || 'your-google-verification-code',
-  },
+  // Add Google verification when available
+  // verification: {
+  //   google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+  // },
 }
 
 export const viewport = {
@@ -62,7 +76,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen bg-white dark:bg-neutral-900 text-gray-900 dark:text-neutral-100 antialiased transition-colors duration-300">
+      <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-white dark:bg-neutral-900 text-gray-900 dark:text-neutral-100 antialiased transition-colors duration-300`}>
         <ThemeProvider>
           {children}
           <Analytics />

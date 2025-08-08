@@ -609,7 +609,7 @@ const PublicationsDatabase = () => {
                   )}
 
                   <div className="flex items-center gap-2">
-                    <span className="inline-flex items-center px-3 py-1 rounded-lg text-xs font-medium bg-secondary-100 dark:bg-secondary-900/30 text-secondary-700 dark:text-secondary-300 border border-secondary-200 dark:border-secondary-700">
+                    <span className="inline-flex items-center px-3 py-1 rounded-lg text-xs font-medium bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 border border-accent-200 dark:border-accent-700">
                       {publication.category}
                     </span>
                   </div>

@@ -36,7 +36,7 @@ export default function ScrollProgress({
     <>
       {/* Progress bar */}
       <div 
-        className={`fixed top-0 left-0 z-50 transition-all duration-150 ease-out ${className}`}
+        className={`fixed top-0 left-0 z-40 transition-all duration-150 ease-out ${className}`}
         style={{ height: `${height}px` }}
       >
         <div
@@ -50,7 +50,7 @@ export default function ScrollProgress({
 
       {/* Optional percentage indicator */}
       {showPercentage && (
-        <div className="fixed top-4 right-4 z-50 bg-white dark:bg-neutral-800 rounded-full px-3 py-1 shadow-lg border border-gray-200 dark:border-neutral-700">
+        <div className="fixed top-4 right-4 z-40 bg-white dark:bg-neutral-800 rounded-full px-3 py-1 shadow-lg border border-gray-200 dark:border-neutral-700">
           <span className="text-sm font-medium text-gray-700 dark:text-neutral-300">
             {Math.round(scrollProgress)}%
           </span>

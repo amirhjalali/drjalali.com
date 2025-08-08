@@ -86,9 +86,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
-        display: ['Playfair Display', 'serif'],
+        sans: ['var(--font-inter)', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'serif'],
+        display: ['var(--font-playfair)', 'serif'],
       },
     },
   },
