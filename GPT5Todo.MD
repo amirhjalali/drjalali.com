@@ -2,26 +2,38 @@
 
 A prioritized checklist focused on fixing root causes first.
 
+**Status Summary (Dec 10, 2025):**
+- ✅ **Completed:** 8 high-priority tasks completed
+  - SEO image paths configured
+  - Sitemap fixed to only include real routes
+  - Tailwind secondary palette issues resolved
+  - Heavy unused dependencies removed
+  - Fonts migrated to next/font
+  - Z-index layering fixed
+  - Single CNAME source established
+  - Unused imports cleaned
+- ⏳ **Remaining:** Performance optimizations, contact form improvements, and data extraction tasks
+
 ### High priority (root-cause fixes)
-- [ ] SEO image paths: use an existing asset or add a proper OG image
+- [x] SEO image paths: use an existing asset or add a proper OG image
   - Update OpenGraph/Twitter images in `src/app/layout.tsx` to an existing file (e.g., `/images/professional/dr-jalali-professional.png`) or add a 1200×630 JPG at `public/images/`.
   - Align `image` in `src/components/JsonLd.tsx` to the same finalized URL.
 
-- [ ] Sitemap lists non-existent routes
+- [x] Sitemap lists non-existent routes
   - `src/app/sitemap.ts` currently lists `/publications`, `/research`, etc., but these are sections on the home page. Keep only `/` unless we add real routes.
 
-- [ ] Tailwind “secondary” palette usage mismatch
+- [x] Tailwind "secondary" palette usage mismatch
   - Option A: add a `secondary` color palette in `tailwind.config.js`.
   - Option B: replace `bg-secondary-*` usages in `src/components/PublicationsDatabase.tsx` with `accent` (recommended for speed).
 
-- [ ] Remove or move heavy unused dependencies
+- [x] Remove or move heavy unused dependencies
   - Audit and remove/move: `playwright`, `puppeteer`, `task-master-ai`, `next-optimized-images`.
   - If truly needed for tooling, move to `devDependencies`; otherwise uninstall. Remove `next-optimized-images.config.js` if unused.
   - Suggested commands:
     - Remove: `npm uninstall playwright puppeteer task-master-ai next-optimized-images`
     - OR move: `npm i -D playwright puppeteer task-master-ai` and then remove from `dependencies`.
 
-- [ ] Fonts: migrate to `next/font` and remove CSS imports
+- [x] Fonts: migrate to `next/font` and remove CSS imports
   - Replace Google Fonts `@import` lines in `src/app/globals.css` with `next/font/google` in `src/app/layout.tsx` for Inter and Playfair Display to improve CLS/LCP.
 
 - [ ] Replace placeholders/secrets before shipping
@@ -30,10 +42,10 @@ A prioritized checklist focused on fixing root causes first.
   - `JsonLd`: replace Google Scholar ID and verify `sameAs` URLs.
   - `ContactForm`: set real Google Forms `formResponse` URL and `entry.*` IDs.
 
-- [ ] Z-index layering
+- [x] Z-index layering
   - Avoid overlap between `Navigation` and `ScrollProgress`. Set `ScrollProgress` container to a lower z-index (e.g., `z-40`) while keeping navbar at `z-50`.
 
-- [ ] Single source of truth for `CNAME`
+- [x] Single source of truth for `CNAME`
   - Keep only one `CNAME` that ends up in `out/CNAME` after `next build`. Prefer placing it under `public/` and remove the duplicate.
 
 ### Performance and UX
@@ -58,7 +70,7 @@ A prioritized checklist focused on fixing root causes first.
   - Verify `CNAME` is present in `out/` after build.
 
 ### Code hygiene
-- [ ] Remove unused import in `src/components/Hero.tsx` (`next/image`).
+- [x] Remove unused import in `src/components/Hero.tsx` (`next/image`).
 - [ ] Consider replacing scroll-to `button`s with anchor links where semantically appropriate for in-page navigation.
 
 ### Data management
