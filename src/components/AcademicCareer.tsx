@@ -1,19 +1,6 @@
 export default function AcademicCareer() {
   const positions = [
     {
-      title: "Professor",
-      institution: "Iran University of Science and Technology (IUST)",
-      period: "1994 - Present",
-      location: "Tehran, Iran",
-      description: "Professor at the School of Electrical Engineering, specializing in Control Systems, Internet of Things, and Information Technology. Director of Control Group at the College of Electrical Engineering since 2016.",
-      achievements: [
-        "Led research teams in ICT, IoT, 3D Printers and Control Systems",
-        "Supervised numerous Ph.D., M.S. and B.S. students",
-        "Published 300+ journal papers and conference papers",
-        "Authored 50+ books and book chapters"
-      ]
-    },
-    {
       title: "Adjunct Professor",
       institution: "University of Maryland Baltimore County",
       period: "2017 - Present",
@@ -44,6 +31,19 @@ export default function AcademicCareer() {
       achievements: [
         "International research collaboration",
         "Knowledge transfer in cutting-edge technologies"
+      ]
+    },
+    {
+      title: "Professor",
+      institution: "Iran University of Science and Technology (IUST)",
+      period: "1994 - Present",
+      location: "Tehran, Iran",
+      description: "Professor at the School of Electrical Engineering, specializing in Control Systems, Internet of Things, and Information Technology. Director of Control Group at the College of Electrical Engineering since 2016.",
+      achievements: [
+        "Led research teams in ICT, IoT, 3D Printers and Control Systems",
+        "Supervised numerous Ph.D., M.S. and B.S. students",
+        "Published 300+ journal papers and conference papers",
+        "Authored 50+ books and book chapters"
       ]
     }
   ]
