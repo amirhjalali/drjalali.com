@@ -64,20 +64,20 @@ export default function AcademicCareer() {
   ]
 
   return (
-    <section id="academic" className="py-20 bg-gray-50 dark:bg-neutral-900">
+    <section id="academic" className="py-24 md:py-28 bg-gray-50 dark:bg-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4 font-playfair">
             Academic Career
           </h2>
-          <p className="text-xl text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-neutral-400 max-w-prose mx-auto">
             Over 30 years of distinguished academic service and research excellence
           </p>
         </div>
 
         {/* Education Section */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Education</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center font-playfair">Education</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {education.map((edu, index) => (
               <div key={index} className="bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md border-l-4 border-primary-500">
@@ -91,7 +91,7 @@ export default function AcademicCareer() {
 
         {/* Academic Positions */}
         <div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Academic Positions</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center font-playfair">Academic Positions</h3>
           <div className="space-y-8">
             {positions.map((position, index) => (
               <div key={index} className="bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden">
@@ -107,7 +107,7 @@ export default function AcademicCareer() {
                     </div>
                   </div>
                   
-                  <p className="text-gray-700 dark:text-neutral-300 mb-4 leading-relaxed">{position.description}</p>
+                  <p className="text-gray-700 dark:text-neutral-200 mb-4 leading-relaxed max-w-prose">{position.description}</p>
                   
                   <div>
                     <h5 className="text-sm font-semibold text-gray-900 dark:text-neutral-100 mb-2 uppercase tracking-wide">
@@ -115,7 +115,7 @@ export default function AcademicCareer() {
                     </h5>
                     <ul className="space-y-1">
                       {position.achievements.map((achievement, achIndex) => (
-                        <li key={achIndex} className="flex items-start text-gray-600 dark:text-neutral-400">
+                        <li key={achIndex} className="flex items-start text-gray-600 dark:text-neutral-400 max-w-prose">
                           <span className="text-primary-500 mr-2 text-sm">•</span>
                           <span className="text-sm">{achievement}</span>
                         </li>
@@ -130,19 +130,19 @@ export default function AcademicCareer() {
 
         {/* Academic Recognition */}
         <div className="mt-16 bg-primary-50 dark:bg-primary-900/20 p-8 rounded-lg border border-primary-100 dark:border-primary-800">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-6 text-center">Academic Recognition</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-6 text-center font-playfair">Academic Recognition</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div>
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">30+</div>
-              <p className="text-gray-700 dark:text-neutral-300">Years of Academic Service</p>
+              <p className="text-gray-700 dark:text-neutral-200">Years of Academic Service</p>
             </div>
             <div>
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">300+</div>
-              <p className="text-gray-700 dark:text-neutral-300">Published Papers</p>
+              <p className="text-gray-700 dark:text-neutral-200">Published Papers</p>
             </div>
             <div>
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">50+</div>
-              <p className="text-gray-700 dark:text-neutral-300">Books & Chapters</p>
+              <p className="text-gray-700 dark:text-neutral-200">Books & Chapters</p>
             </div>
           </div>
         </div>

@@ -34,7 +34,7 @@ export default function Research() {
   ]
 
   return (
-    <section id="research" className="py-20 bg-white dark:bg-neutral-900 transition-colors duration-300">
+    <section id="research" className="py-24 md:py-28 bg-white dark:bg-neutral-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SlideUp>
           <SectionAnchor
@@ -46,7 +46,7 @@ export default function Research() {
         {/* Research Areas */}
         <div className="mb-20">
           <SlideUp>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Areas</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center font-playfair">Research Areas</h2>
           </SlideUp>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {researchAreas.map((area, index) => (
@@ -61,7 +61,7 @@ export default function Research() {
                   <span className="text-3xl mr-4 transform group-hover:scale-110 transition-transform duration-300">{area.icon}</span>
                   <h3 className="text-xl font-bold text-gray-900 dark:text-neutral-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">{area.title}</h3>
                 </div>
-                <p className="text-gray-700 dark:text-neutral-300 mb-4 leading-relaxed">{area.description}</p>
+                <p className="text-gray-700 dark:text-neutral-200 mb-4 leading-relaxed max-w-prose">{area.description}</p>
                 <div>
                   <p className="text-sm font-semibold text-gray-800 dark:text-neutral-200 mb-2">Key Technologies:</p>
                   <div className="flex flex-wrap gap-2">
@@ -83,7 +83,7 @@ export default function Research() {
 
         {/* Research Impact */}
         <div className="bg-primary-50 dark:bg-primary-900/20 p-8 rounded-lg border border-primary-100 dark:border-primary-800">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Impact & Expertise</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center font-playfair">Research Impact & Expertise</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <button
               onClick={() => {
@@ -97,7 +97,7 @@ export default function Research() {
               className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">300+</div>
-              <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Research Papers</p>
+              <p className="text-gray-700 dark:text-neutral-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Research Papers</p>
             </button>
             <button
               onClick={() => {
@@ -111,7 +111,7 @@ export default function Research() {
               className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
-              <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Books & Chapters</p>
+              <p className="text-gray-700 dark:text-neutral-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Books & Chapters</p>
             </button>
             <button
               onClick={() => {
@@ -123,7 +123,7 @@ export default function Research() {
               className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">30+</div>
-              <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Years of Research</p>
+              <p className="text-gray-700 dark:text-neutral-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Years of Research</p>
             </button>
             <button
               onClick={() => {
@@ -135,7 +135,7 @@ export default function Research() {
               className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">Pioneer</div>
-              <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">IT in Iran</p>
+              <p className="text-gray-700 dark:text-neutral-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">IT in Iran</p>
             </button>
           </div>
 
@@ -151,7 +151,7 @@ export default function Research() {
               className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">🌐</div>
-              <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">IoT Expert</p>
+              <p className="text-gray-700 dark:text-neutral-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">IoT Expert</p>
             </button>
             <button
               onClick={() => {
@@ -163,7 +163,7 @@ export default function Research() {
               className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">⚙️</div>
-              <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Control Systems</p>
+              <p className="text-gray-700 dark:text-neutral-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">Control Systems</p>
             </button>
             <button
               onClick={() => {
@@ -175,7 +175,7 @@ export default function Research() {
               className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">📡</div>
-              <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">ICT Development</p>
+              <p className="text-gray-700 dark:text-neutral-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">ICT Development</p>
             </button>
             <button
               onClick={() => {
@@ -187,12 +187,12 @@ export default function Research() {
               className="group bg-white dark:bg-neutral-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-neutral-700 block w-full text-center"
             >
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2 group-hover:scale-110 transition-transform duration-300">🖨️</div>
-              <p className="text-gray-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">3D Printing</p>
+              <p className="text-gray-700 dark:text-neutral-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">3D Printing</p>
             </button>
           </div>
           
           <div className="mt-8 text-center">
-            <p className="text-gray-700 dark:text-neutral-300 italic">
+            <p className="text-gray-700 dark:text-neutral-200 italic max-w-prose mx-auto">
               &ldquo;Recognized as the Father of Information Technology in Iran for pioneering work in internet infrastructure and digital transformation.&rdquo;
             </p>
           </div>

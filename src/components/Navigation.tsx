@@ -32,19 +32,19 @@ export default function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#about" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            <Link href="#about" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2">
               About
             </Link>
-            <Link href="#academic" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            <Link href="#academic" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2">
               Academic Career
             </Link>
-            <Link href="#research" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            <Link href="#research" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2">
               Research
             </Link>
-            <Link href="#publications" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            <Link href="#publications" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2">
               Publications
             </Link>
-            <Link href="#contact" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+            <Link href="#contact" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2">
               Contact
             </Link>
             <ThemeToggle />

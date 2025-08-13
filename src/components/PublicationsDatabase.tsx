@@ -424,7 +424,7 @@ const PublicationsDatabase = () => {
       thesis: 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200',
       chapter: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200'
     };
-    return colors[type as keyof typeof colors] || 'bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-300';
+    return colors[type as keyof typeof colors] || 'bg-gray-100 dark:bg-neutral-700 text-gray-800 dark:text-neutral-200';
   };
 
   const getTypeLabel = (type: string) => {
@@ -464,17 +464,17 @@ const PublicationsDatabase = () => {
   const bookCount = publications.filter(pub => pub.type === 'book' || pub.type === 'translated').length;
 
   return (
-    <section id="publications" className="py-20 bg-white dark:bg-neutral-900">
+    <section id="publications" className="py-24 md:py-28 bg-white dark:bg-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4">Publications</h2>
-          <p className="text-lg text-gray-600 dark:text-neutral-400 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4 font-playfair">Publications</h2>
+          <p className="text-lg text-gray-600 dark:text-neutral-400 max-w-prose mx-auto">
             Comprehensive collection of research publications, papers, and contributions spanning over 30 years in electrical engineering, control systems, and information technology.
           </p>
         </div>
 
         {/* Search and Filter Controls */}
-        <div className="bg-gray-50 dark:bg-neutral-800 rounded-lg shadow-sm p-6 mb-8 border border-gray-200 dark:border-neutral-700">
+        <div className="bg-gray-50 dark:bg-neutral-800 rounded-lg shadow-sm p-8 mb-8 border border-gray-100 dark:border-neutral-600">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {/* Search */}
             <div className="lg:col-span-2 relative">
@@ -551,7 +551,7 @@ const PublicationsDatabase = () => {
         {/* Publications List */}
         <div className="space-y-6">
           {paginatedPublications.map((publication) => (
-            <div key={publication.id} className="bg-white dark:bg-neutral-800 rounded-lg shadow-md border border-gray-200 dark:border-neutral-700 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div key={publication.id} className="bg-white dark:bg-neutral-800 rounded-lg shadow-sm border border-gray-100 dark:border-neutral-700 p-8 hover:shadow-lg transition-all duration-300">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                 <div className="flex-1">
                   <div className="flex items-start gap-3 mb-3">
@@ -576,13 +576,13 @@ const PublicationsDatabase = () => {
                   </h3>
 
                   {publication.authors && publication.authors.length > 0 && (
-                    <p className="text-gray-700 dark:text-neutral-300 mb-2">
+                    <p className="text-gray-700 dark:text-neutral-200 mb-2 max-w-prose">
                       <strong>Authors:</strong> {publication.authors.join(', ')}
                     </p>
                   )}
 
                   {publication.journal && (
-                    <p className="text-gray-700 dark:text-neutral-300 mb-2">
+                    <p className="text-gray-700 dark:text-neutral-200 mb-2 max-w-prose">
                       <strong>Journal:</strong> {publication.journal}
                       {publication.impact_factor && (
                         <span className="text-primary-600 dark:text-primary-400 ml-2">(IF: {publication.impact_factor})</span>
@@ -591,19 +591,19 @@ const PublicationsDatabase = () => {
                   )}
 
                   {publication.conference && (
-                    <p className="text-gray-700 dark:text-neutral-300 mb-2">
+                    <p className="text-gray-700 dark:text-neutral-200 mb-2 max-w-prose">
                       <strong>Conference:</strong> {publication.conference}
                     </p>
                   )}
 
                   {publication.publisher && (
-                    <p className="text-gray-700 dark:text-neutral-300 mb-2">
+                    <p className="text-gray-700 dark:text-neutral-200 mb-2 max-w-prose">
                       <strong>Publisher:</strong> {publication.publisher}
                     </p>
                   )}
 
                   {publication.description && (
-                    <p className="text-gray-600 dark:text-neutral-400 mb-3 leading-relaxed">
+                    <p className="text-gray-600 dark:text-neutral-400 mb-3 leading-relaxed max-w-prose">
                       {publication.description}
                     </p>
                   )}
@@ -650,7 +650,7 @@ const PublicationsDatabase = () => {
             <button
               onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
-              className="px-3 py-2 text-sm bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 rounded-lg text-gray-700 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+              className="px-3 py-2 text-sm bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 rounded-lg text-gray-700 dark:text-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
             >
               Previous
             </button>
@@ -675,7 +675,7 @@ const PublicationsDatabase = () => {
                     className={`px-3 py-2 text-sm rounded-lg transition-colors duration-200 ${
                       currentPage === pageNum
                         ? 'bg-primary-600 text-white'
-                        : 'bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-700'
+                        : 'bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 text-gray-700 dark:text-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-700'
                     }`}
                   >
                     {pageNum}
@@ -687,7 +687,7 @@ const PublicationsDatabase = () => {
             <button
               onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
               disabled={currentPage === totalPages}
-              className="px-3 py-2 text-sm bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 rounded-lg text-gray-700 dark:text-neutral-300 hover:bg-gray-50 dark:hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+              className="px-3 py-2 text-sm bg-white dark:bg-neutral-800 border border-gray-300 dark:border-neutral-600 rounded-lg text-gray-700 dark:text-neutral-200 hover:bg-gray-50 dark:hover:bg-neutral-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
             >
               Next
             </button>
@@ -719,7 +719,7 @@ const PublicationsDatabase = () => {
 
         {/* Statistics */}
         <div className="mt-12 bg-primary-50 dark:bg-primary-900/20 rounded-lg shadow-sm p-8 border border-primary-100 dark:border-primary-800">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Publication Statistics</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center font-playfair">Publication Statistics</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">{publications.length}</div>

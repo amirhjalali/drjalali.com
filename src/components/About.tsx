@@ -5,7 +5,7 @@ import { SectionAnchor, FlowIndicator } from './SectionDivider'
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-neutral-900 transition-colors duration-300">
+    <section id="about" className="py-24 md:py-28 bg-white dark:bg-neutral-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SlideUp>
           <SectionAnchor
@@ -29,7 +29,7 @@ export default function About() {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-2">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-2 font-playfair">
                     Biography
                   </h2>
                   <p className="text-primary-600 dark:text-primary-400 font-medium mb-2">
@@ -49,7 +49,7 @@ export default function About() {
                 </div>
               </div>
               
-              <div className="space-y-4 text-gray-700 dark:text-neutral-300 leading-relaxed">
+              <div className="space-y-4 text-gray-700 dark:text-neutral-200 leading-relaxed max-w-prose">
               <p>
                 Born on November 22, 1954, in Shahkooh, Shahroud, Iran, Dr. Ali Akbar Jalali 
                 has become one of the most influential figures in Iran&apos;s technological development. 
@@ -73,34 +73,34 @@ export default function About() {
           <SlideUp delay={200}>
             <div className="space-y-8">
             <div className="bg-primary-50 dark:bg-primary-900/20 p-6 rounded-lg border border-primary-100 dark:border-primary-800">
-              <h3 className="text-lg font-semibold text-primary-800 dark:text-primary-300 mb-3">
+              <h3 className="text-lg font-semibold text-primary-800 dark:text-primary-300 mb-3 font-playfair">
                 Key Achievements
               </h3>
               <ul className="space-y-2 text-gray-700 dark:text-neutral-300">
                 <li className="flex items-start">
                   <span className="text-primary-600 dark:text-primary-400 mr-2">•</span>
-                  Pioneer of internet development in Iranian villages
+                  <span className="max-w-prose">Pioneer of internet development in Iranian villages</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-primary-600 dark:text-primary-400 mr-2">•</span>
-                  Author of 50+ books and 300+ research papers
+                  <span className="max-w-prose">Author of 50+ books and 300+ research papers</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-primary-600 dark:text-primary-400 mr-2">•</span>
-                  Expert in IoT, Control Systems, and ICT
+                  <span className="max-w-prose">Expert in IoT, Control Systems, and ICT</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-primary-600 dark:text-primary-400 mr-2">•</span>
-                  30+ years of academic excellence
+                  <span className="max-w-prose">30+ years of academic excellence</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-gray-50 dark:bg-neutral-800 p-6 rounded-lg border border-gray-200 dark:border-neutral-700">
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-neutral-200 mb-3">
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-neutral-200 mb-3 font-playfair">
                 Current Positions
               </h3>
-              <ul className="space-y-3 text-gray-700 dark:text-neutral-300">
+              <ul className="space-y-3 text-gray-700 dark:text-neutral-200 max-w-prose">
                 <li>
                   <strong>Professor</strong><br />
                   Iran University of Science and Technology
@@ -122,7 +122,7 @@ export default function About() {
         {/* Career Timeline */}
         <div className="mt-20">
           <SlideUp>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-10 text-center">Career Journey</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-10 text-center font-playfair">Career Journey</h2>
           </SlideUp>
           <FadeIn delay={300}>
             <Timeline />

@@ -34,9 +34,9 @@ export default function ScrollProgress({
 
   return (
     <>
-      {/* Progress bar */}
+      {/* Progress bar - Hidden on mobile */}
       <div 
-        className={`fixed top-0 left-0 z-40 transition-all duration-150 ease-out ${className}`}
+        className={`hidden md:block fixed top-0 left-0 z-40 transition-all duration-150 ease-out ${className}`}
         style={{ height: `${height}px` }}
       >
         <div

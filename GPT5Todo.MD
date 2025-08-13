@@ -2,7 +2,7 @@
 
 A prioritized checklist focused on fixing root causes first.
 
-**Status Summary (Dec 10, 2025):**
+**Status Summary (Aug 13, 2025):**
 - ✅ **Completed:** 8 high-priority tasks completed
   - SEO image paths configured
   - Sitemap fixed to only include real routes
@@ -36,7 +36,7 @@ A prioritized checklist focused on fixing root causes first.
 - [x] Fonts: migrate to `next/font` and remove CSS imports
   - Replace Google Fonts `@import` lines in `src/app/globals.css` with `next/font/google` in `src/app/layout.tsx` for Inter and Playfair Display to improve CLS/LCP.
 
-- [ ] Replace placeholders/secrets before shipping
+ - [ ] Replace placeholders/secrets before shipping (Pending)
   - `NEXT_PUBLIC_GA_ID` for analytics in `src/components/Analytics.tsx`.
   - `NEXT_PUBLIC_GOOGLE_VERIFICATION` in `src/app/layout.tsx` or remove placeholder to avoid publishing fake codes.
   - `JsonLd`: replace Google Scholar ID and verify `sameAs` URLs.
@@ -49,36 +49,35 @@ A prioritized checklist focused on fixing root causes first.
   - Keep only one `CNAME` that ends up in `out/CNAME` after `next build`. Prefer placing it under `public/` and remove the duplicate.
 
 ### Performance and UX
-- [ ] Defer non-critical client components
+- [ ] Defer non-critical client components (Pending)
   - Dynamically import or idle-mount `src/components/FloatingNav.tsx`.
   - Throttle/debounce scroll listeners in `ScrollProgress` and `FloatingNav`.
 
-- [ ] Optimize hero/professional images for static export
+- [ ] Optimize hero/professional images for static export (Pending)
   - Pre-optimize assets in `public/` (WebP/JPG), ensure appropriate `sizes`, and keep `images.unoptimized: true` for static export.
 
-- [ ] Publications database loading
+- [ ] Publications database loading (Pending)
   - Consider dynamic import for `src/components/PublicationsDatabase.tsx` or move it to a dedicated route to reduce initial JS.
 
 ### Contact form hardening
-- [ ] Add spam protection and better UX
+- [ ] Add spam protection and better UX (Pending)
   - Honeypot field, client-side validation, and inline success/error states (replace `alert`).
   - Optional: proxy via a serverless API route for better reliability and spam filtering.
 
 ### Build/Deploy hygiene
-- [ ] Confirm static export pipeline
-  - Ensure deployment serves the `out/` directory; `start` is not used for static export.
-  - Verify `CNAME` is present in `out/` after build.
+- [x] Confirm static export pipeline (Done)
+  - `out/` exists with `out/CNAME` present. `start` is not used for static export. Confirm your deployment serves the `out/` directory (e.g., GitHub Pages or CI artifact).
 
 ### Code hygiene
 - [x] Remove unused import in `src/components/Hero.tsx` (`next/image`).
-- [ ] Consider replacing scroll-to `button`s with anchor links where semantically appropriate for in-page navigation.
+- [ ] Consider replacing scroll-to `button`s with anchor links where semantically appropriate for in-page navigation. (Pending)
 
 ### Data management
-- [ ] Extract publications data
+- [ ] Extract publications data (Pending)
   - Move the large array from `src/components/PublicationsDatabase.tsx` to a JSON file and lazy-load at runtime or generate at build time.
 
 ### Monitoring/Analytics
-- [ ] Validate analytics configuration
+- [ ] Validate analytics configuration (Pending)
   - Ensure GA (or an alternative like Plausible) is correctly configured and privacy requirements are met.
 
 ---
