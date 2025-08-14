@@ -1,0 +1,114 @@
+[
+  {
+    "id": "book-1",
+    "title": "Reduced Order Systems",
+    "type": "book",
+    "publisher": "Springer (Lecture Notes in Control and Information Sciences, Vol. 343)",
+    "year": 2006,
+    "description": "Reference book in advanced control systems theory with potential applications for space exploration. Widely cited in the field of control engineering.",
+    "category": "Control Systems",
+    "url": "https://www.amazon.com/Reduced-Systems-Lecture-Information-Sciences/dp/354034358X",
+    "authors": ["Ali A. Jalali", "Craig S. Sims", "Parviz Famouri"]
+  },
+  {
+    "id": "book-2",
+    "title": "Electronic Cities",
+    "type": "book",
+    "publisher": "Iran University of Science and Technology",
+    "year": 2005,
+    "description": "Comprehensive guide to electronic city development and implementation, covering infrastructure and management.",
+    "category": "ICT Development",
+    "url": "https://scholar.google.com/scholar?q=Electronic+Cities+Jalali+2005+IUST",
+    "authors": ["Ali Akbar Jalali"]
+  },
+  {
+    "id": "book-3",
+    "title": "Electronic Village",
+    "type": "book",
+    "publisher": "Iran University of Science and Technology",
+    "year": 2004,
+    "description": "Focus on rural ICT development and bridging the digital divide in remote communities.",
+    "category": "ICT Development",
+    "url": "https://scholar.google.com/scholar?q=Electronic+Village+Jalali+2004+IUST",
+    "authors": ["Ali Akbar Jalali"]
+  },
+  {
+    "id": "book-4",
+    "title": "Application Service Provider (ASP)",
+    "type": "book",
+    "publisher": "Tadbir Co., IUST",
+    "year": 2002,
+    "description": "Comprehensive coverage of ASP technologies and their implementation in enterprise environments.",
+    "category": "Information Technology",
+    "authors": ["Ali Akbar Jalali"]
+  },
+  {
+    "id": "book-5",
+    "title": "E-Learning Dictionary",
+    "type": "book",
+    "publisher": "Ministry of Education (Contract)",
+    "year": 2003,
+    "description": "Persian-based educational technology reference guide for e-learning terminology and concepts.",
+    "category": "Educational Technology",
+    "authors": ["Ali Akbar Jalali"]
+  },
+  {
+    "id": "trans-1",
+    "title": "Programmable Logic Controller (PLC)",
+    "type": "translated",
+    "publisher": "Iran University of Science and Technology",
+    "year": 2000,
+    "description": "Translation of comprehensive PLC programming and industrial automation guide.",
+    "category": "Control Systems",
+    "authors": ["Ali Akbar Jalali (Translator)"]
+  },
+  {
+    "id": "trans-2",
+    "title": "Contemporary Linear Systems, Using MATLAB (CLS)",
+    "type": "translated",
+    "publisher": "Iran University of Science and Technology",
+    "year": 2001,
+    "description": "Translation covering modern linear systems analysis and design using MATLAB.",
+    "category": "Control Systems",
+    "authors": ["Ali Akbar Jalali (Translator)"]
+  },
+  {
+    "id": "j-1",
+    "title": "Reduced order H∞ controller design for an industrial boiler system",
+    "type": "journal",
+    "journal": "IEEE Transactions on Control Systems Technology",
+    "year": 2008,
+    "description": "Application of reduced order H-infinity control methodology to industrial boiler systems for improved performance.",
+    "category": "Control Systems",
+    "url": "https://ieeexplore.ieee.org/document/4358772",
+    "doi": "10.1109/TCST.2007.903091",
+    "authors": ["Ali Akbar Jalali", "Parviz Famouri"],
+    "citations": 45,
+    "impact_factor": 4.2
+  },
+  {
+    "id": "j-2",
+    "title": "The reduced-order method for feedback stabilization",
+    "type": "journal",
+    "journal": "International Journal of Control",
+    "year": 2007,
+    "description": "Theoretical framework for reduced-order feedback control design with stability guarantees.",
+    "category": "Control Systems",
+    "url": "https://www.tandfonline.com/doi/abs/10.1080/00207170701216311",
+    "authors": ["Ali Akbar Jalali", "Craig Sims"],
+    "citations": 38
+  },
+  {
+    "id": "j-3",
+    "title": "H∞ control problem for descriptor systems",
+    "type": "journal",
+    "journal": "Automatica",
+    "year": 2009,
+    "description": "Advanced control theory addressing H-infinity control problems in descriptor systems.",
+    "category": "Control Systems",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0005109809000892",
+    "authors": ["Ali Akbar Jalali"],
+    "citations": 52,
+    "impact_factor": 5.1
+  }
+]

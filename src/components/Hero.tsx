@@ -56,19 +56,14 @@ export default function Hero() {
                   { text: '300+ Publications', scrollTo: 'publications' },
                   { text: '30+ Years Experience', scrollTo: 'academic' }
                 ].map((tag, index) => (
-                  <button 
+                  <a 
                     key={tag.text}
-                    onClick={() => {
-                      const element = document.getElementById(tag.scrollTo);
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      }
-                    }}
+                    href={`#${tag.scrollTo}`}
                     className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/50 text-primary-800 dark:text-primary-200 border border-primary-200 dark:border-primary-700 transform motion-safe:transition-all motion-safe:duration-500 hover:bg-primary-200 dark:hover:bg-primary-800/50 cursor-pointer ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                     style={{ transitionDelay: `${200 + index * 100}ms` }}
                   >
                     {tag.text}
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>
@@ -234,19 +229,14 @@ export default function Hero() {
                 { text: '300+ Publications', scrollTo: 'publications' },
                 { text: '30+ Years Experience', scrollTo: 'career' }
               ].map((tag, index) => (
-                <button 
+                <a 
                   key={tag.text}
-                  onClick={() => {
-                    const element = document.getElementById(tag.scrollTo);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }}
+                  href={`#${tag.scrollTo}`}
                   className={`inline-flex items-center px-3 py-2 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900/50 text-primary-800 dark:text-primary-200 border border-primary-200 dark:border-primary-700 transform motion-safe:transition-all motion-safe:duration-500 hover:bg-primary-200 dark:hover:bg-primary-800/50 cursor-pointer ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}
                   style={{ transitionDelay: `${400 + index * 100}ms` }}
                 >
                   {tag.text}
-                </button>
+                </a>
               ))}
             </div>
           </div>
