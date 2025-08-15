@@ -178,7 +178,7 @@ const PublicationsDatabase = () => {
     <section id="publications" className="py-24 md:py-28 bg-white dark:bg-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4 font-playfair">Publications</h2>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-neutral-100 mb-4 font-display">Publications</h2>
           <p className="text-lg text-gray-600 dark:text-neutral-400 max-w-prose mx-auto">
             Comprehensive collection of research publications, papers, and contributions spanning over 30 years in electrical engineering, control systems, and information technology.
           </p>
@@ -430,7 +430,7 @@ const PublicationsDatabase = () => {
 
         {/* Statistics */}
         <div className="mt-12 bg-primary-50 dark:bg-primary-900/20 rounded-lg shadow-sm p-8 border border-primary-100 dark:border-primary-800">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center font-playfair">Publication Statistics</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center font-sans">Publication Statistics</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">{publications.length}</div>

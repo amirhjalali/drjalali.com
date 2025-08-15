@@ -88,19 +88,39 @@ body {
   /* Font Family Utilities */
   .font-playfair { font-family: var(--font-playfair), serif; }
   
-  /* Typography Presets */
-  .heading-display {
+  /* Base Typography Styles */
+  h1, h2 {
     font-family: var(--font-playfair);
     font-weight: 700;
     line-height: var(--line-height-tight);
     letter-spacing: var(--letter-spacing-tight);
   }
   
-  .heading-primary {
+  h3, h4, h5, h6, p, body {
     font-family: var(--font-inter);
-    font-weight: 700;
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
+  }
+  
+  h3, h4, h5, h6 {
+    font-weight: 600;
     line-height: var(--line-height-snug);
     letter-spacing: var(--letter-spacing-tight);
+  }
+
+  p {
+    color: rgb(55 65 81);
+    max-width: 65ch;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    p {
+      color: rgb(229 231 235);
+    }
+  }
+  
+  .dark p {
+    color: rgb(229 231 235);
   }
 
   /* Reduced motion support */

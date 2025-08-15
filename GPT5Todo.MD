@@ -86,6 +86,24 @@ A prioritized checklist focused on fixing root causes first.
 
 ---
 
+### Typography consistency (new)
+- [ ] Unify font usage across the site
+  - H1–H2: use Playfair Display via Tailwind class `font-display`
+  - H3–H6 and body: use Inter via `font-sans`
+- [ ] Enforce via base styles in `src/app/globals.css`
+  - Add base rules for `h1, h2` (e.g., `font-display`, `tracking-tight`, tight leading)
+  - Add base rules for `h3–h6, p` (e.g., `font-sans`, consistent leading)
+- [ ] Stop mixing font assignment methods
+  - Replace custom `.heading-*` font-family declarations with Tailwind classes in JSX
+  - Remove any hardcoded "Inter"/"Playfair Display" font-family from CSS utilities
+- [ ] Update component headings to match
+  - Apply `font-display` to section H2s in `Hero`, `About`, `Research`, `PublicationsDatabase`, `Contact`
+- [ ] Ensure next/font weights are correct
+  - Load only needed weights for `Playfair_Display` (e.g., 400, 600, 700)
+- [ ] Improve readability defaults
+  - Dark mode paragraphs: prefer `dark:text-neutral-200`
+  - Constrain long text blocks to `max-w-[65ch]` in content-heavy sections
+
 ### Suggested implementation order
 1) OG/Twitter image + sitemap + Tailwind palette fix
 2) Remove/move heavy deps; delete unused configs

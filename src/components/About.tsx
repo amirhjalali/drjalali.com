@@ -29,7 +29,7 @@ export default function About() {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-2 font-playfair">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-2 font-display">
                     Biography
                   </h2>
                   <p className="text-primary-600 dark:text-primary-400 font-medium mb-2">
@@ -73,7 +73,7 @@ export default function About() {
           <SlideUp delay={200}>
             <div className="space-y-8">
             <div className="bg-primary-50 dark:bg-primary-900/20 p-6 rounded-lg border border-primary-100 dark:border-primary-800">
-              <h3 className="text-lg font-semibold text-primary-800 dark:text-primary-300 mb-3 font-playfair">
+              <h3 className="text-lg font-semibold text-primary-800 dark:text-primary-300 mb-3 font-sans">
                 Key Achievements
               </h3>
               <ul className="space-y-2 text-gray-700 dark:text-neutral-300">
@@ -97,7 +97,7 @@ export default function About() {
             </div>
 
             <div className="bg-gray-50 dark:bg-neutral-800 p-6 rounded-lg border border-gray-200 dark:border-neutral-700">
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-neutral-200 mb-3 font-playfair">
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-neutral-200 mb-3 font-sans">
                 Current Positions
               </h3>
               <ul className="space-y-3 text-gray-700 dark:text-neutral-200 max-w-prose">
@@ -122,7 +122,7 @@ export default function About() {
         {/* Career Timeline */}
         <div className="mt-20">
           <SlideUp>
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-10 text-center font-playfair">Career Journey</h2>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-10 text-center font-display">Career Journey</h2>
           </SlideUp>
           <FadeIn delay={300}>
             <Timeline />

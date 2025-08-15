@@ -26,7 +26,7 @@ export default function Hero() {
           {/* Content */}
           <div className={`transform motion-safe:transition-all motion-safe:duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <div className="space-y-6">
-              <h1 className="heading-primary text-fluid-5xl font-playfair">
+              <h1 className="font-display text-fluid-5xl">
                 <span className="block">
                   <span className="font-extrabold text-gray-900 dark:text-neutral-100">Dr.</span>{' '}
                   <span className="bg-gradient-to-r from-primary-600 to-primary-700 dark:from-primary-400 dark:to-primary-500 bg-clip-text text-transparent">Ali Akbar</span>
@@ -151,7 +151,7 @@ export default function Hero() {
           {/* Mobile Content */}
           <div className={`text-center transform motion-safe:transition-all motion-safe:duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <div className="space-y-4">
-              <h1 className="heading-primary text-fluid-5xl font-playfair">
+              <h1 className="font-display text-fluid-5xl">
                 <span className="block">
                   <span className="font-extrabold text-gray-900 dark:text-neutral-100">Dr.</span>{' '}
                   <span className="bg-gradient-to-r from-primary-600 to-primary-700 dark:from-primary-400 dark:to-primary-500 bg-clip-text text-transparent">Ali Akbar</span>
