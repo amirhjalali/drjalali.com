@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Dr. Ali Akbar Jalali - Professor of Electrical Engineering',
-  description: 'Professor at Iran University of Science and Technology, known as the Father of Information Technology in Iran. Expert in IoT, Control Systems, and ICT.',
+  description: 'Dr. Ali Akbar Jalali - Distinguished Professor at Iran University of Science and Technology, pioneering researcher in IoT and Control Systems, recognized as the Father of Information Technology in Iran with over four decades of academic excellence.',
   keywords: 'Dr. Ali Akbar Jalali, Professor, Electrical Engineering, IoT, Information Technology, Iran University of Science and Technology, Control Systems',
   authors: [{ name: 'Dr. Ali Akbar Jalali' }],
   metadataBase: new URL('https://drjalali.com'),
