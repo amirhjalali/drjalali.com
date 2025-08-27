@@ -7,12 +7,14 @@ interface ProfessionalPhotoProps {
   src?: string;
   alt?: string;
   className?: string;
+  loading?: 'eager' | 'lazy';
 }
 
 export default function ProfessionalPhoto({ 
   src, 
   alt = "Dr. Ali Akbar Jalali", 
-  className = "" 
+  className = "",
+  loading = "eager"
 }: ProfessionalPhotoProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -97,7 +99,8 @@ export default function ProfessionalPhoto({
           }`}
           onLoad={() => setImageLoaded(true)}
           onError={() => setHasError(true)}
-          priority
+          priority={loading === "eager"}
+          loading={loading}
           sizes="(max-width: 768px) 300px, 400px"
         />
       )}

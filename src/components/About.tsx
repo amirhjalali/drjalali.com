@@ -25,6 +25,7 @@ export default function About() {
                       src="/images/biography/dr-jalali-biography.png"
                       className="w-full h-full object-cover object-top"
                       alt="Academic portrait of Dr. Ali Akbar Jalali for biography section"
+                      loading="lazy"
                     />
                   </div>
                 </div>
