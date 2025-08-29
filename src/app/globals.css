@@ -238,6 +238,53 @@ button:hover:not(:disabled),
   }
 }
 
+/* Print styles for academic content */
+@media print {
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    color: #000;
+  }
+  
+  p, blockquote, ul, ol {
+    orphans: 2;
+    widows: 2;
+  }
+  
+  blockquote, ul, ol {
+    page-break-inside: avoid;
+  }
+  
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #555;
+  }
+  
+  .print-break-before {
+    page-break-before: always;
+  }
+  
+  .print-break-after {
+    page-break-after: always;
+  }
+}
+
 /* Screen reader only utility class */
 .sr-only {
   position: absolute;
