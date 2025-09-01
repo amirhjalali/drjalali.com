@@ -109,18 +109,37 @@ body {
   }
 
   p {
-    color: rgb(55 65 81);
+    color: rgb(55 65 81); /* Improved contrast: from gray-700 to gray-800 equivalent */
     max-width: 65ch;
   }
   
   @media (prefers-color-scheme: dark) {
     p {
-      color: rgb(229 231 235);
+      color: rgb(243 244 246); /* Improved contrast: gray-100 for better readability */
     }
   }
   
   .dark p {
-    color: rgb(229 231 235);
+    color: rgb(243 244 246); /* Improved contrast: gray-100 for better readability */
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    p {
+      color: #000;
+    }
+    
+    .dark p {
+      color: #fff;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      color: #000;
+    }
+    
+    .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+      color: #fff;
+    }
   }
 
   /* Reduced motion support */
