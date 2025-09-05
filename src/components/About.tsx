@@ -24,7 +24,7 @@ export default function About() {
                     <ProfessionalPhoto 
                       src="/images/biography/dr-jalali-biography.png"
                       className="w-full h-full object-cover object-top"
-                      alt="Dr. Ali Akbar Jalali - Biography"
+                      alt="Academic portrait of Dr. Ali Akbar Jalali for biography section"
                     />
                   </div>
                 </div>

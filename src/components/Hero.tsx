@@ -113,7 +113,7 @@ export default function Hero() {
                 <ProfessionalPhoto 
                   src="/images/professional/dr-jalali-professional.png"
                   className="w-full h-full"
-                  alt="Dr. Ali Akbar Jalali - Professor of Electrical Engineering"
+                  alt="Portrait of Dr. Ali Akbar Jalali, Distinguished Professor of Electrical Engineering at Iran University of Science and Technology"
                 />
               </div>
               
@@ -182,7 +182,7 @@ export default function Hero() {
                 <ProfessionalPhoto 
                   src="/images/professional/dr-jalali-professional.png"
                   className="w-full h-full"
-                  alt="Dr. Ali Akbar Jalali - Professor of Electrical Engineering"
+                  alt="Portrait of Dr. Ali Akbar Jalali, Distinguished Professor of Electrical Engineering at Iran University of Science and Technology"
                 />
               </div>
               
