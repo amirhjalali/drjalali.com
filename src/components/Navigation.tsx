@@ -23,7 +23,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold hover:opacity-80 transition-opacity">
+            <Link href="/" className="text-xl font-bold hover:opacity-80 transition-opacity" aria-label="Dr. Ali Akbar Jalali homepage">
               <span className="text-gray-900 dark:text-neutral-100">Dr.</span>{' '}
               <span className="text-primary-600 dark:text-primary-400">Ali Akbar</span>{' '}
               <span className="text-gray-900 dark:text-neutral-100">Jalali</span>
@@ -32,19 +32,19 @@ export default function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#about" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2">
+            <Link href="#about" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2" aria-label="Navigate to About section">
               About
             </Link>
-            <Link href="#academic" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2">
+            <Link href="#academic" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2" aria-label="Navigate to Academic Career section">
               Academic Career
             </Link>
-            <Link href="#research" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2">
+            <Link href="#research" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2" aria-label="Navigate to Research section">
               Research
             </Link>
-            <Link href="#publications" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2">
+            <Link href="#publications" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2" aria-label="Navigate to Publications section">
               Publications
             </Link>
-            <Link href="#contact" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2">
+            <Link href="#contact" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2" aria-label="Navigate to Contact section">
               Contact
             </Link>
             <ThemeToggle />
