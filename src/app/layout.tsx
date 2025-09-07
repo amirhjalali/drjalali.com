@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Analytics from '@/components/Analytics'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import ScrollToTop from '@/components/ScrollToTop'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -80,6 +81,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable} font-sans min-h-screen bg-white dark:bg-neutral-900 text-gray-900 dark:text-neutral-100 antialiased transition-colors duration-300`}>
         <ThemeProvider>
           {children}
+          <ScrollToTop />
           <Analytics />
         </ThemeProvider>
       </body>
