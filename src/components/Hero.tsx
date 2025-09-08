@@ -12,7 +12,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative pt-16 bg-gradient-to-br from-primary-50 via-white to-blue-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-neutral-900 overflow-hidden transition-colors duration-300">
+    <section id="hero" className="relative pt-16 bg-gradient-to-br from-primary-50 via-white to-blue-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-neutral-900 overflow-hidden transition-colors duration-300" aria-label="Hero section introducing Dr. Ali Akbar Jalali">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary-200 dark:bg-primary-700 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-2xl opacity-70 motion-safe:animate-pulse"></div>
@@ -76,6 +76,7 @@ export default function Hero() {
                 icon="arrow"
                 glow={true}
                 className="text-lg"
+                aria-label="Learn more about Dr. Jalali's background and achievements"
               >
                 Learn More
               </Button>
@@ -85,6 +86,7 @@ export default function Hero() {
                 size="lg"
                 icon="external"
                 className="text-lg"
+                aria-label="View Dr. Jalali's research and publications"
               >
                 View Research
               </Button>
@@ -94,6 +96,9 @@ export default function Hero() {
                 size="lg"
                 icon="external"
                 className="text-lg"
+                aria-label="View Dr. Jalali's Wikipedia page (opens in new tab)"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Wikipedia
               </Button>
@@ -118,29 +123,29 @@ export default function Hero() {
               </div>
               
               {/* Floating Achievement Badges - Desktop */}
-              <a href="#academic" className="absolute -top-8 left-4 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 motion-safe:transition-all motion-safe:duration-300 hover:scale-105 cursor-pointer">
+              <a href="#academic" className="absolute -top-8 left-4 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-2 hover:rotate-0 motion-safe:transition-all motion-safe:duration-300 hover:scale-105 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-500" aria-label="30+ years of academic experience - view career details">
                 <div className="text-center">
-                  <div className="text-primary-600 dark:text-primary-400 text-xl font-bold">30+</div>
-                  <div className="text-sm font-medium text-gray-600 dark:text-neutral-200">Years</div>
+                  <div className="text-primary-600 dark:text-primary-400 text-xl font-bold" aria-hidden="true">30+</div>
+                  <div className="text-sm font-medium text-gray-600 dark:text-neutral-200" aria-hidden="true">Years</div>
                 </div>
               </a>
               
-              <a href="#research" className="absolute -bottom-6 -right-8 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform -rotate-2 hover:rotate-0 motion-safe:transition-all motion-safe:duration-300 hover:scale-105 cursor-pointer">
+              <a href="#research" className="absolute -bottom-6 -right-8 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform -rotate-2 hover:rotate-0 motion-safe:transition-all motion-safe:duration-300 hover:scale-105 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-500" aria-label="300+ published research papers - view publications">
                 <div className="text-center">
-                  <div className="text-primary-600 dark:text-primary-400 text-xl font-bold">300+</div>
-                  <div className="text-sm font-medium text-gray-600 dark:text-neutral-200">Papers</div>
+                  <div className="text-primary-600 dark:text-primary-400 text-xl font-bold" aria-hidden="true">300+</div>
+                  <div className="text-sm font-medium text-gray-600 dark:text-neutral-200" aria-hidden="true">Papers</div>
                 </div>
               </a>
               
-              <a href="#research" className="absolute top-24 -left-12 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-3 hover:rotate-0 motion-safe:transition-all motion-safe:duration-300 hover:scale-105 cursor-pointer">
+              <a href="#research" className="absolute top-24 -left-12 bg-white dark:bg-neutral-800 rounded-xl px-5 py-4 shadow-xl border border-gray-100 dark:border-neutral-700 transform rotate-3 hover:rotate-0 motion-safe:transition-all motion-safe:duration-300 hover:scale-105 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary-500" aria-label="50+ authored books - view research">
                 <div className="text-center">
-                  <div className="text-primary-600 dark:text-primary-400 text-xl font-bold">50+</div>
-                  <div className="text-sm font-medium text-gray-600 dark:text-neutral-200">Books</div>
+                  <div className="text-primary-600 dark:text-primary-400 text-xl font-bold" aria-hidden="true">50+</div>
+                  <div className="text-sm font-medium text-gray-600 dark:text-neutral-200" aria-hidden="true">Books</div>
                 </div>
               </a>
               
-              <a href="#about" className="absolute bottom-20 right-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl px-4 py-3 shadow-xl transform -rotate-1 hover:rotate-0 motion-safe:transition-all motion-safe:duration-300 hover:scale-105 cursor-pointer">
-                <div className="text-sm font-semibold">IT Pioneer</div>
+              <a href="#about" className="absolute bottom-20 right-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl px-4 py-3 shadow-xl transform -rotate-1 hover:rotate-0 motion-safe:transition-all motion-safe:duration-300 hover:scale-105 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white" aria-label="IT Pioneer - learn about Dr. Jalali's contributions">
+                <div className="text-sm font-semibold" aria-hidden="true">IT Pioneer</div>
               </a>
             </div>
           </div>

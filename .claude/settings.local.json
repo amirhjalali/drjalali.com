@@ -50,7 +50,12 @@
       "Bash(npm run dev:*)",
       "WebFetch(domain:link.springer.com)",
       "WebFetch(domain:www.sciencedirect.com)",
-      "WebFetch(domain:link.springer.com)"
+      "WebFetch(domain:link.springer.com)",
+      "Bash(git stash:*)",
+      "Bash(git restore:*)",
+      "Bash(for i in {0..13})",
+      "Bash(do date -d \"$i days ago\" '+%Y-%m-%d')",
+      "Bash(done)"
     ],
     "deny": []
   }

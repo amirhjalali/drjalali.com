@@ -31,7 +31,7 @@ export default function Navigation() {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
             <Link href="#about" className="text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors hover:underline underline-offset-2" aria-label="Navigate to About section">
               About
             </Link>
@@ -48,7 +48,7 @@ export default function Navigation() {
               Contact
             </Link>
             <ThemeToggle />
-          </div>
+          </nav>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-3">
@@ -74,19 +74,19 @@ export default function Navigation() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 transition-colors duration-300" role="menu" aria-label="Mobile navigation menu">
-              <Link href="#about" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors">
+              <Link href="#about" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500" role="menuitem" onClick={() => setIsMenuOpen(false)}>
                 About
               </Link>
-              <Link href="#academic" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors">
+              <Link href="#academic" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500" role="menuitem" onClick={() => setIsMenuOpen(false)}>
                 Academic Career
               </Link>
-              <Link href="#research" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors">
+              <Link href="#research" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500" role="menuitem" onClick={() => setIsMenuOpen(false)}>
                 Research
               </Link>
-              <Link href="#publications" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors">
+              <Link href="#publications" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500" role="menuitem" onClick={() => setIsMenuOpen(false)}>
                 Publications
               </Link>
-              <Link href="#contact" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors">
+              <Link href="#contact" className="block px-3 py-2 text-gray-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-primary-50 dark:hover:bg-neutral-800 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500" role="menuitem" onClick={() => setIsMenuOpen(false)}>
                 Contact
               </Link>
             </div>
