@@ -37,7 +37,7 @@ export default function Hero() {
               </h1>
               
               <div className="relative">
-                <p className="caption-text text-fluid-2xl text-primary-600 dark:text-primary-400">
+                <p className="text-fluid-2xl text-primary-600 dark:text-primary-400 font-medium">
                   Father of Information Technology in Iran
                 </p>
                 <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 to-primary-700 dark:from-primary-400 dark:to-primary-600 rounded-full"></div>
@@ -162,7 +162,7 @@ export default function Hero() {
               </h1>
               
               <div className="relative flex justify-center">
-                <p className="caption-text text-fluid-2xl text-primary-600 dark:text-primary-400">
+                <p className="text-fluid-2xl text-primary-600 dark:text-primary-400 font-medium">
                   Father of Information Technology in Iran
                 </p>
               </div>

@@ -83,7 +83,7 @@ export default function Research() {
 
         {/* Research Impact */}
         <div className="bg-primary-50 dark:bg-primary-900/20 p-8 rounded-lg border border-primary-100 dark:border-primary-800">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center font-sans">Research Impact & Expertise</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-8 text-center">Research Impact & Expertise</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <button
               onClick={() => {
