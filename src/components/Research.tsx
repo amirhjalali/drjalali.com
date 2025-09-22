@@ -1,11 +1,44 @@
 'use client';
 
-import React from 'react';
+import React, { memo, useCallback } from 'react';
 import Card from './Card';
 import { SlideUp, FadeIn } from './ScrollAnimation';
 import { SectionAnchor } from './SectionDivider';
 
-export default function Research() {
+// Memoized research area component
+const ResearchArea = memo(({ area, index }: { area: any; index: number }) => (
+  <FadeIn key={index} delay={index * 100}>
+    <Card
+      variant="glass"
+      hover="lift"
+      interactive={true}
+      className="group"
+    >
+      <div className="flex items-start mb-4">
+        <span className="text-3xl mr-4 transform group-hover:scale-110 transition-transform duration-300">{area.icon}</span>
+        <h3 className="text-xl font-bold text-gray-900 dark:text-neutral-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">{area.title}</h3>
+      </div>
+      <p className="text-gray-700 dark:text-neutral-200 mb-4 leading-relaxed max-w-prose">{area.description}</p>
+      <div>
+        <p className="text-sm font-semibold text-gray-800 dark:text-neutral-200 mb-2">Key Technologies:</p>
+        <div className="flex flex-wrap gap-2">
+          {area.technologies.map((tech: string, techIndex: number) => (
+            <span
+              key={techIndex}
+              className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs rounded-full border border-primary-200 dark:border-primary-700 hover:bg-primary-200 dark:hover:bg-primary-800/40 transition-colors duration-200"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </Card>
+  </FadeIn>
+));
+
+ResearchArea.displayName = 'ResearchArea';
+
+const Research = () => {
   const researchAreas = [
     {
       title: "Internet of Things (IoT)",
@@ -50,33 +83,7 @@ export default function Research() {
           </SlideUp>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {researchAreas.map((area, index) => (
-              <FadeIn key={index} delay={index * 100}>
-                <Card 
-                  variant="glass" 
-                  hover="lift" 
-                  interactive={true}
-                  className="group"
-                >
-                <div className="flex items-start mb-4">
-                  <span className="text-3xl mr-4 transform group-hover:scale-110 transition-transform duration-300">{area.icon}</span>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-neutral-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">{area.title}</h3>
-                </div>
-                <p className="text-gray-700 dark:text-neutral-200 mb-4 leading-relaxed max-w-prose">{area.description}</p>
-                <div>
-                  <p className="text-sm font-semibold text-gray-800 dark:text-neutral-200 mb-2">Key Technologies:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {area.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs rounded-full border border-primary-200 dark:border-primary-700 hover:bg-primary-200 dark:hover:bg-primary-800/40 transition-colors duration-200"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                </Card>
-              </FadeIn>
+              <ResearchArea key={area.title} area={area} index={index} />
             ))}
           </div>
         </div>
@@ -217,4 +224,6 @@ export default function Research() {
       </div>
     </section>
   )
-}
+};
+
+export default memo(Research);
