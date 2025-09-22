@@ -100,7 +100,8 @@ export function generateMetadata({
     verification: {
       google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
       yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION,
-      bing: process.env.NEXT_PUBLIC_BING_VERIFICATION,
+      yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+      me: process.env.NEXT_PUBLIC_BING_VERIFICATION,
     },
     category: 'education',
     classification: 'Academic Profile',

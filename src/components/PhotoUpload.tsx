@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 import { Upload, Camera, Check, X } from 'lucide-react';
 
 interface PhotoUploadProps {
@@ -163,9 +164,11 @@ export default function PhotoUpload({
           <div className="space-y-4">
             {/* Preview */}
             <div className="relative w-32 h-32 mx-auto">
-              <img
+              <Image
                 src={preview}
                 alt="Photo preview"
+                width={128}
+                height={128}
                 className="w-full h-full object-cover rounded-full border-4 border-white dark:border-neutral-700 shadow-lg"
               />
               

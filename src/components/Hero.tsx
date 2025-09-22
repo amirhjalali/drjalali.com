@@ -97,8 +97,6 @@ export default function Hero() {
                 icon="external"
                 className="text-lg"
                 aria-label="View Dr. Jalali's Wikipedia page (opens in new tab)"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Wikipedia
               </Button>
