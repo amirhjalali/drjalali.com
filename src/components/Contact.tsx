@@ -7,20 +7,6 @@ import Button from './Button';
 export default function Contact() {
   const contactLinks = [
     {
-      title: 'Email',
-      value: 'jalali@iust.ac.ir',
-      href: 'mailto:jalali@iust.ac.ir',
-      icon: '✉️',
-      description: 'Academic correspondence'
-    },
-    {
-      title: 'University Profile',
-      value: 'IUST Faculty Page',
-      href: 'http://webpages.iust.ac.ir/jalali/',
-      icon: '🎓',
-      description: 'Official university profile'
-    },
-    {
       title: 'Google Scholar',
       value: 'Research Publications',
       href: 'https://scholar.google.com/citations?user=RJaAli8AAAAJ&hl=en',
@@ -32,7 +18,21 @@ export default function Contact() {
       value: 'Professional Network',
       href: 'https://www.linkedin.com/in/ali-akbar-jalali/',
       icon: '💼',
-      description: 'Professional connections'
+      description: 'Professional connections and updates'
+    },
+    {
+      title: 'YouTube',
+      value: '@drjalali',
+      href: 'https://www.youtube.com/@drjalali',
+      icon: '📺',
+      description: 'Educational videos and lectures'
+    },
+    {
+      title: 'Instagram',
+      value: '@dr.aliakbarjalali',
+      href: 'https://www.instagram.com/dr.aliakbarjalali/',
+      icon: '📸',
+      description: 'Professional updates and insights'
     },
     {
       title: 'Wikipedia',
@@ -42,11 +42,11 @@ export default function Contact() {
       description: 'Public biography and achievements'
     },
     {
-      title: 'Department',
-      value: 'School of Electrical Engineering',
-      href: 'http://ee.iust.ac.ir',
-      icon: '🏛️',
-      description: 'Iran University of Science and Technology'
+      title: 'ResearchGate',
+      value: 'Research Network',
+      href: 'https://www.researchgate.net/profile/Ali-Jalali-2',
+      icon: '🔬',
+      description: 'Research papers and collaboration'
     }
   ];
 
@@ -105,46 +105,100 @@ export default function Contact() {
           ))}
         </div>
 
-        {/* Office Information */}
+        {/* Professional Affiliations */}
         <div className="mt-16 bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-8 border border-gray-100 dark:border-neutral-700">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-6">Office Information</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-6">Professional Affiliations</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="font-semibold text-gray-900 dark:text-neutral-100 mb-2">Mailing Address</h4>
-              <address className="text-gray-700 dark:text-neutral-300 not-italic leading-relaxed">
-                School of Electrical Engineering<br />
-                Iran University of Science and Technology<br />
-                Narmak, Tehran 16846-13114<br />
-                Iran
-              </address>
-            </div>
             <div>
               <h4 className="font-semibold text-gray-900 dark:text-neutral-100 mb-2">Academic Positions</h4>
               <ul className="text-gray-700 dark:text-neutral-300 space-y-2">
-                <li>• Professor at IUST</li>
-                <li>• Adjunct Professor at UMBC</li>
-                <li>• Adjunct Professor at WVU</li>
-                <li>• Director of Control Group</li>
+                <li>• Professor at Iran University of Science and Technology</li>
+                <li>• Adjunct Professor at University of Maryland Baltimore County</li>
+                <li>• Adjunct Professor at West Virginia University</li>
+                <li>• Director of Control Group, IUST</li>
               </ul>
             </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 dark:text-neutral-100 mb-2">Research Interests</h4>
+              <ul className="text-gray-700 dark:text-neutral-300 space-y-2">
+                <li>• Internet of Things (IoT)</li>
+                <li>• Control Systems Engineering</li>
+                <li>• Information & Communication Technology</li>
+                <li>• 3D Printing and Additive Manufacturing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Social Media */}
+        <div className="mt-12 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-8 border border-primary-100 dark:border-primary-700">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-neutral-100 mb-6 text-center">Stay Connected</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              href="https://www.youtube.com/@drjalali"
+              variant="outline"
+              size="md"
+              icon="external"
+              aria-label="Visit YouTube channel"
+            >
+              YouTube
+            </Button>
+            <Button
+              href="https://www.instagram.com/dr.aliakbarjalali/"
+              variant="outline"
+              size="md"
+              icon="external"
+              aria-label="Visit Instagram profile"
+            >
+              Instagram
+            </Button>
+            <Button
+              href="https://www.linkedin.com/in/ali-akbar-jalali/"
+              variant="outline"
+              size="md"
+              icon="external"
+              aria-label="Visit LinkedIn profile"
+            >
+              LinkedIn
+            </Button>
+            <Button
+              href="https://scholar.google.com/citations?user=RJaAli8AAAAJ&hl=en"
+              variant="outline"
+              size="md"
+              icon="external"
+              aria-label="View Google Scholar profile"
+            >
+              Google Scholar
+            </Button>
           </div>
         </div>
 
         {/* Call to Action */}
         <div className="mt-12 text-center">
           <p className="text-gray-600 dark:text-neutral-400 mb-6">
-            Interested in collaboration or academic opportunities?
+            Interested in collaboration or learning more about Dr. Jalali's work?
           </p>
-          <Button
-            href="mailto:jalali@iust.ac.ir"
-            variant="primary"
-            size="lg"
-            icon="mail"
-            glow={true}
-            aria-label="Send email to Dr. Jalali"
-          >
-            Get in Touch
-          </Button>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button
+              href="https://www.linkedin.com/in/ali-akbar-jalali/"
+              variant="primary"
+              size="lg"
+              icon="external"
+              glow={true}
+              aria-label="Connect on LinkedIn"
+            >
+              Connect on LinkedIn
+            </Button>
+            <Button
+              href="https://scholar.google.com/citations?user=RJaAli8AAAAJ&hl=en"
+              variant="secondary"
+              size="lg"
+              icon="external"
+              aria-label="View research publications"
+            >
+              View Publications
+            </Button>
+          </div>
         </div>
       </div>
     </section>
