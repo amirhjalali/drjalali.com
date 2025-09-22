@@ -105,71 +105,31 @@ export default function Contact() {
           ))}
         </div>
 
-        {/* Professional Affiliations */}
-        <div className="mt-16 bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-8 border border-gray-100 dark:border-neutral-700">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-neutral-100 mb-6">Professional Affiliations</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="font-semibold text-gray-900 dark:text-neutral-100 mb-2">Academic Positions</h4>
-              <ul className="text-gray-700 dark:text-neutral-300 space-y-2">
-                <li>• Professor at Iran University of Science and Technology</li>
-                <li>• Adjunct Professor at University of Maryland Baltimore County</li>
-                <li>• Adjunct Professor at West Virginia University</li>
-                <li>• Director of Control Group, IUST</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-gray-900 dark:text-neutral-100 mb-2">Research Interests</h4>
-              <ul className="text-gray-700 dark:text-neutral-300 space-y-2">
-                <li>• Internet of Things (IoT)</li>
-                <li>• Control Systems Engineering</li>
-                <li>• Information & Communication Technology</li>
-                <li>• 3D Printing and Additive Manufacturing</li>
-              </ul>
-            </div>
+        {/* Professional Highlights */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white dark:bg-neutral-800 rounded-xl p-6 border border-gray-100 dark:border-neutral-700 text-center">
+            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">30+</div>
+            <p className="text-gray-700 dark:text-neutral-300">Years of Academic Excellence</p>
+          </div>
+          <div className="bg-white dark:bg-neutral-800 rounded-xl p-6 border border-gray-100 dark:border-neutral-700 text-center">
+            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">300+</div>
+            <p className="text-gray-700 dark:text-neutral-300">Research Publications</p>
+          </div>
+          <div className="bg-white dark:bg-neutral-800 rounded-xl p-6 border border-gray-100 dark:border-neutral-700 text-center">
+            <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">50+</div>
+            <p className="text-gray-700 dark:text-neutral-300">Books & Chapters</p>
           </div>
         </div>
 
-        {/* Additional Social Media */}
-        <div className="mt-12 bg-primary-50 dark:bg-primary-900/20 rounded-xl p-8 border border-primary-100 dark:border-primary-700">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-neutral-100 mb-6 text-center">Stay Connected</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button
-              href="https://www.youtube.com/@drjalali"
-              variant="outline"
-              size="md"
-              icon="external"
-              aria-label="Visit YouTube channel"
-            >
-              YouTube
-            </Button>
-            <Button
-              href="https://www.instagram.com/dr.aliakbarjalali/"
-              variant="outline"
-              size="md"
-              icon="external"
-              aria-label="Visit Instagram profile"
-            >
-              Instagram
-            </Button>
-            <Button
-              href="https://www.linkedin.com/in/ali-akbar-jalali/"
-              variant="outline"
-              size="md"
-              icon="external"
-              aria-label="Visit LinkedIn profile"
-            >
-              LinkedIn
-            </Button>
-            <Button
-              href="https://scholar.google.com/citations?user=RJaAli8AAAAJ&hl=en"
-              variant="outline"
-              size="md"
-              icon="external"
-              aria-label="View Google Scholar profile"
-            >
-              Google Scholar
-            </Button>
+        {/* Research Expertise */}
+        <div className="mt-12 bg-gradient-to-r from-primary-50 to-blue-50 dark:from-primary-900/20 dark:to-blue-900/20 rounded-xl p-8 border border-primary-100 dark:border-primary-700">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-neutral-100 mb-4 text-center">Areas of Expertise</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            <span className="px-4 py-2 bg-white dark:bg-neutral-800 rounded-full text-gray-700 dark:text-neutral-300 border border-gray-200 dark:border-neutral-700">Internet of Things (IoT)</span>
+            <span className="px-4 py-2 bg-white dark:bg-neutral-800 rounded-full text-gray-700 dark:text-neutral-300 border border-gray-200 dark:border-neutral-700">Control Systems</span>
+            <span className="px-4 py-2 bg-white dark:bg-neutral-800 rounded-full text-gray-700 dark:text-neutral-300 border border-gray-200 dark:border-neutral-700">Information Technology</span>
+            <span className="px-4 py-2 bg-white dark:bg-neutral-800 rounded-full text-gray-700 dark:text-neutral-300 border border-gray-200 dark:border-neutral-700">3D Printing</span>
+            <span className="px-4 py-2 bg-white dark:bg-neutral-800 rounded-full text-gray-700 dark:text-neutral-300 border border-gray-200 dark:border-neutral-700">Academic Leadership</span>
           </div>
         </div>
 
