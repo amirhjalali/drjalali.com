@@ -136,7 +136,7 @@ export default function Contact() {
         {/* Call to Action */}
         <div className="mt-12 text-center">
           <p className="text-gray-600 dark:text-neutral-400 mb-6">
-            Interested in collaboration or learning more about Dr. Jalali's work?
+            Interested in collaboration or learning more about Dr. Jalali&apos;s work?
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button
