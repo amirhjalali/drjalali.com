@@ -16,21 +16,28 @@ export default function Contact() {
     {
       title: 'LinkedIn',
       value: 'Professional Network',
-      href: 'https://www.linkedin.com/in/ali-akbar-jalali/',
+      href: 'https://www.linkedin.com/in/ali-akbar-jalali-71478517/',
       icon: '💼',
       description: 'Professional connections and updates'
     },
     {
-      title: 'YouTube',
+      title: 'Twitter',
       value: '@drjalali',
-      href: 'https://www.youtube.com/@drjalali',
+      href: 'https://twitter.com/drjalali',
+      icon: '𝕏',
+      description: 'Updates and insights'
+    },
+    {
+      title: 'YouTube',
+      value: 'Dr. Jalali',
+      href: 'https://www.youtube.com/@draliakbarjalali',
       icon: '📺',
       description: 'Educational videos and lectures'
     },
     {
       title: 'Instagram',
-      value: '@dr.aliakbarjalali',
-      href: 'https://www.instagram.com/dr.aliakbarjalali/',
+      value: '@draliakbarjalali',
+      href: 'https://www.instagram.com/draliakbarjalali/',
       icon: '📸',
       description: 'Professional updates and insights'
     },
@@ -44,9 +51,16 @@ export default function Contact() {
     {
       title: 'ResearchGate',
       value: 'Research Network',
-      href: 'https://www.researchgate.net/profile/Ali-Jalali-2',
+      href: 'https://www.researchgate.net/profile/Ali-Akbar-Jalali',
       icon: '🔬',
       description: 'Research papers and collaboration'
+    },
+    {
+      title: 'ORCID',
+      value: '0000-0002-7578-1949',
+      href: 'https://orcid.org/0000-0002-7578-1949',
+      icon: '🆔',
+      description: 'Research identifier and publications'
     }
   ];
 
@@ -140,7 +154,7 @@ export default function Contact() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button
-              href="https://www.linkedin.com/in/ali-akbar-jalali/"
+              href="https://www.linkedin.com/in/ali-akbar-jalali-71478517/"
               variant="primary"
               size="lg"
               icon="external"
