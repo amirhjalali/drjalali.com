@@ -9,37 +9,37 @@ export default function Contact() {
     {
       title: 'Google Scholar',
       value: 'Research Publications',
-      href: 'https://scholar.google.com/citations?user=RJaAli8AAAAJ&hl=en',
+      href: 'https://scholar.google.com/citations?user=yb5J4skAAAAJ&hl=en',
       icon: '📚',
       description: 'Academic publications and citations'
     },
     {
       title: 'LinkedIn',
       value: 'Professional Network',
-      href: 'https://www.linkedin.com/in/ali-akbar-jalali-71478517/',
+      href: 'https://www.linkedin.com/in/aliakbar-jalali-4569405/',
       icon: '💼',
       description: 'Professional connections and updates'
     },
     {
-      title: 'Twitter',
-      value: '@drjalali',
-      href: 'https://twitter.com/drjalali',
-      icon: '𝕏',
-      description: 'Updates and insights'
-    },
-    {
       title: 'YouTube',
-      value: 'Dr. Jalali',
-      href: 'https://www.youtube.com/@draliakbarjalali',
+      value: '@Professor.Aliakbar.Jalali',
+      href: 'https://www.youtube.com/@Professor.Aliakbar.Jalali',
       icon: '📺',
       description: 'Educational videos and lectures'
     },
     {
       title: 'Instagram',
-      value: '@draliakbarjalali',
-      href: 'https://www.instagram.com/draliakbarjalali/',
+      value: '@drjalali_ict',
+      href: 'https://www.instagram.com/drjalali_ict/',
       icon: '📸',
       description: 'Professional updates and insights'
+    },
+    {
+      title: 'ResearchGate',
+      value: 'Research Network',
+      href: 'https://www.researchgate.net/profile/Ali-Akbar-Jalali-2',
+      icon: '🔬',
+      description: 'Research papers and collaboration'
     },
     {
       title: 'Wikipedia',
@@ -47,20 +47,6 @@ export default function Contact() {
       href: 'https://en.wikipedia.org/wiki/Ali_Akbar_Jalali',
       icon: '📖',
       description: 'Public biography and achievements'
-    },
-    {
-      title: 'ResearchGate',
-      value: 'Research Network',
-      href: 'https://www.researchgate.net/profile/Ali-Akbar-Jalali',
-      icon: '🔬',
-      description: 'Research papers and collaboration'
-    },
-    {
-      title: 'ORCID',
-      value: '0000-0002-7578-1949',
-      href: 'https://orcid.org/0000-0002-7578-1949',
-      icon: '🆔',
-      description: 'Research identifier and publications'
     }
   ];
 
@@ -154,7 +140,7 @@ export default function Contact() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button
-              href="https://www.linkedin.com/in/ali-akbar-jalali-71478517/"
+              href="https://www.linkedin.com/in/aliakbar-jalali-4569405/"
               variant="primary"
               size="lg"
               icon="external"
@@ -164,7 +150,7 @@ export default function Contact() {
               Connect on LinkedIn
             </Button>
             <Button
-              href="https://scholar.google.com/citations?user=RJaAli8AAAAJ&hl=en"
+              href="https://scholar.google.com/citations?user=yb5J4skAAAAJ&hl=en"
               variant="secondary"
               size="lg"
               icon="external"

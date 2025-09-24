@@ -204,7 +204,7 @@ export default function Publications() {
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Button
-              href="https://scholar.google.com/citations?user=RJaAli8AAAAJ&hl=en"
+              href="https://scholar.google.com/citations?user=yb5J4skAAAAJ&hl=en"
               variant="primary"
               size="lg"
               icon="external"
