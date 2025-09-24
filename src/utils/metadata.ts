@@ -81,8 +81,6 @@ export function generateMetadata({
       title: fullTitle,
       description,
       images: [ogImage],
-      creator: '@drjalali',
-      site: '@drjalali',
     },
     robots: {
       index: true,

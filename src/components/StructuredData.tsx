@@ -19,9 +19,11 @@ export default function StructuredData() {
     "image": "https://drjalali.com/images/professional/dr-jalali-professional.png",
     "sameAs": [
       "https://en.wikipedia.org/wiki/Ali_Akbar_Jalali",
-      "https://scholar.google.com/citations?user=drjalali",
-      "https://www.linkedin.com/in/drjalali",
-      "https://orcid.org/0000-0000-0000-0000"
+      "https://scholar.google.com/citations?user=yb5J4skAAAAJ&hl=en",
+      "https://www.linkedin.com/in/aliakbar-jalali-4569405/",
+      "https://www.youtube.com/@Professor.Aliakbar.Jalali",
+      "https://www.instagram.com/drjalali_ict/",
+      "https://www.researchgate.net/profile/Ali-Akbar-Jalali-2"
     ],
     "nationality": {
       "@type": "Country",
